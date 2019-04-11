@@ -788,6 +788,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.4.3":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.1.tgz#51b56e216e87103ab3f7d6040b464c538e242888"
+  integrity sha512-g+hmPKs16iewFSmW57NkH9xpPkuYD1RV3UE2BCkXx9j+nhhRb9hsiSxPmEa67j35IecTQdn4iyMtHMbt5VoREg==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.4.5":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
@@ -9245,6 +9252,25 @@ react-transition-group@^2.3.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
+
+react-ui-icheck@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-ui-icheck/-/react-ui-icheck-0.5.0.tgz#2ca4ee4cec7a3633564d23a07b9cfad6d59e8f8b"
+  integrity sha512-jZFmEHfn+pA7+gX52JXpagXbW2S6OGGsmZ7XgDg/CpWG5DIBkSdZPUslJzFhCUSxYzFJftKvjnpWQ1/H+RuyBg==
+  dependencies:
+    "@babel/runtime" "^7.4.3"
+    bootstrap "^4.3.1"
+    classnames "^2.2.6"
+    icheck "^1.0.2"
+    is-mobile "^2.0.0"
+    lodash "^4.17.11"
+    prismjs "^1.16.0"
+    prop-types "^15.7.2"
+    react-dom "^16.8.6"
+    react-hot-loader "^4.8.4"
+    react-router-bootstrap "^0.25.0"
+    react-router-dom "^5.0.0"
+    reactstrap "^8.0.0"
 
 react@^16.8.6:
   version "16.8.6"

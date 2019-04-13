@@ -38,5 +38,4 @@ node_modules/
 .idea/
 
 ### Project specific ###
-/lib/
-/website/dist/
+/dist/

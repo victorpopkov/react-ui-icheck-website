@@ -19,7 +19,7 @@ module.exports = {
   context: paths.root,
   entry: {
     app: [
-      path.join(paths.websiteSrc, 'app.js'),
+      path.join(paths.src, 'app.js'),
     ],
   },
   module: {
@@ -64,7 +64,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: paths.websiteDist,
+    path: paths.dist,
     publicPath: config.appPublicPath,
   },
   resolve: {
@@ -73,8 +73,8 @@ module.exports = {
       'node_modules',
     ],
     alias: {
-      '@WebsiteConfig': paths.websiteConfig,
-      '@WebsiteRoot': paths.websiteRoot,
+      '@WebsiteConfig': paths.config,
+      '@WebsiteRoot': paths.root,
     },
     extensions: ['.json', '.js', '.jsx'],
   },
@@ -85,7 +85,7 @@ module.exports = {
       systemvars: true,
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(paths.websiteSrc, 'index.html'),
+      template: path.resolve(paths.src, 'index.html'),
     }),
   ],
 };

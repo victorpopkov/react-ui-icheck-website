@@ -8,7 +8,7 @@ const paths = require('./paths');
 
 module.exports = merge(common, {
   devServer: {
-    contentBase: paths.websiteDist,
+    contentBase: paths.dist,
     host: config.appHost,
     hot: true,
     hotOnly: true,
@@ -110,7 +110,7 @@ module.exports = merge(common, {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.join(paths.websiteSrc, 'app/sass-resources.scss'),
+              resources: path.join(paths.src, 'app/sass-resources.scss'),
             },
           },
         ],

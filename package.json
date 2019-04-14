@@ -8,17 +8,17 @@
   },
   "betterScripts": {
     "build:website": {
-      "command": "webpack --config ./website/webpack/webpack.config.prod.js --colors --display-error-details --verbose"
+      "command": "webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose"
     },
     "start": {
-      "command": "http-server website/dist/",
+      "command": "http-server dist/",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "production"
       }
     },
     "watch": {
-      "command": "webpack-dev-server --config ./website/webpack/webpack.config.dev.js",
+      "command": "webpack-dev-server --config ./webpack/webpack.config.dev.js",
       "env": {
         "NODE_ENV": "development",
         "BABEL_ENV": "development"
@@ -155,9 +155,9 @@
     "build:website": "better-npm-run build:website",
     "dev": "npm-run-all build:website watch",
     "lint": "npm-run-all --continue-on-error lint:*",
-    "lint:eslint": "eslint -c .eslintrc ./src/ ./website/src/",
+    "lint:eslint": "eslint -c .eslintrc ./src/",
     "lint:remark": "remark .",
-    "lint:stylelint": "stylelint './website/src/**/*.css' './website/src/**/*.scss'",
+    "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
     "prepare": "npm-run-all build",
     "start": "better-npm-run start",
     "test": "jest --coverage",

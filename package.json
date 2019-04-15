@@ -159,9 +159,6 @@
     "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
     "prepare": "npm-run-all build",
     "start": "better-npm-run start",
-    "test": "jest --coverage",
-    "test:codecov": "codecov",
-    "test:watch": "jest --watch",
     "watch": "better-npm-run watch"
   }
 }

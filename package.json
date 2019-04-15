@@ -7,7 +7,7 @@
     "email": "victor@popkov.com"
   },
   "betterScripts": {
-    "build:website": {
+    "build": {
       "command": "webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose"
     },
     "start": {
@@ -151,9 +151,8 @@
     "babel-core": "7.0.0-bridge.0"
   },
   "scripts": {
-    "build": "npm-run-all --parallel build:*",
-    "build:website": "better-npm-run build:website",
-    "dev": "npm-run-all build:website watch",
+    "build": "better-npm-run build",
+    "dev": "npm-run-all watch",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint -c .eslintrc ./src/",
     "lint:remark": "remark .",

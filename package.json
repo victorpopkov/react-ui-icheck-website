@@ -111,24 +111,7 @@
   "engines": {
     "node": ">= 8.10.0 < 9.* || >= 10.*"
   },
-  "files": [
-    "CHANGELOG.md",
-    "lib",
-    "README.md"
-  ],
   "homepage": "http://github.victorpopkov.com/react-ui-icheck/",
-  "keywords": [
-    "checkbox",
-    "form",
-    "icheck",
-    "input",
-    "radio",
-    "react",
-    "react-ui-icheck",
-    "switch",
-    "toggle",
-    "ui"
-  ],
   "license": "MIT",
   "main": "lib/index.js",
   "peerDependencies": {

@@ -11,11 +11,11 @@ import config from '@WebsiteConfig';
 const Jumbotron = () => (
   <BaseJumbotron className="m-0 pb-5 pt-5" styleName="jumbotron" tag="section">
     <Container>
-      <h1>{config.package.name}</h1>
+      <h1>{config.lib.name}</h1>
       <h6 className="mb-4">
         Latest version:
         {' '}
-        {config.package.version}
+        {config.lib.version}
       </h6>
       <Row className="justify-content-center">
         <Col lg={6} md={8} xl={4} xs={12}>
@@ -23,7 +23,7 @@ const Jumbotron = () => (
             <code className="language-bash">
               npm install
               {' '}
-              {config.package.name}
+              {config.lib.name}
               {' '}
               --save
             </code>

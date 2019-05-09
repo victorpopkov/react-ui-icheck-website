@@ -36,7 +36,7 @@ class Navbar extends Component {
       <BaseNavbar expand="md" light>
         <Container>
           <IndexLinkContainer to="/">
-            <NavbarBrand>{config.package.name}</NavbarBrand>
+            <NavbarBrand>{config.lib.name}</NavbarBrand>
           </IndexLinkContainer>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={collapsed} timeout={0} navbar>
@@ -54,7 +54,7 @@ class Navbar extends Component {
                   </LinkContainer>
                 </NavItem>
                 <NavItem>
-                  <NavLink href={config.package.repository}>GitHub</NavLink>
+                  <NavLink href={config.lib.repository}>GitHub</NavLink>
                 </NavItem>
               </Nav>
             </div>

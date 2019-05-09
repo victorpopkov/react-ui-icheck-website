@@ -13,14 +13,14 @@ const Footer = () => (
       <Row>
         <Col md={12} styleName="content">
           <ul>
-            <li><a href={config.package.repository}>View on GitHub</a></li>
+            <li><a href={config.lib.repository}>View on GitHub</a></li>
           </ul>
           <div styleName="buttons">
             <iframe
               frameBorder="0"
               height="20px"
               scrolling="0"
-              src={`https://ghbtns.com/github-btn.html?user=victorpopkov&repo=${config.package.name}&type=star&count=true`}
+              src={`https://ghbtns.com/github-btn.html?user=victorpopkov&repo=${config.lib.name}&type=star&count=true`}
               title="GitHub Stars"
               width="80px"
             />
@@ -28,7 +28,7 @@ const Footer = () => (
               frameBorder="0"
               height="20px"
               scrolling="0"
-              src={`https://ghbtns.com/github-btn.html?user=victorpopkov&repo=${config.package.name}&type=watch&count=true&v=2`}
+              src={`https://ghbtns.com/github-btn.html?user=victorpopkov&repo=${config.lib.name}&type=watch&count=true&v=2`}
               title="GitHub Watchers"
               width="90px"
             />

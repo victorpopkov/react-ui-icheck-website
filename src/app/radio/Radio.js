@@ -50,7 +50,7 @@ class RadioPage extends Component {
         <Container>
           <Row>
             <Col md={9}>
-              <h2 className="heading">Checkbox</h2>
+              <h2 className="heading">Radio</h2>
               <Nav className="mt-4" tabs>
                 <NavItem>
                   <NavLink

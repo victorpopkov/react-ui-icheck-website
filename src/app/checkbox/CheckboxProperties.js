@@ -26,35 +26,32 @@ const CheckboxProperties = () => (
         <pre>
           <code className="language-jsx">
             {`Checkbox.propTypes = {
-  activeClass: PropTypes.string,        // default: 'active'
-  aria: PropTypes.bool,                 // default: false
-  checkboxClass: PropTypes.string,      // default: 'icheckbox'
-  checked: PropTypes.bool,              // default: false
-  checkedClass: PropTypes.string,       // default: 'checked'
+  activeClassName: PropTypes.string,        // default: 'active'
+  aria: PropTypes.bool,                     // default: false
+  checkboxClassName: PropTypes.string,      // default: 'icheckbox'
+  checked: PropTypes.bool,                  // default: false
+  checkedClassName: PropTypes.string,       // default: 'checked'
   children: PropTypes.node,
   className: PropTypes.string,
-  defaultChecked: PropTypes.bool,       // default: false
-  determinateClass: PropTypes.string,
-  disabled: PropTypes.bool,             // default: false
-  disabledClass: PropTypes.string,      // default: 'disabled'
-  focusClass: PropTypes.string,         // default: 'focus'
-  hoverClass: PropTypes.string,         // default: 'hover'
+  defaultChecked: PropTypes.bool,           // default: false
+  disabled: PropTypes.bool,                 // default: false
+  disabledClassName: PropTypes.string,      // default: 'disabled'
+  focusClassName: PropTypes.string,         // default: 'focus'
+  hoverClassName: PropTypes.string,         // default: 'hover'
   id: PropTypes.string,
-  increaseArea: PropTypes.string,       // default: ''
-  indeterminate: PropTypes.bool,        // default: true
-  indeterminateClass: PropTypes.string, // default: 'indeterminate'
-  inheritClass: PropTypes.bool,         // default: false
-  inheritID: PropTypes.bool,            // default: false
+  increaseArea: PropTypes.string,           // default: ''
+  indeterminate: PropTypes.bool,            // default: true
+  indeterminateClassName: PropTypes.string, // default: 'indeterminate'
+  inheritClassName: PropTypes.bool,         // default: false
+  inheritID: PropTypes.bool,                // default: false
   insert: PropTypes.node,
   label: PropTypes.node,
   labelClassName: PropTypes.string,
-  labelHover: PropTypes.bool,           // default: true
-  labelHoverClass: PropTypes.string,    // default: 'hover'
-  labelTag: PropTypes.string,           // default: 'span'
+  labelHover: PropTypes.bool,               // default: true
+  labelHoverClass: PropTypes.string,        // default: 'hover'
+  labelTag: PropTypes.string,               // default: 'span'
   labelTagClassName: PropTypes.string,
   name: PropTypes.string,
-  type: PropTypes.string,
-  value: PropTypes.string,              // default: ''
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,

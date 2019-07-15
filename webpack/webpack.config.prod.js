@@ -1,4 +1,4 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -32,8 +32,10 @@ module.exports = merge(common, {
             loader: 'css-loader',
             options: {
               importLoaders: 2,
-              localIdentName: '[local]___[hash:base64:5]',
-              modules: 'global',
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]',
+                mode: 'global',
+              },
               sourceMap: true,
             },
           },
@@ -61,8 +63,10 @@ module.exports = merge(common, {
             loader: 'css-loader',
             options: {
               importLoaders: 2,
-              localIdentName: '[local]___[hash:base64:5]',
-              modules: 'global',
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]',
+                mode: 'global',
+              },
               sourceMap: true,
             },
           },

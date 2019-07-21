@@ -8,7 +8,11 @@
   },
   "betterScripts": {
     "build": {
-      "command": "webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose"
+      "command": "webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production"
+      }
     },
     "start": {
       "command": "http-server dist/",

@@ -33,7 +33,7 @@
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "icheck": "^1.0.2",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react-dom": "^16.8.6",
     "react-hot-loader": "^4.12.8",

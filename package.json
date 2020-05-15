@@ -84,6 +84,7 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
+    "prettier": "^2.0.5",
     "react": "^16.8.6",
     "react-element-to-jsx-string": "14.0.2",
     "remark-cli": "^7.0.0",

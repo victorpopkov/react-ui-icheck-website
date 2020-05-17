@@ -125,6 +125,7 @@
     "dev": "npm-run-all watch",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint -c .eslintrc ./src/",
+    "lint:prettier": "prettier --check .",
     "lint:remark": "remark .",
     "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
     "prepare": "npm-run-all build",

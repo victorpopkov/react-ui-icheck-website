@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxGroup } from 'react-ui-icheck'; // eslint-disable-line import/no-unresolved
+import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
 import {
   Col,
   Container,
@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 import Prism from 'prismjs';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
-import { Example, Jumbotron, Sidebar } from '../common'; // eslint-disable-line sort-imports
+import { Example, Jumbotron, Sidebar } from '../common';
 import CheckboxProperties from './CheckboxProperties';
 
 @hot(module)
@@ -54,24 +54,27 @@ class CheckboxPage extends Component {
                 <NavItem>
                   <NavLink
                     className={classNames({ active: activeTab === 'examples' })}
-                    onClick={() => { this.toggleActiveTab('examples'); }}
+                    onClick={() => {
+                      this.toggleActiveTab('examples');
+                    }}
                   >
                     Examples
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    className={classNames({ active: activeTab === 'properties' })}
-                    onClick={() => { this.toggleActiveTab('properties'); }}
+                    className={classNames({
+                      active: activeTab === 'properties',
+                    })}
+                    onClick={() => {
+                      this.toggleActiveTab('properties');
+                    }}
                   >
                     Properties
                   </NavLink>
                 </NavItem>
               </Nav>
-              <TabContent
-                activeTab={activeTab}
-                className="mb-4"
-              >
+              <TabContent activeTab={activeTab} className="mb-4">
                 <TabPane tabId="examples">
                   <Example
                     srcPrepend={`import 'icheck/skins/all.css';
@@ -90,7 +93,9 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
                       <Checkbox
                         checkboxClass="icheckbox_square-blue"
                         increaseArea="30%"
-                        label={'#checkbox-2, <span class="label1">defaultChecked</span>'}
+                        label={
+                          '#checkbox-2, <span class="label1">defaultChecked</span>'
+                        }
                         labelTag="div"
                         labelTagClassName="d-inline"
                         defaultChecked
@@ -123,7 +128,9 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
                       />
                       <Checkbox
                         checkboxClass="icheckbox_square-blue"
-                        label={'#checkbox-2, <span class="label1">defaultChecked</span>'}
+                        label={
+                          '#checkbox-2, <span class="label1">defaultChecked</span>'
+                        }
                         labelTag="div"
                         labelTagClassName="d-inline"
                         defaultChecked

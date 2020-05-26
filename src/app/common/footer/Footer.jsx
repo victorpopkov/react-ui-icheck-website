@@ -1,9 +1,5 @@
 import './Footer.scss';
-import {
-  Col,
-  Container,
-  Row,
-} from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import config from '@WebsiteConfig';
 
@@ -13,7 +9,9 @@ const Footer = () => (
       <Row>
         <Col md={12} styleName="content">
           <ul>
-            <li><a href={config.lib.repository}>View on GitHub</a></li>
+            <li>
+              <a href={config.lib.repository}>View on GitHub</a>
+            </li>
           </ul>
           <div styleName="buttons">
             <iframe

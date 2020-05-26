@@ -1,9 +1,4 @@
-import {
-  Col,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
+import { Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 

@@ -4,7 +4,7 @@ import './style.scss';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
-import { Footer, Navbar } from './common'; // eslint-disable-line sort-imports
+import { Footer, Navbar } from './common';
 
 @hot(module)
 class App extends Component {

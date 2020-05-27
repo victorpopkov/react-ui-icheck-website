@@ -33,14 +33,14 @@ body {
       background: $pampas;
       border-radius: 3px;
       color: $black;
-      font-size: .85em;
-      padding: .15em 0;
+      font-size: 0.85em;
+      padding: 0.15em 0;
       white-space: nowrap;
 
       &::before,
       &::after {
         content: '\00a0';
-        letter-spacing: -.2em;
+        letter-spacing: -0.2em;
       }
     }
   }
@@ -68,9 +68,9 @@ label {
 }
 
 .heading {
-  border-bottom: 1px solid transparentize($black, .9);
+  border-bottom: 1px solid transparentize($black, 0.9);
   margin-bottom: $grid-gutter-width / 2;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
 }
 
 .badges {
@@ -90,7 +90,7 @@ label {
 @include media-breakpoint-down(sm) {
   #app {
     main {
-      font-size: .85rem;
+      font-size: 0.85rem;
 
       h1 {
         font-size: $h3-font-size;

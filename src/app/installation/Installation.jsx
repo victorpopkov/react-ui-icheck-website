@@ -1,11 +1,32 @@
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
+import ReactMarkdown from 'react-markdown';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 
 @hot(module)
 class Installation extends Component {
+  content =
+    'The library can be installed like any other [npm](https://www.npmjs.com/) package.\n' +
+    '\n' +
+    'If you are planning to use your custom skin(s):\n' +
+    '\n' +
+    '```bash\n' +
+    '$ npm install react-ui-icheck --save\n' +
+    '# or\n' +
+    '$ yarn add react-ui-icheck\n' +
+    '```\n' +
+    '\n' +
+    'However, if you are planning to use [iCheck](https://github.com/fronteed/icheck) skin(s) you will need to install\n' +
+    'the `icheck` package as well:\n' +
+    '\n' +
+    '```bash\n' +
+    '$ npm install react-ui-icheck icheck --save\n' +
+    '# or\n' +
+    '$ yarn add react-ui-icheck icheck\n' +
+    '```';
+
   componentDidMount() {
     Prism.highlightAll();
   }
@@ -18,50 +39,7 @@ class Installation extends Component {
           <Row>
             <Col md={9}>
               <h2 className="heading">Installation</h2>
-              <p>
-                {`You can install this library as any other `}
-                <a
-                  href="https://www.npmjs.com/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  npm
-                </a>
-                {` package.`}
-              </p>
-              <p>
-                If you are planning to use your own custom skin, then only the
-                package of this library is needed:
-              </p>
-              <pre className="mb-3">
-                <code className="language-bash">
-                  {`# using npm
-npm install react-ui-icheck --save
-
-# using Yarn
-yarn add react-ui-icheck`}
-                </code>
-              </pre>
-              <p>
-                {`If you are planning to use the original `}
-                <a
-                  href="https://github.com/fronteed/icheck"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  iCheck
-                </a>
-                {` skins, then you should install both packages:`}
-              </p>
-              <pre>
-                <code className="language-bash">
-                  {`# using npm
-npm install react-ui-icheck icheck --save
-
-# using Yarn
-yarn add react-ui-icheck icheck`}
-                </code>
-              </pre>
+              <ReactMarkdown source={this.content} />
             </Col>
             <Sidebar />
           </Row>

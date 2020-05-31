@@ -39,7 +39,7 @@ class Installation extends Component {
           <Row>
             <Col md={9}>
               <h2 className="heading">Installation</h2>
-              <ReactMarkdown source={this.content} />
+              <ReactMarkdown className="markdown" source={this.content} />
             </Col>
             <Sidebar />
           </Row>

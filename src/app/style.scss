@@ -28,7 +28,9 @@ body {
     flex-grow: 1;
     justify-content: flex-start;
     width: 100%;
+  }
 
+  .markdown {
     h2 {
       border-bottom: 1px solid transparentize($black, 0.9);
       padding-bottom: 0.3em;

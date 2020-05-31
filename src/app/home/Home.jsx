@@ -83,7 +83,7 @@ class Home extends Component {
                   'Code Climate',
                 )}
               </p>
-              <ReactMarkdown source={this.content} />
+              <ReactMarkdown className="markdown" source={this.content} />
             </Col>
             <Sidebar />
           </Row>

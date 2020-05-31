@@ -6,7 +6,7 @@ import Skin from './Skin';
 const SkinFuturico = () => (
   <main className="skin futurico" role="main">
     <Jumbotron />
-    <Skin defaultColor="futurico" skin="futurico" title="Futurico skin" />
+    <Skin defaultColor="futurico" skin="futurico" title="Futurico Skin" />
   </main>
 );
 

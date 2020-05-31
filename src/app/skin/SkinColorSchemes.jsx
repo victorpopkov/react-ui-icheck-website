@@ -84,7 +84,7 @@ class SkinColorSchemes extends React.Component {
 
     return (
       <div className="colors">
-        <strong>Color schemes</strong>
+        <strong>Color Schemes</strong>
         <ul>{list}</ul>
       </div>
     );

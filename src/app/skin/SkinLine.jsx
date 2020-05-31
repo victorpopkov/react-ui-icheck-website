@@ -66,7 +66,7 @@ class SkinLine extends Component {
         <Container>
           <Row>
             <Col md={9}>
-              <h2 className="heading">Line skin</h2>
+              <h2 className="heading">Line Skin</h2>
               <Col className="skin-line mt-4" md={11}>
                 <Row>
                   <Col className="mb-2 mb-lg-0" lg={6} md={12}>

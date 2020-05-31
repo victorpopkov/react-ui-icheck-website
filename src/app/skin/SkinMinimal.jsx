@@ -9,7 +9,7 @@ const SkinMinimal = () => (
     <Skin
       defaultColor="minimal"
       skin="minimal"
-      title="Minimal skin"
+      title="Minimal Skin"
       colorSchemes
     />
   </main>

@@ -9,7 +9,7 @@ const SkinSquare = () => (
     <Skin
       defaultColor="square"
       skin="square"
-      title="Square skin"
+      title="Square Skin"
       colorSchemes
     />
   </main>

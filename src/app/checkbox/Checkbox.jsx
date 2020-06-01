@@ -47,28 +47,23 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
       title="Default"
     >
       <CheckboxGroup checkboxWrapClassName="form-check" checkboxWrapTag="div">
+        <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
         <Checkbox
           checkboxClass="icheckbox_square-blue"
-          increaseArea="30%"
-          label="#checkbox-1"
-        />
-        <Checkbox
-          checkboxClass="icheckbox_square-blue"
-          increaseArea="30%"
-          label={'#checkbox-2, <span class="label1">defaultChecked</span>'}
+          label={'#checkbox-2, <span>defaultChecked</span>'}
           labelTag="div"
           labelTagClassName="d-inline"
           defaultChecked
         />
         <Checkbox
           checkboxClass="icheckbox_square-blue"
-          increaseArea="30%"
           labelTag="div"
           labelTagClassName="d-inline"
           disabled
         >
-          <span>#checkbox-3, </span>
-          <span className="label1">disabled</span>
+          <span>#checkbox-3</span>
+          {`, `}
+          <span>disabled</span>
         </Checkbox>
       </CheckboxGroup>
     </Example>
@@ -88,7 +83,7 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
         <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
         <Checkbox
           checkboxClass="icheckbox_square-blue"
-          label={'#checkbox-2, <span class="label1">defaultChecked</span>'}
+          label={'#checkbox-2, <span>defaultChecked</span>'}
           labelTag="div"
           labelTagClassName="d-inline"
           defaultChecked
@@ -99,8 +94,9 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
           labelTagClassName="d-inline"
           disabled
         >
-          <span>#checkbox-3, </span>
-          <span className="label1">disabled</span>
+          <span>#checkbox-3</span>
+          {`, `}
+          <span>disabled</span>
         </Checkbox>
       </CheckboxGroup>
     </Example>

@@ -40,6 +40,72 @@ class CheckboxPage extends Component {
     }
   }
 
+  renderDefaultExample = () => (
+    <Example
+      srcPrepend={`import 'icheck/skins/all.css';
+import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
+      title="Default"
+    >
+      <CheckboxGroup checkboxWrapClassName="form-check" checkboxWrapTag="div">
+        <Checkbox
+          checkboxClass="icheckbox_square-blue"
+          increaseArea="30%"
+          label="#checkbox-1"
+        />
+        <Checkbox
+          checkboxClass="icheckbox_square-blue"
+          increaseArea="30%"
+          label={'#checkbox-2, <span class="label1">defaultChecked</span>'}
+          labelTag="div"
+          labelTagClassName="d-inline"
+          defaultChecked
+        />
+        <Checkbox
+          checkboxClass="icheckbox_square-blue"
+          increaseArea="30%"
+          labelTag="div"
+          labelTagClassName="d-inline"
+          disabled
+        >
+          <span>#checkbox-3, </span>
+          <span className="label1">disabled</span>
+        </Checkbox>
+      </CheckboxGroup>
+    </Example>
+  );
+
+  renderInlineExample = () => (
+    <Example
+      srcPrepend={`import 'icheck/skins/all.css';
+import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
+      title="Inline"
+    >
+      <CheckboxGroup
+        checkboxWrapClassName="form-check form-check-inline"
+        checkboxWrapTag="div"
+        className="d-flex align-items-center"
+      >
+        <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
+        <Checkbox
+          checkboxClass="icheckbox_square-blue"
+          label={'#checkbox-2, <span class="label1">defaultChecked</span>'}
+          labelTag="div"
+          labelTagClassName="d-inline"
+          defaultChecked
+        />
+        <Checkbox
+          checkboxClass="icheckbox_square-blue"
+          labelTag="div"
+          labelTagClassName="d-inline"
+          disabled
+        >
+          <span>#checkbox-3, </span>
+          <span className="label1">disabled</span>
+        </Checkbox>
+      </CheckboxGroup>
+    </Example>
+  );
+
   render() {
     const { activeTab } = this.state;
 
@@ -76,76 +142,8 @@ class CheckboxPage extends Component {
               </Nav>
               <TabContent activeTab={activeTab} className="mb-4">
                 <TabPane tabId="examples">
-                  <Example
-                    srcPrepend={`import 'icheck/skins/all.css';
-import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
-                    title="Default"
-                  >
-                    <CheckboxGroup
-                      checkboxWrapClassName="form-check"
-                      checkboxWrapTag="div"
-                    >
-                      <Checkbox
-                        checkboxClass="icheckbox_square-blue"
-                        increaseArea="30%"
-                        label="#checkbox-1"
-                      />
-                      <Checkbox
-                        checkboxClass="icheckbox_square-blue"
-                        increaseArea="30%"
-                        label={
-                          '#checkbox-2, <span class="label1">defaultChecked</span>'
-                        }
-                        labelTag="div"
-                        labelTagClassName="d-inline"
-                        defaultChecked
-                      />
-                      <Checkbox
-                        checkboxClass="icheckbox_square-blue"
-                        increaseArea="30%"
-                        labelTag="div"
-                        labelTagClassName="d-inline"
-                        disabled
-                      >
-                        <span>#checkbox-3, </span>
-                        <span className="label1">disabled</span>
-                      </Checkbox>
-                    </CheckboxGroup>
-                  </Example>
-                  <Example
-                    srcPrepend={`import 'icheck/skins/all.css';
-import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
-                    title="Inline"
-                  >
-                    <CheckboxGroup
-                      checkboxWrapClassName="form-check form-check-inline"
-                      checkboxWrapTag="div"
-                      className="d-flex align-items-center"
-                    >
-                      <Checkbox
-                        checkboxClass="icheckbox_square-blue"
-                        label="#checkbox-1"
-                      />
-                      <Checkbox
-                        checkboxClass="icheckbox_square-blue"
-                        label={
-                          '#checkbox-2, <span class="label1">defaultChecked</span>'
-                        }
-                        labelTag="div"
-                        labelTagClassName="d-inline"
-                        defaultChecked
-                      />
-                      <Checkbox
-                        checkboxClass="icheckbox_square-blue"
-                        labelTag="div"
-                        labelTagClassName="d-inline"
-                        disabled
-                      >
-                        <span>#checkbox-3, </span>
-                        <span className="label1">disabled</span>
-                      </Checkbox>
-                    </CheckboxGroup>
-                  </Example>
+                  {this.renderDefaultExample()}
+                  {this.renderInlineExample()}
                 </TabPane>
                 <TabPane tabId="properties">
                   <CheckboxProperties />

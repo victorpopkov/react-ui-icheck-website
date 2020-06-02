@@ -77,7 +77,8 @@ this.state = {
             value="3"
             disabled
           >
-            <span>#radio-3, </span>
+            <span>#radio-3</span>
+            {`, `}
             <span className="label1">disabled</span>
           </Radio>
         </RadioGroup>
@@ -122,7 +123,8 @@ this.state = {
             value="3"
             disabled
           >
-            <span>#radio-3, </span>
+            <span>#radio-3</span>
+            {`, `}
             <span className="label1">disabled</span>
           </Radio>
         </RadioGroup>

@@ -28,6 +28,45 @@ body {
     flex-grow: 1;
     justify-content: flex-start;
     width: 100%;
+
+    label {
+      position: relative;
+    }
+
+    table {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100%;
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+
+    th,
+    td {
+      padding-left: $grid-gutter-width;
+      padding-right: $grid-gutter-width;
+    }
+
+    tfoot {
+      th,
+      td {
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+      }
+
+      .buttons {
+        text-align: right;
+
+        button {
+          margin-right: 0.75rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 
   .markdown {
@@ -36,7 +75,10 @@ body {
       padding-bottom: 0.3em;
     }
 
-    h3, h4, h5, h6 {
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-bottom: 16px;
       margin-top: 1em;
     }
@@ -46,7 +88,7 @@ body {
     }
 
     li + li {
-      margin-top: .25em;
+      margin-top: 0.25em;
     }
 
     pre.d-inline,

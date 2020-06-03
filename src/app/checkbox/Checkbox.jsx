@@ -46,11 +46,14 @@ class CheckboxPage extends Component {
 import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
       title="Default"
     >
-      <CheckboxGroup checkboxWrapClassName="form-check" checkboxWrapTag="div">
+      <CheckboxGroup
+        checkboxWrapClassName="form-check p-0"
+        checkboxWrapTag="div"
+      >
         <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
         <Checkbox
           checkboxClass="icheckbox_square-blue"
-          label={'#checkbox-2, <span>defaultChecked</span>'}
+          label={'#checkbox-2, <span>default</span>'}
           labelTag="div"
           labelTagClassName="d-inline"
           defaultChecked
@@ -83,7 +86,7 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
         <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
         <Checkbox
           checkboxClass="icheckbox_square-blue"
-          label={'#checkbox-2, <span>defaultChecked</span>'}
+          label={'#checkbox-2, <span>default</span>'}
           labelTag="div"
           labelTagClassName="d-inline"
           defaultChecked

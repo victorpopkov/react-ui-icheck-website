@@ -57,14 +57,14 @@ this.state = {
       >
         <RadioGroup
           name="radio"
-          radioWrapClassName="form-check"
+          radioWrapClassName="form-check p-0"
           radioWrapTag="div"
           value={radioValue}
           onChange={(event, value) => this.setState({ radioValue: value })}
         >
           <Radio label="#radio-1" radioClass="iradio_square-blue" value="1" />
           <Radio
-            label="#radio-2"
+            label={'#radio-2, <span>default</span>'}
             labelTag="div"
             labelTagClassName="d-inline"
             radioClass="iradio_square-blue"
@@ -110,7 +110,7 @@ this.state = {
         >
           <Radio label="#radio-1" radioClass="iradio_square-blue" value="1" />
           <Radio
-            label="#radio-2"
+            label={'#radio-2, <span>default</span>'}
             labelTag="div"
             labelTagClassName="d-inline"
             radioClass="iradio_square-blue"

@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import { Example, Jumbotron, Sidebar } from '../common';
 import CheckboxProperties from './CheckboxProperties';
+import CheckboxStates from './CheckboxStates';
 
 @hot(module)
 class CheckboxPage extends Component {
@@ -143,6 +144,7 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
                 <TabPane tabId="examples">
                   {this.renderDefaultExample()}
                   {this.renderInlineExample()}
+                  <CheckboxStates />
                 </TabPane>
                 <TabPane tabId="properties">
                   <CheckboxProperties />

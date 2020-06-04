@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import { Example, Jumbotron, Sidebar } from '../common';
 import RadioProperties from './RadioProperties';
+import RadioStates from './RadioStates';
 
 @hot(module)
 class RadioPage extends Component {
@@ -170,6 +171,7 @@ this.state = {
                 <TabPane tabId="examples">
                   {this.renderDefaultExample()}
                   {this.renderInlineExample()}
+                  <RadioStates />
                 </TabPane>
                 <TabPane tabId="properties">
                   <RadioProperties />

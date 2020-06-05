@@ -100,6 +100,10 @@
   },
   "scripts": {
     "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose",
+    "ci:eslint": "eslint --config ./.eslintrc --ext js,jsx --format ./.github/eslint-issues.js .",
+    "ci:prettier:md": "prettier --check './**/*.md'",
+    "ci:prettier:scss": "prettier --check './**/*.scss'",
+    "ci:prettier:yml": "prettier --check './**/*.yml'",
     "dev": "npm-run-all watch",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx .",

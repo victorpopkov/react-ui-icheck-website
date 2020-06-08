@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [12.x]
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2
+      - name: Getting branch name
+        run: echo "::set-env name=BRANCH_NAME::${GITHUB_REF##*/}"
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install
+        run: yarn install --ignore-scripts && npm rebuild node-sass
+      - name: Build
+        continue-on-error: true
+        id: build
+        run: |
+          # build
+          yarn build
+          export STATUS="$?"
+
+          # env
+          echo "::set-env name=NODE_VERSION::${{ matrix.node_version }}"
+
+          # status
+          if [ "${STATUS}" -eq 0 ]; then
+            echo '::set-output name=status::success'
+            exit 0
+          else
+            echo '::set-output name=status::failure'
+            exit 1
+          fi
+      - name: Prepare success Slack notification
+        continue-on-error: true
+        if: steps.build.outputs.status == 'success'
+        run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#2eb886","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *build* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed on Node.js {{ NODE_VERSION }}"}}]}]}'
+      - name: Prepare failure Slack notification
+        continue-on-error: true
+        if: steps.build.outputs.status == 'failure'
+        run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#ed2f00","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *build* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js {{ NODE_VERSION }}"}}]}]}'
+      - name: Slack notification (codedsolar)
+        continue-on-error: true
+        uses: Ilshidur/action-slack@master
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CODEDSOLAR }}
+      - name: Lint status
+        run: |
+          export EXIT=$("${SUCCESS}" && echo 0 || echo 1)
+          exit "${EXIT}"
+        env:
+          SUCCESS: ${{ steps.build.outputs.status == 'success' }}

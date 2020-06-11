@@ -113,4 +113,6 @@ temp/
 .idea/
 
 ### Project ###
-env_*
+.github/slack*.json
+env*
+lib/

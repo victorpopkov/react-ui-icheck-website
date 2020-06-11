@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: Install
+        continue-on-error: true
         run: yarn install --ignore-scripts && npm rebuild node-sass
       - name: Build
         continue-on-error: true
@@ -40,7 +41,6 @@ jobs:
             echo '::set-output name=status::success'
             exit 0
           else
-            echo '::set-output name=status::failure'
             exit 1
           fi
       - name: Prepare success Slack notification
@@ -51,7 +51,7 @@ jobs:
           SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#2eb886","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *build* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed on Node.js {{ NODE_VERSION }}"}}]}]}'
       - name: Prepare failure Slack notification
         continue-on-error: true
-        if: steps.build.outputs.status == 'failure'
+        if: steps.build.outputs.status != 'success'
         run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
         env:
           SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#ed2f00","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *build* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js {{ NODE_VERSION }}"}}]}]}'
@@ -60,12 +60,8 @@ jobs:
         uses: Ilshidur/action-slack@master
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CODEDSOLAR }}
-      - name: Lint status
-        run: |
-          export EXIT=$("${SUCCESS}" && echo 0 || echo 1)
-          exit "${EXIT}"
-        env:
-          SUCCESS: ${{ steps.build.outputs.status == 'success' }}
+      - name: Build status
+        run: ${{ steps.build.outputs.status == 'success' }} && exit 0 || exit 1
 
   lint:
     runs-on: ubuntu-latest
@@ -118,11 +114,10 @@ jobs:
           yarn lint || true
 
           # status
-          if [ ${LINT_ISSUES} -eq 0 ]; then
+          if [ "${LINT_ISSUES}" -eq 0 ]; then
             echo '::set-output name=status::success'
             exit 0
           else
-            echo '::set-output name=status::failure'
             exit 1
           fi
       - name: Prepare success Slack notification
@@ -133,7 +128,7 @@ jobs:
           SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#2eb886","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *lint* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed with no issues on Node.js {{ NODE_VERSION }}"}}]}]}'
       - name: Prepare failure Slack notification
         continue-on-error: true
-        if: steps.lint.outputs.status == 'failure'
+        if: steps.lint.outputs.status != 'success'
         run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
         env:
           SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#ed2f00","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *lint* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed with *{{ LINT_ISSUES }}* issues on Node.js {{ NODE_VERSION }}"}},{"type":"section","fields":[{"type":"mrkdwn","text":"*JavaScript (ESLint)*:\n{{ LINT_ISSUES_JS }}"},{"type":"mrkdwn","text":"*Markdown (Prettier)*:\n{{ LINT_ISSUES_MD }}"},{"type":"mrkdwn","text":"*SCSS (Prettier)*:\n{{ LINT_ISSUES_SCSS }}"},{"type":"mrkdwn","text":"*YAML (Prettier)*:\n{{ LINT_ISSUES_YML }}"}]}]}]}'
@@ -143,8 +138,4 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CODEDSOLAR }}
       - name: Lint status
-        run: |
-          export EXIT=$("${SUCCESS}" && echo 0 || echo 1)
-          exit "${EXIT}"
-        env:
-          SUCCESS: ${{ steps.lint.outputs.status == 'success' }}
+        run: ${{ steps.lint.outputs.status == 'success' }} && exit 0 || exit 1

@@ -44,10 +44,9 @@ jobs:
           fi
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
-      - name: Prepare Docker to access the remote host
+      - name: Add Docker certificates to access the remote host
         continue-on-error: true
         run: |
-          # certificates
           mkdir -p "${DOCKER_CERT_PATH}"
           echo "${DOCKER_TLS_CA}" > "${DOCKER_CERT_PATH}/ca.pem"
           echo "${DOCKER_TLS_CERT}" > "${DOCKER_CERT_PATH}/cert.pem"
@@ -55,18 +54,11 @@ jobs:
           chmod 400 "${DOCKER_CERT_PATH}/ca.pem"
           chmod 400 "${DOCKER_CERT_PATH}/cert.pem"
           chmod 400 "${DOCKER_CERT_PATH}/key.pem"
-
-          # env
-          echo "::set-env name=DOCKER_CERT_PATH::${DOCKER_CERT_PATH}"
-          echo "::set-env name=DOCKER_HOST::${DOCKER_HOST}"
-          echo "::set-env name=DOCKER_TLS_VERIFY::${DOCKER_TLS_VERIFY}"
         env:
           DOCKER_CERT_PATH: /home/runner/.docker/deploy
-          DOCKER_HOST: tcp://codedsolar.com:2376
           DOCKER_TLS_CA: ${{ secrets.DEPLOY_DOCKER_TLS_CA }}
           DOCKER_TLS_CERT: ${{ secrets.DEPLOY_DOCKER_TLS_CERT }}
           DOCKER_TLS_KEY: ${{ secrets.DEPLOY_DOCKER_TLS_KEY }}
-          DOCKER_TLS_VERIFY: 1
       - name: Build Docker image
         continue-on-error: true
         run: |
@@ -74,18 +66,24 @@ jobs:
           echo "::set-env name=DOCKER_IMAGE::${DOCKER_IMAGE}"
           echo "::set-env name=DOCKER_IMAGE_TAG::${DOCKER_IMAGE_TAG}"
         env:
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy
+          DOCKER_HOST: tcp://codedsolar.com:2376
           DOCKER_IMAGE: victorpopkov/react-ui-icheck-website
           DOCKER_IMAGE_TAG: latest
+          DOCKER_TLS_VERIFY: 1
       - name: Deploy Docker Stack
         continue-on-error: true
         run: |
           docker stack rm "${DOCKER_STACK_NAME}"
           docker stack deploy --with-registry-auth --resolve-image=always --compose-file=docker-stack.yml --prune "${DOCKER_STACK_NAME}"
         env:
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy
+          DOCKER_HOST: tcp://codedsolar.com:2376
           DOCKER_STACK_NAME: github_react_ui_icheck_website
           DOCKER_STACK_TRAEFIK_HOST: github.victorpopkov.com
           DOCKER_STACK_TRAEFIK_NAME: github-react-ui-icheck-website
           DOCKER_STACK_TRAEFIK_PATH_PREFIX: /react-ui-icheck/
+          DOCKER_TLS_VERIFY: 1
       - name: Prepare success Slack notification
         continue-on-error: true
         if: steps.build.outputs.status == 'success'

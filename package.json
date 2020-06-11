@@ -109,7 +109,6 @@
     "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx .",
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
-    "prepare": "npm-run-all build",
     "start": "cross-env BABEL_ENV=production NODE_ENV=production http-server ./dist/",
     "watch": "cross-env BABEL_ENV=development NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.dev.js"
   }

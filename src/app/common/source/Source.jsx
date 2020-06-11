@@ -1,10 +1,4 @@
-import {
-  Nav,
-  NavItem,
-  NavLink,
-  TabContent,
-  TabPane,
-} from 'reactstrap';
+import { Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
@@ -52,12 +46,7 @@ class Source extends Component {
   }
 
   render() {
-    const {
-      children,
-      srcAppend,
-      srcFunctionValue,
-      srcPrepend,
-    } = this.props;
+    const { children, srcAppend, srcFunctionValue, srcPrepend } = this.props;
     const { activeTab } = this.state;
 
     let html = ReactDOMServer.renderToStaticMarkup(children);
@@ -79,7 +68,9 @@ class Source extends Component {
           <NavItem>
             <NavLink
               className={classNames({ active: activeTab === 'source' })}
-              onClick={() => { this.toggleTab('source'); }}
+              onClick={() => {
+                this.toggleTab('source');
+              }}
             >
               Source
             </NavLink>
@@ -87,16 +78,15 @@ class Source extends Component {
           <NavItem>
             <NavLink
               className={classNames({ active: activeTab === 'rendered' })}
-              onClick={() => { this.toggleTab('rendered'); }}
+              onClick={() => {
+                this.toggleTab('rendered');
+              }}
             >
               Rendered
             </NavLink>
           </NavItem>
         </Nav>
-        <TabContent
-          activeTab={activeTab}
-          className="mb-4"
-        >
+        <TabContent activeTab={activeTab} className="mb-4">
           <TabPane tabId="source">
             <pre>
               <code className="language-jsx">
@@ -116,12 +106,9 @@ class Source extends Component {
           <TabPane tabId="rendered">
             <pre>
               <code className="language-html">
-                {beautify.html(
-                  html,
-                  {
-                    indent_size: 2,
-                  }
-                )}
+                {beautify.html(html, {
+                  indent_size: 2,
+                })}
               </code>
             </pre>
           </TabPane>

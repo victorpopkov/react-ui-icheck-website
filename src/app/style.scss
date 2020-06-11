@@ -29,18 +29,91 @@ body {
     justify-content: flex-start;
     width: 100%;
 
-    pre.d-inline {
+    label {
+      position: relative;
+    }
+
+    table {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100%;
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+
+    th,
+    td {
+      padding-left: $grid-gutter-width;
+      padding-right: $grid-gutter-width;
+    }
+
+    tfoot {
+      th,
+      td {
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+      }
+
+      .buttons {
+        text-align: right;
+
+        button {
+          margin-right: 0.75rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .markdown {
+    h2 {
+      border-bottom: 1px solid transparentize($black, 0.9);
+      padding-bottom: 0.3em;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 16px;
+      margin-top: 1em;
+    }
+
+    ul {
+      margin-bottom: 16px;
+    }
+
+    li + li {
+      margin-top: 0.25em;
+    }
+
+    pre.d-inline,
+    code {
       background: $pampas;
       border-radius: 3px;
       color: $black;
-      font-size: .85em;
-      padding: .15em 0;
+      font-size: 0.85em;
+      padding: 0.15em 0;
       white-space: nowrap;
 
       &::before,
       &::after {
         content: '\00a0';
-        letter-spacing: -.2em;
+        letter-spacing: -0.2em;
+      }
+    }
+
+    pre code {
+      font-size: 1em;
+      white-space: inherit;
+
+      &::before,
+      &::after {
+        content: none;
       }
     }
   }
@@ -68,9 +141,9 @@ label {
 }
 
 .heading {
-  border-bottom: 1px solid transparentize($black, .9);
+  border-bottom: 1px solid transparentize($black, 0.9);
   margin-bottom: $grid-gutter-width / 2;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
 }
 
 .badges {
@@ -90,7 +163,7 @@ label {
 @include media-breakpoint-down(sm) {
   #app {
     main {
-      font-size: .85rem;
+      font-size: 0.85rem;
 
       h1 {
         font-size: $h3-font-size;

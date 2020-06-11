@@ -18,9 +18,7 @@ const useImages = [
 module.exports = {
   context: paths.root,
   entry: {
-    app: [
-      path.join(paths.src, 'app.js'),
-    ],
+    app: [path.join(paths.src, 'app.jsx')],
   },
   module: {
     rules: [
@@ -68,10 +66,7 @@ module.exports = {
     publicPath: config.appPublicPath,
   },
   resolve: {
-    modules: [
-      'src',
-      'node_modules',
-    ],
+    modules: ['src', 'node_modules'],
     alias: {
       '@WebsiteConfig': paths.config,
       '@WebsiteRoot': paths.root,

@@ -1,16 +1,11 @@
 import './Skin.scss';
-import {
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-} from 'react-ui-icheck'; // eslint-disable-line import/no-unresolved
+import { Checkbox, CheckboxGroup, Radio, RadioGroup } from 'react-ui-icheck';
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
-import Sidebar from '../common/sidebar/Sidebar'; // eslint-disable-line sort-imports
+import Sidebar from '../common/sidebar/Sidebar';
 import SkinColorSchemes from './SkinColorSchemes';
 
 @hot(module)
@@ -85,12 +80,7 @@ class Skin extends Component {
   }
 
   render() {
-    const {
-      colorSchemes,
-      defaultColor,
-      skin,
-      title,
-    } = this.props;
+    const { colorSchemes, defaultColor, skin, title } = this.props;
     const { color, radioValue } = this.state;
 
     return (
@@ -186,7 +176,9 @@ class Skin extends Component {
               <Col className="pt-4" md={11}>
                 <pre className="m-0">
                   <code className="language-jsx">
-                    {`import 'icheck/skins/${skin}/${color || defaultColor}.css';
+                    {`import 'icheck/skins/${skin}/${
+                      color || defaultColor
+                    }.css';
 import { Checkbox, Radio } from 'react-ui-icheck';
 
 <Checkbox checkboxClassName="${this.getCheckboxClass()}" />

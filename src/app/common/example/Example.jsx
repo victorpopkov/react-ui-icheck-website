@@ -2,7 +2,7 @@ import './Example.scss';
 import { Button, Collapse, Form } from 'reactstrap';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Source from '../source/Source'; // eslint-disable-line sort-imports
+import Source from '../source/Source';
 
 class Example extends Component {
   static propTypes = {

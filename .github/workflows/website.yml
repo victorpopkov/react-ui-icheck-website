@@ -1,0 +1,107 @@
+name: Website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [12.x]
+    steps:
+      - name: Checking out
+        uses: actions/checkout@v2
+      - name: Getting branch name
+        run: echo "::set-env name=BRANCH_NAME::${GITHUB_REF##*/}"
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install
+        continue-on-error: true
+        run: yarn install --ignore-scripts && npm rebuild node-sass
+      - name: Build
+        continue-on-error: true
+        id: build
+        run: |
+          # build
+          yarn build
+          export STATUS="$?"
+
+          # env
+          echo "::set-env name=NODE_VERSION::${{ matrix.node_version }}"
+
+          # status
+          if [ "${STATUS}" -eq 0 ]; then
+            echo '::set-output name=status::success'
+            exit 0
+          else
+            exit 1
+          fi
+        env:
+          APP_PUBLIC_PATH: /react-ui-icheck/
+      - name: Prepare Docker to access the remote host
+        continue-on-error: true
+        run: |
+          # certificates
+          mkdir -p "${DOCKER_CERT_PATH}"
+          echo "${DOCKER_TLS_CA}" > "${DOCKER_CERT_PATH}/ca.pem"
+          echo "${DOCKER_TLS_CERT}" > "${DOCKER_CERT_PATH}/cert.pem"
+          echo "${DOCKER_TLS_KEY}" > "${DOCKER_CERT_PATH}/key.pem"
+          chmod 400 "${DOCKER_CERT_PATH}/ca.pem"
+          chmod 400 "${DOCKER_CERT_PATH}/cert.pem"
+          chmod 400 "${DOCKER_CERT_PATH}/key.pem"
+
+          # env
+          echo "::set-env name=DOCKER_CERT_PATH::${DOCKER_CERT_PATH}"
+          echo "::set-env name=DOCKER_HOST::${DOCKER_HOST}"
+          echo "::set-env name=DOCKER_TLS_VERIFY::${DOCKER_TLS_VERIFY}"
+        env:
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy
+          DOCKER_HOST: tcp://codedsolar.com:2376
+          DOCKER_TLS_CA: ${{ secrets.DEPLOY_DOCKER_TLS_CA }}
+          DOCKER_TLS_CERT: ${{ secrets.DEPLOY_DOCKER_TLS_CERT }}
+          DOCKER_TLS_KEY: ${{ secrets.DEPLOY_DOCKER_TLS_KEY }}
+          DOCKER_TLS_VERIFY: 1
+      - name: Build Docker image
+        continue-on-error: true
+        run: |
+          docker build --tag "${DOCKER_IMAGE}:${DOCKER_IMAGE_TAG}" .
+          echo "::set-env name=DOCKER_IMAGE::${DOCKER_IMAGE}"
+          echo "::set-env name=DOCKER_IMAGE_TAG::${DOCKER_IMAGE_TAG}"
+        env:
+          DOCKER_IMAGE: victorpopkov/react-ui-icheck-website
+          DOCKER_IMAGE_TAG: latest
+      - name: Deploy Docker Stack
+        continue-on-error: true
+        run: |
+          docker stack rm "${DOCKER_STACK_NAME}"
+          docker stack deploy --with-registry-auth --resolve-image=always --compose-file=docker-stack.yml --prune "${DOCKER_STACK_NAME}"
+        env:
+          DOCKER_STACK_NAME: github_react_ui_icheck_website
+          DOCKER_STACK_TRAEFIK_HOST: github.victorpopkov.com
+          DOCKER_STACK_TRAEFIK_NAME: github-react-ui-icheck-website
+          DOCKER_STACK_TRAEFIK_PATH_PREFIX: /react-ui-icheck/
+      - name: Prepare success Slack notification
+        continue-on-error: true
+        if: steps.build.outputs.status == 'success'
+        run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#2eb886","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *deploy* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed on Node.js {{ NODE_VERSION }}"}}]}]}'
+      - name: Prepare failure Slack notification
+        continue-on-error: true
+        if: steps.build.outputs.status != 'success'
+        run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
+        env:
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#ed2f00","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *deploy* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js {{ NODE_VERSION }}"}}]}]}'
+      - name: Slack notification (codedsolar)
+        continue-on-error: true
+        uses: Ilshidur/action-slack@master
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CODEDSOLAR }}
+      - name: Deploy status
+        run: ${{ steps.build.outputs.status == 'success' }} && exit 0 || exit 1

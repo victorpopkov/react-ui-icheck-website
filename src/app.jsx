@@ -1,7 +1,7 @@
 import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App'; // eslint-disable-line sort-imports
+import App from './app/App';
 import Checkbox from './app/checkbox/Checkbox';
 import Error404 from './app/error/404/Error404';
 import Home from './app/home/Home';

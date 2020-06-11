@@ -77,20 +77,15 @@ class SkinColorSchemes extends React.Component {
           key={newColor}
           title={listColor}
         >
-          <button
-            type="button"
-            onClick={() => this.handleColor(newColor)}
-          />
+          <button type="button" onClick={() => this.handleColor(newColor)} />
         </li>
       );
     });
 
     return (
       <div className="colors">
-        <strong>Color schemes</strong>
-        <ul>
-          {list}
-        </ul>
+        <strong>Color Schemes</strong>
+        <ul>{list}</ul>
       </div>
     );
   }

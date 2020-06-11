@@ -1,15 +1,11 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-} from 'react-ui-icheck'; // eslint-disable-line import/no-unresolved
+/* eslint-disable react/jsx-wrap-multilines */
+import { Checkbox, CheckboxGroup, Radio, RadioGroup } from 'react-ui-icheck';
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
-import { Jumbotron, Sidebar } from '../common'; // eslint-disable-line sort-imports
+import { Jumbotron, Sidebar } from '../common';
 import SkinColorSchemes from './SkinColorSchemes';
 
 @hot(module)
@@ -70,7 +66,7 @@ class SkinLine extends Component {
         <Container>
           <Row>
             <Col md={9}>
-              <h2 className="heading">Line skin</h2>
+              <h2 className="heading">Line Skin</h2>
               <Col className="skin-line mt-4" md={11}>
                 <Row>
                   <Col className="mb-2 mb-lg-0" lg={6} md={12}>
@@ -80,41 +76,41 @@ class SkinLine extends Component {
                     >
                       <Checkbox
                         checkboxClass={this.getCheckboxClass()}
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Checkbox
                           </div>
-                        )}
+                        }
                       />
                       <Checkbox
                         checkboxClass={this.getCheckboxClass()}
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Checkbox, defaultChecked
                           </div>
-                        )}
+                        }
                         defaultChecked
                       />
                       <Checkbox
                         checkboxClass={this.getCheckboxClass()}
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Checkbox, disabled
                           </div>
-                        )}
+                        }
                         disabled
                       />
                       <Checkbox
                         checkboxClass={this.getCheckboxClass()}
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Checkbox, defaultChecked, disabled
                           </div>
-                        )}
+                        }
                         defaultChecked
                         disabled
                       />
@@ -138,34 +134,34 @@ class SkinLine extends Component {
                         value="1"
                       />
                       <Radio
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Radio, defaultChecked
                           </div>
-                        )}
+                        }
                         radioClass={this.getRadioClass()}
                         value="2"
                         defaultChecked
                       />
                       <Radio
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Radio, disabled
                           </div>
-                        )}
+                        }
                         radioClass={this.getRadioClass()}
                         value="3"
                         disabled
                       />
                       <Radio
-                        insert={(
+                        insert={
                           <div>
                             <div className="icheck_line-icon" />
                             Radio, defaultChecked, disabled
                           </div>
-                        )}
+                        }
                         radioClass={this.getRadioClass()}
                         value="4"
                         defaultChecked

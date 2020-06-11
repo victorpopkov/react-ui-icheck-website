@@ -10,10 +10,7 @@ const Error404 = () => (
       <h1>404</h1>
       <h2>Page Not Found</h2>
       <IndexLinkContainer to="/">
-        <Button
-          color="secondary"
-          outline
-        >
+        <Button color="secondary" outline>
           <span>&larr; Back to Homepage</span>
         </Button>
       </IndexLinkContainer>

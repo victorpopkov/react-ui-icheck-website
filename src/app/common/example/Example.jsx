@@ -5,20 +5,6 @@ import PropTypes from 'prop-types';
 import Source from '../source/Source';
 
 class Example extends Component {
-  static propTypes = {
-    children: PropTypes.element.isRequired,
-    title: PropTypes.string.isRequired,
-    srcAppend: PropTypes.string,
-    srcFunctionValue: PropTypes.string,
-    srcPrepend: PropTypes.string,
-  };
-
-  static defaultProps = {
-    srcAppend: '',
-    srcFunctionValue: '',
-    srcPrepend: '',
-  };
-
   constructor(props) {
     super(props);
 
@@ -73,5 +59,19 @@ class Example extends Component {
     );
   }
 }
+
+Example.propTypes = {
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+  srcAppend: PropTypes.string,
+  srcFunctionValue: PropTypes.string,
+  srcPrepend: PropTypes.string,
+};
+
+Example.defaultProps = {
+  srcAppend: '',
+  srcFunctionValue: '',
+  srcPrepend: '',
+};
 
 export default Example;

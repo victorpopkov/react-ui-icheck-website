@@ -10,19 +10,6 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 
 @hot(module)
 class Source extends Component {
-  static propTypes = {
-    children: PropTypes.element.isRequired,
-    srcAppend: PropTypes.string,
-    srcFunctionValue: PropTypes.string,
-    srcPrepend: PropTypes.string,
-  };
-
-  static defaultProps = {
-    srcAppend: '',
-    srcFunctionValue: '',
-    srcPrepend: '',
-  };
-
   constructor(props) {
     super(props);
 
@@ -117,5 +104,18 @@ class Source extends Component {
     );
   }
 }
+
+Source.propTypes = {
+  children: PropTypes.element.isRequired,
+  srcAppend: PropTypes.string,
+  srcFunctionValue: PropTypes.string,
+  srcPrepend: PropTypes.string,
+};
+
+Source.defaultProps = {
+  srcAppend: '',
+  srcFunctionValue: '',
+  srcPrepend: '',
+};
 
 export default Source;

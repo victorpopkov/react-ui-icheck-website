@@ -10,22 +10,6 @@ import SkinColorSchemes from './SkinColorSchemes';
 
 @hot(module)
 class Skin extends Component {
-  static propTypes = {
-    color: PropTypes.string,
-    colorSchemes: PropTypes.bool,
-    defaultColor: PropTypes.string,
-    skin: PropTypes.string,
-    title: PropTypes.string,
-  };
-
-  static defaultProps = {
-    color: null,
-    colorSchemes: false,
-    defaultColor: null,
-    skin: null,
-    title: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -194,5 +178,21 @@ import { Checkbox, Radio } from 'react-ui-icheck';
     );
   }
 }
+
+Skin.propTypes = {
+  color: PropTypes.string,
+  colorSchemes: PropTypes.bool,
+  defaultColor: PropTypes.string,
+  skin: PropTypes.string,
+  title: PropTypes.string,
+};
+
+Skin.defaultProps = {
+  color: null,
+  colorSchemes: false,
+  defaultColor: null,
+  skin: null,
+  title: null,
+};
 
 export default Skin;

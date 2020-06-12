@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-newline */
 import { Badge, Button, Table } from 'reactstrap';
 import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';

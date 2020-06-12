@@ -8,14 +8,6 @@ import { Footer, Navbar } from './common';
 
 @hot(module)
 class App extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-  };
-
-  static defaultProps = {
-    children: null,
-  };
-
   render() {
     const { children } = this.props;
 
@@ -28,5 +20,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.node,
+};
+
+App.defaultProps = {
+  children: null,
+};
 
 export default App;

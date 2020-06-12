@@ -10,14 +10,6 @@ import SkinColorSchemes from './SkinColorSchemes';
 
 @hot(module)
 class SkinLine extends Component {
-  static propTypes = {
-    color: PropTypes.string,
-  };
-
-  static defaultProps = {
-    color: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -197,5 +189,13 @@ import { Checkbox, Radio } from 'react-ui-icheck';
     );
   }
 }
+
+SkinLine.propTypes = {
+  color: PropTypes.string,
+};
+
+SkinLine.defaultProps = {
+  color: null,
+};
 
 export default SkinLine;

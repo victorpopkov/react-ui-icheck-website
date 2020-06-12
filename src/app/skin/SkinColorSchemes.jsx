@@ -6,16 +6,6 @@ import { hot } from 'react-hot-loader';
 
 @hot(module)
 class SkinColorSchemes extends React.Component {
-  static propTypes = {
-    color: PropTypes.string,
-    onChange: PropTypes.func,
-  };
-
-  static defaultProps = {
-    color: '',
-    onChange: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -77,7 +67,11 @@ class SkinColorSchemes extends React.Component {
           key={newColor}
           title={listColor}
         >
-          <button type="button" onClick={() => this.handleColor(newColor)} />
+          <button
+            aria-label="Change Color Scheme"
+            type="button"
+            onClick={() => this.handleColor(newColor)}
+          />
         </li>
       );
     });
@@ -90,5 +84,15 @@ class SkinColorSchemes extends React.Component {
     );
   }
 }
+
+SkinColorSchemes.propTypes = {
+  color: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
+SkinColorSchemes.defaultProps = {
+  color: '',
+  onChange: null,
+};
 
 export default SkinColorSchemes;

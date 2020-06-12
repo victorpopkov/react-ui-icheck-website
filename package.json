@@ -35,7 +35,7 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.8.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-prismjs": "^2.0.1",

@@ -12,7 +12,7 @@
     "icheck": "^1.0.2",
     "js-beautify": "^1.10.1",
     "lodash": "^4.17.15",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",
     "react-dom": "^16.8.6",
     "react-element-to-jsx-string": "14.0.2",

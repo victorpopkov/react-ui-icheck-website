@@ -1,10 +1,10 @@
 # react-ui-icheck-website
 
-[![David](https://img.shields.io/david/victorpopkov/react-ui-icheck-website)](https://david-dm.org/victorpopkov/react-ui-icheck-website)
-[![David Dev](https://img.shields.io/david/dev/victorpopkov/react-ui-icheck-website)](https://david-dm.org/victorpopkov/react-ui-icheck-website?type=dev)
-[![GitHub Workflow CI Status](https://img.shields.io/github/workflow/status/victorpopkov/react-ui-icheck-website/CI?label=CI)](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3ACI)
-[![GitHub Workflow Website Status](https://img.shields.io/github/workflow/status/victorpopkov/react-ui-icheck-website/Website?label=Website)](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3AWebsite)
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website)](https://codeclimate.com/github/victorpopkov/react-ui-icheck-website)
+[![David][]](https://david-dm.org/victorpopkov/react-ui-icheck-website)
+[![David Dev][]](https://david-dm.org/victorpopkov/react-ui-icheck-website?type=dev)
+[![GitHub Workflow CI Status][]](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3ACI)
+[![GitHub Workflow Deploy Status][]](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3ADeploy)
+[![Code Climate][]](https://codeclimate.com/github/victorpopkov/react-ui-icheck-website)
 
 Website of the [react-ui-icheck][] library.
 
@@ -34,4 +34,9 @@ $ yarn dev
 
 Released under the [MIT License](https://opensource.org/licenses/MIT).
 
+[code climate]: https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website
+[david dev]: https://img.shields.io/david/dev/victorpopkov/react-ui-icheck-website
+[david]: https://img.shields.io/david/victorpopkov/react-ui-icheck-website
+[github workflow ci status]: https://img.shields.io/github/workflow/status/victorpopkov/react-ui-icheck-website/CI?label=CI
+[github workflow deploy status]: https://img.shields.io/github/workflow/status/victorpopkov/react-ui-icheck-website/Deploy?label=Deploy
 [react-ui-icheck]: https://github.com/victorpopkov/react-ui-icheck

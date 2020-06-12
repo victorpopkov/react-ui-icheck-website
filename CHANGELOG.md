@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- **[maintenance]** Exceptions for the `react/jsx-props-no-spreading` ESLint rule
+- **[maintenance]** Integration with "GitHub Actions" for CI building and linting
+- **[maintenance]** Integration with "GitHub Actions" for the deploying production
+- **[maintenance]** Integration with Prettier
+- Checkbox "States" examples
+- Radio "States" examples
+
+### Changed
+
+- **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
+- **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
+- Content of the "Home" page
+- Content of the "Installation" page
+- Dependencies to match the latest ones
+- Deprecated `componentWillReceiveProps` in favour of `getDerivedStateFromProps`
+- Extension `JS` to `JSX` where appropriate
+- Markdown styles to become separated
+- Use title case where appropriate
+
+### Removed
+
+- **[maintenance]** Integration with "Travis CI" in favour of "GitHub Actions"
+- **[maintenance]** Integration with remark in favour of Prettier
+- Dependency `better-npm-run` in favour of `cross-env`
+
+### Fixed
+
+- **[maintenance]** Some ESLint code linting issues
+- **[maintenance]** Some Prettier code formatting issues
+
 ## 0.1.0 - 2019-07-15
 
 First release.

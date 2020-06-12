@@ -1,29 +1,33 @@
 # react-ui-icheck-website
 
-[![David](https://img.shields.io/david/victorpopkov/react-ui-icheck-website.svg)](https://david-dm.org/victorpopkov/react-ui-icheck-website)
-[![David](https://img.shields.io/david/dev/victorpopkov/react-ui-icheck-website.svg)](https://david-dm.org/victorpopkov/react-ui-icheck-website?type=dev)
-[![Travis (.org)](https://img.shields.io/travis/victorpopkov/react-ui-icheck-website.svg)](https://travis-ci.org/victorpopkov/react-ui-icheck-website)
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website.svg)](https://codeclimate.com/github/victorpopkov/react-ui-icheck-website)
+[![David](https://img.shields.io/david/victorpopkov/react-ui-icheck-website)](https://david-dm.org/victorpopkov/react-ui-icheck-website)
+[![David Dev](https://img.shields.io/david/dev/victorpopkov/react-ui-icheck-website)](https://david-dm.org/victorpopkov/react-ui-icheck-website?type=dev)
+[![GitHub Workflow CI Status](https://img.shields.io/github/workflow/status/victorpopkov/react-ui-icheck-website/CI?label=CI)](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3ACI)
+[![GitHub Workflow Website Status](https://img.shields.io/github/workflow/status/victorpopkov/react-ui-icheck-website/Website?label=Website)](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3AWebsite)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website)](https://codeclimate.com/github/victorpopkov/react-ui-icheck-website)
 
 Website of the [react-ui-icheck][] library.
 
-- [Building/Running](#buildingrunning)
+- [Production](#production)
 - [Development](#development)
 
-## Building/Running
+```bash
+$ git clone git@github.com:victorpopkov/react-ui-icheck-website.git
+$ cd react-ui-icheck-website/
+$ yarn install
+```
+
+## Production
 
 ```bash
-git clone https://github.com/victorpopkov/react-ui-icheck-website.git
-cd react-ui-icheck-website/
-yarn install && yarn start
+$ yarn build
+$ yarn start
 ```
 
 ## Development
 
 ```bash
-git clone https://github.com/victorpopkov/react-ui-icheck-website.git
-cd react-ui-icheck-website/
-yarn install --ignore-scripts && yarn dev
+$ yarn dev
 ```
 
 ## License

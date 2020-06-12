@@ -7,7 +7,7 @@
     "email": "victor@popkov.me"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
     "icheck": "^1.0.2",
     "js-beautify": "^1.11.0",

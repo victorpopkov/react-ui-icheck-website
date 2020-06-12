@@ -42,9 +42,6 @@ module.exports = merge(common, {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'css-loader',
@@ -76,9 +73,6 @@ module.exports = merge(common, {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'css-loader',
@@ -106,8 +100,9 @@ module.exports = merge(common, {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [],
-              outputStyle: 'expanded',
+              sassOptions: {
+                outputStyle: 'expanded',
+              },
               sourceMap: true,
             },
           },

@@ -85,7 +85,9 @@ module.exports = merge(common, {
           {
             loader: 'sass-loader',
             options: {
-              outputStyle: 'expanded',
+              sassOptions: {
+                outputStyle: 'expanded',
+              },
               sourceMap: true,
             },
           },

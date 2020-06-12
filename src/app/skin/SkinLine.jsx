@@ -18,19 +18,24 @@ class SkinLine extends Component {
     const { color } = props;
 
     this.state = {
+      prevColor: null,
       radioValue: '2',
       color,
     };
   }
 
-  componentDidMount() {
-    Prism.highlightAll();
+  static getDerivedStateFromProps(props, state) {
+    if (props.color !== state.prevColor) {
+      return {
+        color: props.color,
+        prevColor: props.color,
+      };
+    }
+    return null;
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      color: nextProps.color,
-    });
+  componentDidMount() {
+    Prism.highlightAll();
   }
 
   getCheckboxClass() {

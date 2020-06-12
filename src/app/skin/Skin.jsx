@@ -16,31 +16,28 @@ class Skin extends Component {
     this.handleColor = this.handleColor.bind(this);
 
     this.state = {
-      skin: props.skin,
       color: props.color,
+      prevColor: null,
+      prevSkin: null,
       radioValue: '2',
+      skin: props.skin,
     };
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.color !== state.prevColor || props.skin !== state.prevSkin) {
+      return {
+        color: props.color,
+        prevColor: props.color,
+        prevSkin: state.skin,
+        skin: props.skin,
+      };
+    }
+    return null;
   }
 
   componentDidMount() {
     Prism.highlightAll();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { color: prevColor, skin: prevSkin } = this.props;
-    const { color, skin } = nextProps;
-
-    if (color !== prevColor) {
-      this.setState({
-        color,
-      });
-    }
-
-    if (skin !== prevSkin) {
-      this.setState({
-        skin,
-      });
-    }
   }
 
   getCheckboxClass() {

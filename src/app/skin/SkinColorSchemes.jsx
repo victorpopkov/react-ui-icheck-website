@@ -14,19 +14,19 @@ class SkinColorSchemes extends React.Component {
     const { color } = this.props;
 
     this.state = {
+      prevColor: null,
       color,
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { color: prevColor } = this.props;
-    const { color } = nextProps;
-
-    if (color !== prevColor) {
-      this.setState({
-        color,
-      });
+  static getDerivedStateFromProps(props, state) {
+    if (props.color !== state.prevColor) {
+      return {
+        color: props.color,
+        prevColor: props.color,
+      };
     }
+    return null;
   }
 
   handleColor(color) {

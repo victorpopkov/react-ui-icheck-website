@@ -10,7 +10,7 @@
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "icheck": "^1.0.2",
-    "js-beautify": "^1.10.1",
+    "js-beautify": "^1.11.0",
     "lodash": "^4.17.15",
     "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",

@@ -3,52 +3,40 @@ import { Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import _ from 'lodash';
+import SidebarBadge from './SidebarBadge';
 
 const badges = [
   {
-    url: 'https://www.npmjs.com/package/react-ui-icheck',
-    img: 'npm/v/react-ui-icheck',
     alt: 'npm',
+    href: 'https://www.npmjs.com/package/react-ui-icheck',
+    path: 'npm/v/react-ui-icheck',
   },
   {
-    url: 'https://david-dm.org/victorpopkov/react-ui-icheck',
-    img: 'david/victorpopkov/react-ui-icheck',
     alt: 'David',
+    href: 'https://david-dm.org/victorpopkov/react-ui-icheck',
+    path: 'david/victorpopkov/react-ui-icheck',
   },
   {
-    url: 'https://david-dm.org/victorpopkov/react-ui-icheck?type=dev',
-    img: 'david/dev/victorpopkov/react-ui-icheck',
     alt: 'David Dev',
+    href: 'https://david-dm.org/victorpopkov/react-ui-icheck?type=dev',
+    path: 'david/dev/victorpopkov/react-ui-icheck',
   },
   {
-    url: 'https://github.com/victorpopkov/react-ui-icheck/actions',
-    img: 'github/workflow/status/victorpopkov/react-ui-icheck/CI',
     alt: 'GitHub Workflow Status',
+    href: 'https://github.com/victorpopkov/react-ui-icheck/actions',
+    path: 'github/workflow/status/victorpopkov/react-ui-icheck/CI',
   },
   {
-    url: 'https://codecov.io/gh/victorpopkov/react-ui-icheck',
-    img: 'codecov/c/github/victorpopkov/react-ui-icheck',
     alt: 'Codecov',
+    href: 'https://codecov.io/gh/victorpopkov/react-ui-icheck',
+    path: 'codecov/c/github/victorpopkov/react-ui-icheck',
   },
   {
-    url: 'https://codeclimate.com/github/victorpopkov/react-ui-icheck',
-    img: 'codeclimate/maintainability/victorpopkov/react-ui-icheck',
     alt: 'Code Climate',
+    href: 'https://codeclimate.com/github/victorpopkov/react-ui-icheck',
+    path: 'codeclimate/maintainability/victorpopkov/react-ui-icheck',
   },
 ];
-
-const badge = (href, src, alt) => (
-  <NavItem>
-    <NavLink
-      href={href}
-      rel="noopener noreferrer"
-      styleName="badge"
-      target="_blank"
-    >
-      <img alt={alt} src={`https://img.shields.io/${src}?style=flat-square`} />
-    </NavLink>
-  </NavItem>
-);
 
 const navItem = (name, to) => (
   <NavItem>
@@ -88,7 +76,14 @@ const Sidebar = () => {
       <hr className="mb-4" />
       <h5 className="pb-2">Library</h5>
       <Nav vertical>
-        {_.map(badges, (entry) => badge(entry.url, entry.img, entry.alt))}
+        {_.map(badges, (entry, key) => (
+          <SidebarBadge
+            alt={entry.alt}
+            href={entry.href}
+            key={`badge-${key}`}
+            path={entry.path}
+          />
+        ))}
       </Nav>
     </Col>
   );

@@ -3,6 +3,7 @@ import { Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import _ from 'lodash';
+import { hot } from 'react-hot-loader';
 import SidebarBadge from './SidebarBadge';
 
 const badges = [
@@ -89,4 +90,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default hot(module)(Sidebar);

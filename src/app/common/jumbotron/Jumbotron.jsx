@@ -7,6 +7,7 @@ import {
   Row,
 } from 'reactstrap';
 import React from 'react';
+import { hot } from 'react-hot-loader';
 import config from '@WebsiteConfig';
 
 const Jumbotron = () => (
@@ -60,4 +61,4 @@ const Jumbotron = () => (
   </BaseJumbotron>
 );
 
-export default Jumbotron;
+export default hot(module)(Jumbotron);

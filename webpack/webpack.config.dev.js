@@ -9,7 +9,7 @@ const paths = require('./paths');
 module.exports = merge(common, {
   devServer: {
     contentBase: paths.dist,
-    host: config.appHost,
+    host: config.app.host,
     hot: true,
     hotOnly: true,
     inline: true,
@@ -18,7 +18,7 @@ module.exports = merge(common, {
       errors: true,
       warnings: true,
     },
-    port: config.appPort,
+    port: config.app.port,
     publicPath: common.output.publicPath,
   },
   devtool: 'inline-source-map',

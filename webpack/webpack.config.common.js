@@ -10,7 +10,7 @@ const useImages = [
     options: {
       limit: 512,
       name: 'assets/images/[name].[ext]',
-      publicPath: config.appPublicPath,
+      publicPath: config.app.publicPath,
     },
   },
 ];
@@ -52,7 +52,7 @@ module.exports = {
             options: {
               limit: 512,
               name: 'assets/images/icheck/[1]/[name].[ext]',
-              publicPath: config.appPublicPath,
+              publicPath: config.app.publicPath,
               regExp: /\/([a-z0-9]+)\/[a-z0-9]+(@2x)?\.png$/,
             },
           },
@@ -63,7 +63,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: paths.dist,
-    publicPath: config.appPublicPath,
+    publicPath: config.app.publicPath,
   },
   resolve: {
     modules: ['src', 'node_modules'],

@@ -31,10 +31,12 @@ jobs:
         id: build
         run: |
           # build
+          export APP_REVISION="$(git rev-parse HEAD)"
           yarn build
           export STATUS="$?"
 
           # env
+          echo "::set-env name=APP_REVISION::${APP_REVISION}"
           echo "::set-env name=NODE_VERSION::${{ matrix.node_version }}"
 
           # status

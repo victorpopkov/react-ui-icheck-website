@@ -89,7 +89,7 @@ class SkinLine extends Component {
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
-                            Checkbox, defaultChecked
+                            Checkbox, checked
                           </div>
                         }
                         defaultChecked
@@ -109,7 +109,7 @@ class SkinLine extends Component {
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
-                            Checkbox, defaultChecked, disabled
+                            Checkbox, checked, disabled
                           </div>
                         }
                         defaultChecked
@@ -138,7 +138,7 @@ class SkinLine extends Component {
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
-                            Radio, defaultChecked
+                            Radio, checked
                           </div>
                         }
                         radioClass={this.getRadioClass()}
@@ -160,7 +160,7 @@ class SkinLine extends Component {
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
-                            Radio, defaultChecked, disabled
+                            Radio, checked, disabled
                           </div>
                         }
                         radioClass={this.getRadioClass()}

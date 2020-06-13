@@ -134,7 +134,7 @@ class CheckboxStates extends Component {
     return (
       <div>
         <h5 className="mb-4 mt-4">States</h5>
-        <Table className>
+        <Table>
           <thead>
             <tr>
               <th>Element</th>

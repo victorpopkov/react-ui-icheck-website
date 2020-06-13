@@ -37,12 +37,6 @@ class Home extends Component {
     Prism.highlightAll();
   }
 
-  renderShieldsBadge = (href, src, alt) => (
-    <a href={href} rel="noopener noreferrer" target="_blank">
-      <img alt={alt} src={`https://img.shields.io/${src}?style=flat-square`} />
-    </a>
-  );
-
   render() {
     return (
       <main className="home" role="main">
@@ -51,38 +45,6 @@ class Home extends Component {
           <Row>
             <Col md={9}>
               <h2 className="heading">Overview</h2>
-              <p className="badges clearfix">
-                {this.renderShieldsBadge(
-                  'https://www.npmjs.com/package/react-ui-icheck',
-                  'npm/v/react-ui-icheck',
-                  'npm',
-                )}
-                {this.renderShieldsBadge(
-                  'https://david-dm.org/victorpopkov/react-ui-icheck',
-                  'david/victorpopkov/react-ui-icheck',
-                  'David',
-                )}
-                {this.renderShieldsBadge(
-                  'https://david-dm.org/victorpopkov/react-ui-icheck?type=dev',
-                  'david/dev/victorpopkov/react-ui-icheck',
-                  'David Dev',
-                )}
-                {this.renderShieldsBadge(
-                  'https://github.com/victorpopkov/react-ui-icheck/actions',
-                  'github/workflow/status/victorpopkov/react-ui-icheck/CI',
-                  'GitHub Workflow Status',
-                )}
-                {this.renderShieldsBadge(
-                  'https://codecov.io/gh/victorpopkov/react-ui-icheck',
-                  'codecov/c/github/victorpopkov/react-ui-icheck',
-                  'Codecov',
-                )}
-                {this.renderShieldsBadge(
-                  'https://codeclimate.com/github/victorpopkov/react-ui-icheck',
-                  'codeclimate/maintainability/victorpopkov/react-ui-icheck',
-                  'Code Climate',
-                )}
-              </p>
               <ReactMarkdown className="markdown" source={this.content} />
             </Col>
             <Sidebar />

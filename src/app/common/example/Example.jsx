@@ -45,7 +45,7 @@ class Example extends Component {
             outline
             onClick={this.toggleCollapse}
           >
-            View source
+            {collapse ? 'Hide source' : 'View source'}
           </Button>
         </Form>
         <Collapse isOpen={collapse}>

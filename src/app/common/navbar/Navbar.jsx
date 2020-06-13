@@ -12,6 +12,7 @@ import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import config from '@WebsiteConfig';
+import NavbarMobile from './NavbarMobile';
 
 @hot(module)
 class Navbar extends Component {
@@ -31,6 +32,14 @@ class Navbar extends Component {
     }));
   }
 
+  renderNavItem = (name, to, className) => (
+    <NavItem className={className}>
+      <LinkContainer to={to}>
+        <NavLink>{name}</NavLink>
+      </LinkContainer>
+    </NavItem>
+  );
+
   render() {
     const { collapsed } = this.state;
 
@@ -45,84 +54,23 @@ class Navbar extends Component {
             <div className="d-block d-md-inline-block ml-auto text-center">
               <hr className="d-block d-sm-none" />
               <Nav navbar>
-                <NavItem className="d-none d-md-inline-block">
-                  <LinkContainer to="/checkbox">
-                    <NavLink>Checkbox</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem className="d-none d-md-inline-block">
-                  <LinkContainer to="/radio">
-                    <NavLink>Radio</NavLink>
-                  </LinkContainer>
-                </NavItem>
+                {this.renderNavItem(
+                  'Checkbox',
+                  '/checkbox',
+                  'd-none d-md-inline-block',
+                )}
+
+                {this.renderNavItem(
+                  'Radio',
+                  '/radio',
+                  'd-none d-md-inline-block',
+                )}
                 <NavItem>
                   <NavLink href={config.lib.repository}>GitHub</NavLink>
                 </NavItem>
               </Nav>
             </div>
-            <div className="d-md-none d-sm-block ml-auto text-center">
-              <hr />
-              <h6>Getting Started</h6>
-              <Nav navbar>
-                <NavItem>
-                  <IndexLinkContainer to="/">
-                    <NavLink>Overview</NavLink>
-                  </IndexLinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/checkbox">
-                    <NavLink>Checkbox</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/radio">
-                    <NavLink>Radio</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/installation">
-                    <NavLink>Installation</NavLink>
-                  </LinkContainer>
-                </NavItem>
-              </Nav>
-              <hr />
-              <h6>Skins</h6>
-              <Nav navbar>
-                <NavItem>
-                  <LinkContainer to="/skin/flat">
-                    <NavLink>Flat</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/skin/line">
-                    <NavLink>Line</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/skin/minimal">
-                    <NavLink>Minimal</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/skin/square">
-                    <NavLink>Square</NavLink>
-                  </LinkContainer>
-                </NavItem>
-              </Nav>
-              <hr />
-              <Nav navbar>
-                <NavItem>
-                  <LinkContainer to="/skin/futurico">
-                    <NavLink>Futurico</NavLink>
-                  </LinkContainer>
-                </NavItem>
-                <NavItem>
-                  <LinkContainer to="/skin/polaris">
-                    <NavLink>Polaris</NavLink>
-                  </LinkContainer>
-                </NavItem>
-              </Nav>
-            </div>
+            <NavbarMobile />
           </Collapse>
         </Container>
       </BaseNavbar>

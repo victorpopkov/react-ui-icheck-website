@@ -38,6 +38,10 @@ class SkinLine extends Component {
     Prism.highlightAll();
   }
 
+  componentDidUpdate() {
+    Prism.highlightAll();
+  }
+
   getCheckboxClass() {
     const { color } = this.state;
 

@@ -37,6 +37,10 @@ class Home extends Component {
     Prism.highlightAll();
   }
 
+  componentDidUpdate() {
+    Prism.highlightAll();
+  }
+
   render() {
     return (
       <main className="home" role="main">

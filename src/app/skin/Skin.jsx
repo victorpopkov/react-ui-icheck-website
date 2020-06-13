@@ -40,6 +40,10 @@ class Skin extends Component {
     Prism.highlightAll();
   }
 
+  componentDidUpdate() {
+    Prism.highlightAll();
+  }
+
   getCheckboxClass() {
     const { skin, color } = this.state;
     if (color) {

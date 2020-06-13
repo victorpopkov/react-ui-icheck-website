@@ -34,6 +34,10 @@ class RadioPage extends Component {
     Prism.highlightAll();
   }
 
+  componentDidUpdate() {
+    Prism.highlightAll();
+  }
+
   toggleActiveTab(tab) {
     const { activeTab } = this.state;
 

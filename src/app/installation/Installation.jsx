@@ -31,6 +31,10 @@ class Installation extends Component {
     Prism.highlightAll();
   }
 
+  componentDidUpdate() {
+    Prism.highlightAll();
+  }
+
   render() {
     return (
       <main role="main">

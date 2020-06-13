@@ -25,6 +25,7 @@
     [
       "react-css-modules",
       {
+        "attributeNames": { "activeStyleName": "activeClassName" },
         "generateScopedName": "[local]___[hash:base64:5]",
         "filetypes": {
           ".scss": {

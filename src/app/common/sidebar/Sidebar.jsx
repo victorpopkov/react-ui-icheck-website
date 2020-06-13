@@ -41,7 +41,7 @@ const badges = [
 
 const navItem = (name, to) => (
   <NavItem>
-    <LinkContainer to={to}>
+    <LinkContainer activeStyleName="active" to={to}>
       <NavLink styleName="link">{name}</NavLink>
     </LinkContainer>
   </NavItem>
@@ -53,7 +53,7 @@ const Sidebar = () => {
       <h5 className="pb-2">Getting Started</h5>
       <Nav vertical>
         <NavItem>
-          <IndexLinkContainer to="/">
+          <IndexLinkContainer activeStyleName="active" to="/">
             <NavLink styleName="link">Overview</NavLink>
           </IndexLinkContainer>
         </NavItem>

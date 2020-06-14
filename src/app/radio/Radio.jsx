@@ -8,12 +8,13 @@ import {
   TabContent,
   TabPane,
 } from 'reactstrap';
-import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
-import { Example, Jumbotron, Sidebar } from '../common';
+import { Jumbotron, Sidebar } from '../common';
+import RadioExampleDefault from './example/RadioExampleDefault';
+import RadioExampleInline from './example/RadioExampleInline';
 import RadioProperties from './RadioProperties';
 import RadioStates from './RadioStates';
 
@@ -26,7 +27,6 @@ class RadioPage extends Component {
 
     this.state = {
       activeTab: 'examples',
-      radioValue: '2',
     };
   }
 
@@ -44,97 +44,6 @@ class RadioPage extends Component {
     if (activeTab !== tab) {
       this.setState({ activeTab: tab });
     }
-  }
-
-  renderDefaultExample() {
-    const { radioValue } = this.state;
-
-    return (
-      <Example
-        srcFunctionValue="(event, value) => this.setState({ radioValue: value })"
-        srcPrepend={`import 'icheck/skins/all.css';
-import { Radio, RadioGroup } from 'react-ui-icheck';
-
-this.state = {
-  radioValue: '2',
-};\n\n`}
-        title="Default"
-      >
-        <RadioGroup
-          name="radio"
-          radioWrapClassName="form-check p-0"
-          radioWrapTag="div"
-          value={radioValue}
-          onChange={(event, value) => this.setState({ radioValue: value })}
-        >
-          <Radio label="#radio-1" radioClass="iradio_square-blue" value="1" />
-          <Radio
-            label={'#radio-2, <span>default</span>'}
-            labelTag="div"
-            labelTagClassName="d-inline"
-            radioClass="iradio_square-blue"
-            value="2"
-          />
-          <Radio
-            labelTag="div"
-            labelTagClassName="d-inline"
-            radioClass="iradio_square-blue"
-            value="3"
-            disabled
-          >
-            <span>#radio-3</span>
-            {`, `}
-            <span className="label1">disabled</span>
-          </Radio>
-        </RadioGroup>
-      </Example>
-    );
-  }
-
-  renderInlineExample() {
-    const { radioValue } = this.state;
-
-    return (
-      <Example
-        srcFunctionValue="(event, value) => this.setState({ radioValue: value })"
-        srcPrepend={`import 'icheck/skins/all.css';
-import { Radio, RadioGroup } from 'react-ui-icheck';
-
-this.state = {
-  radioValue: '2',
-};\n\n`}
-        title="Inline"
-      >
-        <RadioGroup
-          className="d-flex align-items-center"
-          name="radio"
-          radioWrapClassName="form-check form-check-inline"
-          radioWrapTag="div"
-          value={radioValue}
-          onChange={(event, value) => this.setState({ radioValue: value })}
-        >
-          <Radio label="#radio-1" radioClass="iradio_square-blue" value="1" />
-          <Radio
-            label={'#radio-2, <span>default</span>'}
-            labelTag="div"
-            labelTagClassName="d-inline"
-            radioClass="iradio_square-blue"
-            value="2"
-          />
-          <Radio
-            labelTag="div"
-            labelTagClassName="d-inline"
-            radioClass="iradio_square-blue"
-            value="3"
-            disabled
-          >
-            <span>#radio-3</span>
-            {`, `}
-            <span className="label1">disabled</span>
-          </Radio>
-        </RadioGroup>
-      </Example>
-    );
   }
 
   render() {
@@ -173,8 +82,8 @@ this.state = {
               </Nav>
               <TabContent activeTab={activeTab} className="mb-4">
                 <TabPane tabId="examples">
-                  {this.renderDefaultExample()}
-                  {this.renderInlineExample()}
+                  <RadioExampleDefault />
+                  <RadioExampleInline />
                   <RadioStates />
                 </TabPane>
                 <TabPane tabId="properties">

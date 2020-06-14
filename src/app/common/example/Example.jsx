@@ -26,6 +26,7 @@ class Example extends Component {
   render() {
     const {
       children,
+      src,
       srcAppend,
       srcFunctionValue,
       srcPrepend,
@@ -50,6 +51,7 @@ class Example extends Component {
         </Form>
         <Collapse isOpen={collapse}>
           <Source
+            src={src}
             srcAppend={srcAppend}
             srcFunctionValue={srcFunctionValue}
             srcPrepend={srcPrepend}
@@ -65,12 +67,14 @@ class Example extends Component {
 Example.propTypes = {
   children: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
+  src: PropTypes.string,
   srcAppend: PropTypes.string,
   srcFunctionValue: PropTypes.string,
   srcPrepend: PropTypes.string,
 };
 
 Example.defaultProps = {
+  src: '',
   srcAppend: '',
   srcFunctionValue: '',
   srcPrepend: '',

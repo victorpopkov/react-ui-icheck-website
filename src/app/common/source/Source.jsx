@@ -33,7 +33,13 @@ class Source extends Component {
   }
 
   render() {
-    const { children, srcAppend, srcFunctionValue, srcPrepend } = this.props;
+    const {
+      children,
+      src,
+      srcAppend,
+      srcFunctionValue,
+      srcPrepend,
+    } = this.props;
     const { activeTab } = this.state;
 
     let html = ReactDOMServer.renderToStaticMarkup(children);
@@ -77,16 +83,17 @@ class Source extends Component {
           <TabPane tabId="source">
             <pre>
               <code className="language-jsx">
-                {`${srcPrepend}${reactElementToJSXString(children, {
-                  functionValue: () => {
-                    if (srcFunctionValue) {
-                      return srcFunctionValue;
-                    }
+                {src ||
+                  `${srcPrepend}${reactElementToJSXString(children, {
+                    functionValue: () => {
+                      if (srcFunctionValue) {
+                        return srcFunctionValue;
+                      }
 
-                    return '() => {}';
-                  },
-                  showDefaultProps: false,
-                })}${srcAppend}`}
+                      return '() => {}';
+                    },
+                    showDefaultProps: false,
+                  })}${srcAppend}`}
               </code>
             </pre>
           </TabPane>
@@ -107,12 +114,14 @@ class Source extends Component {
 
 Source.propTypes = {
   children: PropTypes.element.isRequired,
+  src: PropTypes.string,
   srcAppend: PropTypes.string,
   srcFunctionValue: PropTypes.string,
   srcPrepend: PropTypes.string,
 };
 
 Source.defaultProps = {
+  src: '',
   srcAppend: '',
   srcFunctionValue: '',
   srcPrepend: '',

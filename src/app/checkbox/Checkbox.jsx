@@ -14,6 +14,7 @@ import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 import CheckboxExampleDefault from './example/CheckboxExampleDefault';
+import CheckboxExampleFunctional from './example/CheckboxExampleFunctional';
 import CheckboxExampleInline from './example/CheckboxExampleInline';
 import CheckboxProperties from './CheckboxProperties';
 import CheckboxStates from './CheckboxStates';
@@ -84,6 +85,7 @@ class CheckboxPage extends Component {
                 <TabPane tabId="examples">
                   <CheckboxExampleDefault />
                   <CheckboxExampleInline />
+                  <CheckboxExampleFunctional />
                   <CheckboxStates />
                 </TabPane>
                 <TabPane tabId="properties">

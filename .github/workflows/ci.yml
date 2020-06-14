@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install
         continue-on-error: true
-        run: yarn install --ignore-scripts && npm rebuild node-sass
+        run: yarn install --ignore-scripts
       - name: Build
         continue-on-error: true
         id: build
@@ -50,13 +50,13 @@ jobs:
         if: steps.build.outputs.status == 'success'
         run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
         env:
-          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#2eb886","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has passed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#2eb886","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has passed with no issues on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has passed with no issues on Node.js *{{ NODE_VERSION }}*"}}]}]}'
       - name: Prepare failure Slack notification
         continue-on-error: true
         if: steps.build.outputs.status != 'success'
         run: echo "::set-env name=SLACK_CUSTOM_PAYLOAD::${SLACK_CUSTOM_PAYLOAD}"
         env:
-          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed on Node.js *{{ NODE_VERSION }}*"}}]}]}'
+          SLACK_CUSTOM_PAYLOAD: '{"channel":"react-ui-icheck","attachments":[{"color":"#ed2f00","fallback":"GitHub Actions {{ GITHUB_WORKFLOW }} workflow {{ GITHUB_JOB_NAME }} job of {{ GITHUB_REPOSITORY }}@{{ BRANCH_NAME }} by {{ GITHUB_ACTOR }} has failed with {{ LINT_ISSUES }} issues on Node.js {{ NODE_VERSION }}","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"GitHub Actions *<https://github.com/{{ GITHUB_REPOSITORY }}/actions/runs/{{ GITHUB_RUN_ID }}|{{ GITHUB_WORKFLOW }}>* workflow *{{ GITHUB_JOB_NAME }}* job of *<https://github.com/{{ GITHUB_REPOSITORY }}|{{ GITHUB_REPOSITORY }}>@<https://github.com/{{ GITHUB_REPOSITORY }}/tree/{{ BRANCH_NAME }}|{{ BRANCH_NAME }}>* by *{{ GITHUB_ACTOR }}* has failed with *{{ LINT_ISSUES }}* issues on Node.js *{{ NODE_VERSION }}*"}},{"type":"section","fields":[{"type":"mrkdwn","text":"*JavaScript (ESLint)*:\n{{ LINT_ISSUES_JS }}"},{"type":"mrkdwn","text":"*Markdown (Prettier)*:\n{{ LINT_ISSUES_MD }}"},{"type":"mrkdwn","text":"*SCSS (Prettier)*:\n{{ LINT_ISSUES_SCSS }}"},{"type":"mrkdwn","text":"*YAML (Prettier)*:\n{{ LINT_ISSUES_YML }}"}]}]}]}'
       - name: Slack notification (codedsolar)
         continue-on-error: true
         uses: Ilshidur/action-slack@master
@@ -83,7 +83,8 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: Install
-        run: yarn install --ignore-scripts && npm rebuild node-sass
+        continue-on-error: true
+        run: yarn install --ignore-scripts
       - name: Lint
         continue-on-error: true
         id: lint

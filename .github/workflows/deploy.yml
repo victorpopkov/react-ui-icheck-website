@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install
         continue-on-error: true
-        run: yarn install --ignore-scripts && npm rebuild node-sass
+        run: yarn install --ignore-scripts
       - name: Build
         continue-on-error: true
         id: build

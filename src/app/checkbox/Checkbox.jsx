@@ -1,4 +1,3 @@
-import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
 import {
   Col,
   Container,
@@ -13,7 +12,9 @@ import React, { Component } from 'react';
 import Prism from 'prismjs';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
-import { Example, Jumbotron, Sidebar } from '../common';
+import { Jumbotron, Sidebar } from '../common';
+import CheckboxExampleDefault from './example/CheckboxExampleDefault';
+import CheckboxExampleInline from './example/CheckboxExampleInline';
 import CheckboxProperties from './CheckboxProperties';
 import CheckboxStates from './CheckboxStates';
 
@@ -44,71 +45,6 @@ class CheckboxPage extends Component {
       this.setState({ activeTab: tab });
     }
   }
-
-  renderDefaultExample = () => (
-    <Example
-      srcPrepend={`import 'icheck/skins/all.css';
-import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
-      title="Default"
-    >
-      <CheckboxGroup
-        checkboxWrapClassName="form-check p-0"
-        checkboxWrapTag="div"
-      >
-        <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
-        <Checkbox
-          checkboxClass="icheckbox_square-blue"
-          label={'#checkbox-2, <span>default</span>'}
-          labelTag="div"
-          labelTagClassName="d-inline"
-          defaultChecked
-        />
-        <Checkbox
-          checkboxClass="icheckbox_square-blue"
-          labelTag="div"
-          labelTagClassName="d-inline"
-          disabled
-        >
-          <span>#checkbox-3</span>
-          {`, `}
-          <span>disabled</span>
-        </Checkbox>
-      </CheckboxGroup>
-    </Example>
-  );
-
-  renderInlineExample = () => (
-    <Example
-      srcPrepend={`import 'icheck/skins/all.css';
-import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
-      title="Inline"
-    >
-      <CheckboxGroup
-        checkboxWrapClassName="form-check form-check-inline"
-        checkboxWrapTag="div"
-        className="d-flex align-items-center"
-      >
-        <Checkbox checkboxClass="icheckbox_square-blue" label="#checkbox-1" />
-        <Checkbox
-          checkboxClass="icheckbox_square-blue"
-          label={'#checkbox-2, <span>default</span>'}
-          labelTag="div"
-          labelTagClassName="d-inline"
-          defaultChecked
-        />
-        <Checkbox
-          checkboxClass="icheckbox_square-blue"
-          labelTag="div"
-          labelTagClassName="d-inline"
-          disabled
-        >
-          <span>#checkbox-3</span>
-          {`, `}
-          <span>disabled</span>
-        </Checkbox>
-      </CheckboxGroup>
-    </Example>
-  );
 
   render() {
     const { activeTab } = this.state;
@@ -146,8 +82,8 @@ import { Checkbox, CheckboxGroup } from 'react-ui-icheck';\n\n`}
               </Nav>
               <TabContent activeTab={activeTab} className="mb-4">
                 <TabPane tabId="examples">
-                  {this.renderDefaultExample()}
-                  {this.renderInlineExample()}
+                  <CheckboxExampleDefault />
+                  <CheckboxExampleInline />
                   <CheckboxStates />
                 </TabPane>
                 <TabPane tabId="properties">

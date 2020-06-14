@@ -14,6 +14,7 @@ import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 import RadioExampleDefault from './example/RadioExampleDefault';
+import RadioExampleFunctional from './example/RadioExampleFunctional';
 import RadioExampleInline from './example/RadioExampleInline';
 import RadioProperties from './RadioProperties';
 import RadioStates from './RadioStates';
@@ -84,6 +85,7 @@ class RadioPage extends Component {
                 <TabPane tabId="examples">
                   <RadioExampleDefault />
                   <RadioExampleInline />
+                  <RadioExampleFunctional />
                   <RadioStates />
                 </TabPane>
                 <TabPane tabId="properties">

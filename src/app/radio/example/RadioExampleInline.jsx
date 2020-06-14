@@ -70,7 +70,7 @@ class RadioExampleInline extends Component {
     const { radioValue } = this.state;
 
     return (
-      <Example src={src} title="Default">
+      <Example src={src} title="Inline">
         <RadioGroup
           className="d-flex align-items-center"
           name="radio"

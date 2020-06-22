@@ -95,9 +95,6 @@
     "type": "git",
     "url": "github:victorpopkov/react-ui-icheck-website"
   },
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
-  },
   "scripts": {
     "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose",
     "ci:eslint": "eslint --config ./.eslintrc --ext js,jsx --format ./.github/eslint-issues.js .",

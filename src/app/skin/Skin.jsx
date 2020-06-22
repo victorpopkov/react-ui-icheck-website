@@ -81,24 +81,24 @@ class Skin extends Component {
                     checkboxWrapTag="div"
                   >
                     <Checkbox
-                      checkboxClass={this.getCheckboxClass()}
+                      checkboxClassName={this.getCheckboxClass()}
                       increaseArea="20%"
                       label="Checkbox"
                     />
                     <Checkbox
-                      checkboxClass={this.getCheckboxClass()}
+                      checkboxClassName={this.getCheckboxClass()}
                       increaseArea="20%"
                       label="Checkbox, checked"
                       defaultChecked
                     />
                     <Checkbox
-                      checkboxClass={this.getCheckboxClass()}
+                      checkboxClassName={this.getCheckboxClass()}
                       increaseArea="20%"
                       label="Checkbox, disabled"
                       disabled
                     />
                     <Checkbox
-                      checkboxClass={this.getCheckboxClass()}
+                      checkboxClassName={this.getCheckboxClass()}
                       increaseArea="20%"
                       label="Checkbox, checked, disabled"
                       defaultChecked
@@ -121,27 +121,27 @@ class Skin extends Component {
                     <Radio
                       increaseArea="20%"
                       label="Radio"
-                      radioClass={this.getRadioClass()}
+                      radioClassName={this.getRadioClass()}
                       value="1"
                     />
                     <Radio
                       increaseArea="20%"
                       label="Radio, checked"
-                      radioClass={this.getRadioClass()}
+                      radioClassName={this.getRadioClass()}
                       value="2"
                       defaultChecked
                     />
                     <Radio
                       increaseArea="20%"
                       label="Radio, disabled"
-                      radioClass={this.getRadioClass()}
+                      radioClassName={this.getRadioClass()}
                       value="3"
                       disabled
                     />
                     <Radio
                       increaseArea="20%"
                       label="Radio, checked, disabled"
-                      radioClass={this.getRadioClass()}
+                      radioClassName={this.getRadioClass()}
                       value="4"
                       defaultChecked
                       disabled

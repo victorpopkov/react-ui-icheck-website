@@ -76,7 +76,7 @@ class SkinLine extends Component {
                       checkboxWrapTag="div"
                     >
                       <Checkbox
-                        checkboxClass={this.getCheckboxClass()}
+                        checkboxClassName={this.getCheckboxClass()}
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
@@ -85,7 +85,7 @@ class SkinLine extends Component {
                         }
                       />
                       <Checkbox
-                        checkboxClass={this.getCheckboxClass()}
+                        checkboxClassName={this.getCheckboxClass()}
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
@@ -95,7 +95,7 @@ class SkinLine extends Component {
                         defaultChecked
                       />
                       <Checkbox
-                        checkboxClass={this.getCheckboxClass()}
+                        checkboxClassName={this.getCheckboxClass()}
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
@@ -105,7 +105,7 @@ class SkinLine extends Component {
                         disabled
                       />
                       <Checkbox
-                        checkboxClass={this.getCheckboxClass()}
+                        checkboxClassName={this.getCheckboxClass()}
                         insert={
                           <div>
                             <div className="icheck_line-icon" />
@@ -131,7 +131,7 @@ class SkinLine extends Component {
                     >
                       <Radio
                         insert={'<div class="icheck_line-icon"></div>Radio'}
-                        radioClass={this.getRadioClass()}
+                        radioClassName={this.getRadioClass()}
                         value="1"
                       />
                       <Radio
@@ -141,7 +141,7 @@ class SkinLine extends Component {
                             Radio, checked
                           </div>
                         }
-                        radioClass={this.getRadioClass()}
+                        radioClassName={this.getRadioClass()}
                         value="2"
                         defaultChecked
                       />
@@ -152,7 +152,7 @@ class SkinLine extends Component {
                             Radio, disabled
                           </div>
                         }
-                        radioClass={this.getRadioClass()}
+                        radioClassName={this.getRadioClass()}
                         value="3"
                         disabled
                       />
@@ -163,7 +163,7 @@ class SkinLine extends Component {
                             Radio, checked, disabled
                           </div>
                         }
-                        radioClass={this.getRadioClass()}
+                        radioClassName={this.getRadioClass()}
                         value="4"
                         defaultChecked
                         disabled

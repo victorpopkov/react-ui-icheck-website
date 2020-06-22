@@ -92,7 +92,7 @@ class SkinLine extends Component {
                             Checkbox, checked
                           </div>
                         }
-                        defaultChecked
+                        checked
                       />
                       <Checkbox
                         checkboxClassName={this.getCheckboxClass()}
@@ -112,7 +112,7 @@ class SkinLine extends Component {
                             Checkbox, checked, disabled
                           </div>
                         }
-                        defaultChecked
+                        checked
                         disabled
                       />
                     </CheckboxGroup>
@@ -143,7 +143,7 @@ class SkinLine extends Component {
                         }
                         radioClassName={this.getRadioClass()}
                         value="2"
-                        defaultChecked
+                        checked
                       />
                       <Radio
                         insert={
@@ -165,7 +165,7 @@ class SkinLine extends Component {
                         }
                         radioClassName={this.getRadioClass()}
                         value="4"
-                        defaultChecked
+                        checked
                         disabled
                       />
                     </RadioGroup>

@@ -14,7 +14,7 @@ import SkinMinimal from './app/skin/SkinMinimal';
 import SkinPolaris from './app/skin/SkinPolaris';
 import SkinSquare from './app/skin/SkinSquare';
 
-const routes = (
+ReactDOM.render(
   <Router>
     <App>
       <Switch>
@@ -31,7 +31,6 @@ const routes = (
         <Route component={Error404} path="*" />
       </Switch>
     </App>
-  </Router>
+  </Router>,
+  document.querySelector('#app'),
 );
-
-ReactDOM.render(routes, document.querySelector('#app'));

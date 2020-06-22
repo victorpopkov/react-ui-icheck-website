@@ -89,7 +89,7 @@ class Skin extends Component {
                       checkboxClassName={this.getCheckboxClass()}
                       increaseArea="20%"
                       label="Checkbox, checked"
-                      defaultChecked
+                      checked
                     />
                     <Checkbox
                       checkboxClassName={this.getCheckboxClass()}
@@ -101,7 +101,7 @@ class Skin extends Component {
                       checkboxClassName={this.getCheckboxClass()}
                       increaseArea="20%"
                       label="Checkbox, checked, disabled"
-                      defaultChecked
+                      checked
                       disabled
                     />
                   </CheckboxGroup>
@@ -129,7 +129,7 @@ class Skin extends Component {
                       label="Radio, checked"
                       radioClassName={this.getRadioClass()}
                       value="2"
-                      defaultChecked
+                      checked
                     />
                     <Radio
                       increaseArea="20%"
@@ -143,7 +143,7 @@ class Skin extends Component {
                       label="Radio, checked, disabled"
                       radioClassName={this.getRadioClass()}
                       value="4"
-                      defaultChecked
+                      checked
                       disabled
                     />
                   </RadioGroup>

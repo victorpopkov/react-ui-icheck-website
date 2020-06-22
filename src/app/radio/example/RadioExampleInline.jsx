@@ -29,18 +29,18 @@ class RadioExampleInline extends Component {
         value={radioValue}
         onChange={(event, value) => this.setState({ radioValue: value })}
       >
-        <Radio label="#radio-1" radioClass="iradio_square-blue" value="1" />
+        <Radio label="#radio-1" radioClassName="iradio_square-blue" value="1" />
         <Radio
           label={'#radio-2, <span>default</span>'}
           labelTag="div"
           labelTagClassName="d-inline"
-          radioClass="iradio_square-blue"
+          radioClassName="iradio_square-blue"
           value="2"
         />
         <Radio
           labelTag="div"
           labelTagClassName="d-inline"
-          radioClass="iradio_square-blue"
+          radioClassName="iradio_square-blue"
           value="3"
           disabled
         >
@@ -79,18 +79,22 @@ class RadioExampleInline extends Component {
           value={radioValue}
           onChange={(event, value) => this.setState({ radioValue: value })}
         >
-          <Radio label="#radio-1" radioClass="iradio_square-blue" value="1" />
+          <Radio
+            label="#radio-1"
+            radioClassName="iradio_square-blue"
+            value="1"
+          />
           <Radio
             label={'#radio-2, <span>default</span>'}
             labelTag="div"
             labelTagClassName="d-inline"
-            radioClass="iradio_square-blue"
+            radioClassName="iradio_square-blue"
             value="2"
           />
           <Radio
             labelTag="div"
             labelTagClassName="d-inline"
-            radioClass="iradio_square-blue"
+            radioClassName="iradio_square-blue"
             value="3"
             disabled
           >

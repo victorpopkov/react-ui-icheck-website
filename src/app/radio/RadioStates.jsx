@@ -157,7 +157,7 @@ class CheckboxStates extends Component {
                   <Radio
                     disabled={radio1Disabled['1']}
                     label={'#radio-1-1, <span>default</span>'}
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="1"
                   />
                   <Radio
@@ -165,7 +165,7 @@ class CheckboxStates extends Component {
                     label="#radio-1-2"
                     labelTag="div"
                     labelTagClassName="d-inline"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="2"
                   />
                   <Radio
@@ -173,7 +173,7 @@ class CheckboxStates extends Component {
                     label={'#radio-1-3, <span>disabled</span>'}
                     labelTag="div"
                     labelTagClassName="d-inline"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="3"
                   />
                 </RadioGroup>
@@ -199,7 +199,7 @@ class CheckboxStates extends Component {
                   <Radio
                     disabled={radio2Disabled['1']}
                     label="#radio-2-1"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="1"
                   />
                   <Radio
@@ -207,7 +207,7 @@ class CheckboxStates extends Component {
                     label={'#radio-2-2, <span>default</span>'}
                     labelTag="div"
                     labelTagClassName="d-inline"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="2"
                   />
                   <Radio
@@ -215,7 +215,7 @@ class CheckboxStates extends Component {
                     label={'#radio-2-3, <span>disabled</span>'}
                     labelTag="div"
                     labelTagClassName="d-inline"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="3"
                   />
                 </RadioGroup>
@@ -241,7 +241,7 @@ class CheckboxStates extends Component {
                   <Radio
                     disabled={radio3Disabled['1']}
                     label="#radio-3-1"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="1"
                   />
                   <Radio
@@ -249,7 +249,7 @@ class CheckboxStates extends Component {
                     label="#radio-3-2"
                     labelTag="div"
                     labelTagClassName="d-inline"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="2"
                   />
                   <Radio
@@ -259,7 +259,7 @@ class CheckboxStates extends Component {
                     }
                     labelTag="div"
                     labelTagClassName="d-inline"
-                    radioClass="iradio_square-blue"
+                    radioClassName="iradio_square-blue"
                     value="3"
                   />
                 </RadioGroup>

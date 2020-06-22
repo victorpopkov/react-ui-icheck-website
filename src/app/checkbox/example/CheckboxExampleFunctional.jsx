@@ -17,13 +17,13 @@ const CheckboxExampleFunctional = () => {
       checkboxWrapTag="div"
     >
       <Checkbox
-        checkboxClass="icheckbox_square-blue"
+        checkboxClassName="icheckbox_square-blue"
         checked={i1Checked}
         label="#checkbox-1"
         onChange={(event, value) => setI1Checked(value)}
       />
       <Checkbox
-        checkboxClass="icheckbox_square-blue"
+        checkboxClassName="icheckbox_square-blue"
         checked={i2Checked}
         label={'#checkbox-2, <span>default</span>'}
         labelTag="div"
@@ -31,7 +31,7 @@ const CheckboxExampleFunctional = () => {
         onChange={(event, value) => setI2Checked(value)}
       />
       <Checkbox
-        checkboxClass="icheckbox_square-blue"
+        checkboxClassName="icheckbox_square-blue"
         checked={i3Checked}
         labelTag="div"
         labelTagClassName="d-inline"
@@ -60,13 +60,13 @@ const CheckboxExampleFunctional = () => {
         checkboxWrapTag="div"
       >
         <Checkbox
-          checkboxClass="icheckbox_square-blue"
+          checkboxClassName="icheckbox_square-blue"
           checked={i1Checked}
           label="#checkbox-1"
           onChange={(event, value) => setI1Checked(value)}
         />
         <Checkbox
-          checkboxClass="icheckbox_square-blue"
+          checkboxClassName="icheckbox_square-blue"
           checked={i2Checked}
           label={'#checkbox-2, <span>default</span>'}
           labelTag="div"
@@ -74,7 +74,7 @@ const CheckboxExampleFunctional = () => {
           onChange={(event, value) => setI2Checked(value)}
         />
         <Checkbox
-          checkboxClass="icheckbox_square-blue"
+          checkboxClassName="icheckbox_square-blue"
           checked={i3Checked}
           labelTag="div"
           labelTagClassName="d-inline"

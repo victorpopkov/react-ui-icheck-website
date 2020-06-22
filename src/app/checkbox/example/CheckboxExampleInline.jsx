@@ -29,14 +29,14 @@ class CheckboxExampleInline extends Component {
         className="d-flex align-items-center"
       >
         <Checkbox
-          checkboxClass="icheckbox_square-blue"
+          checkboxClassName="icheckbox_square-blue"
           checked={i1.checked}
           disabled={i1.disabled}
           label="#checkbox-1"
           onChange={(event, value) => this.setState({ i1: { ...i1, checked: value } })}
         />
         <Checkbox
-          checkboxClass="icheckbox_square-blue"
+          checkboxClassName="icheckbox_square-blue"
           checked={i2.checked}
           disabled={i2.disabled}
           label={'#checkbox-2, <span>default</span>'}
@@ -45,7 +45,7 @@ class CheckboxExampleInline extends Component {
           onChange={(event, value) => this.setState({ i2: { ...i2, checked: value } })}
         />
         <Checkbox
-          checkboxClass="icheckbox_square-blue"
+          checkboxClassName="icheckbox_square-blue"
           checked={i3.checked}
           disabled={i3.disabled}
           labelTag="div"
@@ -87,7 +87,7 @@ class CheckboxExampleInline extends Component {
           className="d-flex align-items-center"
         >
           <Checkbox
-            checkboxClass="icheckbox_square-blue"
+            checkboxClassName="icheckbox_square-blue"
             checked={i1.checked}
             disabled={i1.disabled}
             label="#checkbox-1"
@@ -96,7 +96,7 @@ class CheckboxExampleInline extends Component {
             }
           />
           <Checkbox
-            checkboxClass="icheckbox_square-blue"
+            checkboxClassName="icheckbox_square-blue"
             checked={i2.checked}
             disabled={i2.disabled}
             label={'#checkbox-2, <span>default</span>'}
@@ -107,7 +107,7 @@ class CheckboxExampleInline extends Component {
             }
           />
           <Checkbox
-            checkboxClass="icheckbox_square-blue"
+            checkboxClassName="icheckbox_square-blue"
             checked={i3.checked}
             disabled={i3.disabled}
             labelTag="div"

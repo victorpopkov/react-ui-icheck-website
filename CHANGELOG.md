@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
 - Badges to be in the sidebar
 - Checkbox and radio examples
+- Component `App` to become functional
 - Configurations for the app and the library
 - Content of the "Home" page
 - Content of the "Installation" page

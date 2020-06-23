@@ -1,7 +1,7 @@
 {
   "name": "react-ui-icheck-website",
   "description": "Website of the react-ui-icheck library.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Victor Popkov",
     "email": "victor@popkov.me"

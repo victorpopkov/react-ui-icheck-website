@@ -5271,10 +5271,10 @@ is-hexadecimal@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-hexadecimal/-/is-hexadecimal-1.0.3.tgz#e8a426a69b6d31470d3a33a47bb825cda02506ee"
   integrity sha512-zxQ9//Q3D/34poZf8fiy3m3XVpbQc7ren15iKqrTtLPwkPD/t3Scy9Imp63FujULGxuK0ZlCwoo5xNpktFgbOA==
 
-is-mobile@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/is-mobile/-/is-mobile-2.0.1.tgz#7e307cf066030e5c1241b53521ceaa999d1f1a2f"
-  integrity sha512-JNaoIFM3geBseef71iOu4024vfphwjFQPFGD64cziXbbyHdrF9zLTqxj2VEbrdOS/gkiQ5b3HldPf4eYPu8g/g==
+is-mobile@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/is-mobile/-/is-mobile-2.2.1.tgz#10f2320012c410cc285feecb13406bd586f1b2f8"
+  integrity sha512-6zELsfVFr326eq2CI53yvqq6YBanOxKBybwDT+MbMS2laBnK6Ez8m5XHSuTQQbnKRfpDzCod1CMWW5q3wZYMvA==
 
 is-number@^3.0.0:
   version "3.0.0"
@@ -8317,7 +8317,7 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.13.1, react-dom@^16.8.6:
+react-dom@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -8432,15 +8432,15 @@ react-transition-group@^2.3.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-ui-icheck@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/react-ui-icheck/-/react-ui-icheck-0.6.0.tgz#4b08231f6f430da5fc90f441c2be310c537e9645"
-  integrity sha512-KtdG94rvK0q71eK9nRP3BEWzuI2Oj5r2dR14edg+bOweWbmtgE616ITwlLHs4vBXea7kj54ftf3j5dNfKS6oVw==
+react-ui-icheck@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/react-ui-icheck/-/react-ui-icheck-0.7.0.tgz#949ccfda7e3d67a60339275fb5cd744d90f646c1"
+  integrity sha512-gXGA46uY21u10WDtWRThOPGa/zbHdnLcs9NPY9tzYJkWx5GzstSrbO0RXlfLiFAXn44ppolcDdbCsgvPrSR7/w==
   dependencies:
     classnames "^2.2.6"
-    is-mobile "^2.0.1"
+    is-mobile "^2.2.1"
     prop-types "^15.7.2"
-    react-dom "^16.8.6"
+    react-dom "^16.13.1"
 
 react@^16.13.1:
   version "16.13.1"

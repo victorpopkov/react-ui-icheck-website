@@ -72,6 +72,7 @@ module.exports = {
       '@WebsiteRoot': paths.root,
     },
     extensions: ['.json', '.js', '.jsx'],
+    symlinks: false,
   },
   plugins: [
     new DotenvPlugin({

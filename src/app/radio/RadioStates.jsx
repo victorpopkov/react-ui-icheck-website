@@ -18,21 +18,21 @@ class CheckboxStates extends Component {
 
     this.state = {
       radio1Disabled: {
-        '1': false,
-        '2': false,
-        '3': true,
+        1: false,
+        2: false,
+        3: true,
       },
       radio1Value: '1',
       radio2Disabled: {
-        '1': false,
-        '2': false,
-        '3': true,
+        1: false,
+        2: false,
+        3: true,
       },
       radio2Value: '2',
       radio3Disabled: {
-        '1': false,
-        '2': false,
-        '3': true,
+        1: false,
+        2: false,
+        3: true,
       },
       radio3Value: '3',
     };
@@ -53,19 +53,19 @@ class CheckboxStates extends Component {
   handleDisableAll() {
     this.setState({
       radio1Disabled: {
-        '1': true,
-        '2': true,
-        '3': true,
+        1: true,
+        2: true,
+        3: true,
       },
       radio2Disabled: {
-        '1': true,
-        '2': true,
-        '3': true,
+        1: true,
+        2: true,
+        3: true,
       },
       radio3Disabled: {
-        '1': true,
-        '2': true,
-        '3': true,
+        1: true,
+        2: true,
+        3: true,
       },
     });
   }
@@ -73,19 +73,19 @@ class CheckboxStates extends Component {
   handleEnableAll() {
     this.setState({
       radio1Disabled: {
-        '1': false,
-        '2': false,
-        '3': false,
+        1: false,
+        2: false,
+        3: false,
       },
       radio2Disabled: {
-        '1': false,
-        '2': false,
-        '3': false,
+        1: false,
+        2: false,
+        3: false,
       },
       radio3Disabled: {
-        '1': false,
-        '2': false,
-        '3': false,
+        1: false,
+        2: false,
+        3: false,
       },
     });
   }
@@ -93,21 +93,21 @@ class CheckboxStates extends Component {
   handleReset() {
     this.setState({
       radio1Disabled: {
-        '1': false,
-        '2': false,
-        '3': true,
+        1: false,
+        2: false,
+        3: true,
       },
       radio1Value: '1',
       radio2Disabled: {
-        '1': false,
-        '2': false,
-        '3': true,
+        1: false,
+        2: false,
+        3: true,
       },
       radio2Value: '2',
       radio3Disabled: {
-        '1': false,
-        '2': false,
-        '3': true,
+        1: false,
+        2: false,
+        3: true,
       },
       radio3Value: '3',
     });

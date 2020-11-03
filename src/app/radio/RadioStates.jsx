@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 
 @hot(module)
-class CheckboxStates extends Component {
+class RadioStates extends Component {
   constructor(props) {
     super(props);
 
@@ -293,4 +293,4 @@ class CheckboxStates extends Component {
   }
 }
 
-export default CheckboxStates;
+export default RadioStates;

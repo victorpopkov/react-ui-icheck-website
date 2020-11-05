@@ -24,7 +24,7 @@ const Jumbotron = () => (
         version={config.app.version}
       />
       <Row className="justify-content-center">
-        <Col lg={6} md={8} xl={4} xs={12}>
+        <Col lg={6} md={8} xs={12}>
           <pre className="text-center">
             <code className="language-bash">
               {`npm install ${config.lib.name} --save`}

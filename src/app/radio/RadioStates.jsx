@@ -156,7 +156,7 @@ class RadioStates extends Component {
                 >
                   <Radio
                     disabled={radio1Disabled['1']}
-                    label={'#radio-1-1, <span>default</span>'}
+                    label="#radio-1-1, <span>default</span>"
                     radioClassName="iradio_square-blue"
                     value="1"
                   />
@@ -170,7 +170,7 @@ class RadioStates extends Component {
                   />
                   <Radio
                     disabled={radio1Disabled['3']}
-                    label={'#radio-1-3, <span>disabled</span>'}
+                    label="#radio-1-3, <span>disabled</span>"
                     labelTag="div"
                     labelTagClassName="d-inline"
                     radioClassName="iradio_square-blue"
@@ -204,7 +204,7 @@ class RadioStates extends Component {
                   />
                   <Radio
                     disabled={radio2Disabled['2']}
-                    label={'#radio-2-2, <span>default</span>'}
+                    label="#radio-2-2, <span>default</span>"
                     labelTag="div"
                     labelTagClassName="d-inline"
                     radioClassName="iradio_square-blue"
@@ -212,7 +212,7 @@ class RadioStates extends Component {
                   />
                   <Radio
                     disabled={radio2Disabled['3']}
-                    label={'#radio-2-3, <span>disabled</span>'}
+                    label="#radio-2-3, <span>disabled</span>"
                     labelTag="div"
                     labelTagClassName="d-inline"
                     radioClassName="iradio_square-blue"
@@ -254,9 +254,7 @@ class RadioStates extends Component {
                   />
                   <Radio
                     disabled={radio3Disabled['3']}
-                    label={
-                      '#radio-3-3, <span>default</span>, <span>disabled</span>'
-                    }
+                    label="#radio-3-3, <span>default</span>, <span>disabled</span>"
                     labelTag="div"
                     labelTagClassName="d-inline"
                     radioClassName="iradio_square-blue"

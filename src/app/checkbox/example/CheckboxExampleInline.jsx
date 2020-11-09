@@ -39,7 +39,7 @@ class CheckboxExampleInline extends Component {
           checkboxClassName="icheckbox_square-blue"
           checked={i2.checked}
           disabled={i2.disabled}
-          label={'#checkbox-2, <span>default</span>'}
+          label="#checkbox-2, <span>default</span>"
           labelTag="div"
           labelTagClassName="d-inline"
           onChange={(event, value) => this.setState({ i2: { ...i2, checked: value } })}
@@ -99,7 +99,7 @@ class CheckboxExampleInline extends Component {
             checkboxClassName="icheckbox_square-blue"
             checked={i2.checked}
             disabled={i2.disabled}
-            label={'#checkbox-2, <span>default</span>'}
+            label="#checkbox-2, <span>default</span>"
             labelTag="div"
             labelTagClassName="d-inline"
             onChange={(event, value) =>

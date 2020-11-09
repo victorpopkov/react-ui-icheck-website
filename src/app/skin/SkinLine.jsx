@@ -42,6 +42,10 @@ class SkinLine extends Component {
     Prism.highlightAll();
   }
 
+  handleColor(color) {
+    this.setState({ color });
+  }
+
   getCheckboxClass() {
     const { color } = this.state;
 
@@ -52,10 +56,6 @@ class SkinLine extends Component {
     const { color } = this.state;
 
     return color ? `iradio_line-${color}` : 'iradio_line';
-  }
-
-  handleColor(color) {
-    this.setState({ color });
   }
 
   render() {

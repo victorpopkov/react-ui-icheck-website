@@ -30,7 +30,7 @@ class RadioExampleDefault extends Component {
       >
         <Radio label="#radio-1" radioClassName="iradio_square-blue" value="1" />
         <Radio
-          label={'#radio-2, <span>default</span>'}
+          label="#radio-2, <span>default</span>"
           labelTag="div"
           labelTagClassName="d-inline"
           radioClassName="iradio_square-blue"
@@ -83,7 +83,7 @@ class RadioExampleDefault extends Component {
             value="1"
           />
           <Radio
-            label={'#radio-2, <span>default</span>'}
+            label="#radio-2, <span>default</span>"
             labelTag="div"
             labelTagClassName="d-inline"
             radioClassName="iradio_square-blue"

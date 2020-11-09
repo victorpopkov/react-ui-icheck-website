@@ -25,7 +25,7 @@ const CheckboxExampleFunctional = () => {
       <Checkbox
         checkboxClassName="icheckbox_square-blue"
         checked={i2Checked}
-        label={'#checkbox-2, <span>default</span>'}
+        label="#checkbox-2, <span>default</span>"
         labelTag="div"
         labelTagClassName="d-inline"
         onChange={(event, value) => setI2Checked(value)}
@@ -68,7 +68,7 @@ const CheckboxExampleFunctional = () => {
         <Checkbox
           checkboxClassName="icheckbox_square-blue"
           checked={i2Checked}
-          label={'#checkbox-2, <span>default</span>'}
+          label="#checkbox-2, <span>default</span>"
           labelTag="div"
           labelTagClassName="d-inline"
           onChange={(event, value) => setI2Checked(value)}

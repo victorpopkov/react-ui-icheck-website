@@ -144,7 +144,7 @@ class CheckboxStates extends Component {
               <td className="align-middle">
                 <Checkbox
                   checkboxClassName="icheckbox_square-blue"
-                  label={'#checkbox-2, <span>checked</span>'}
+                  label="#checkbox-2, <span>checked</span>"
                   checked={i2checked}
                   disabled={i2disabled}
                   onChange={this.handle2Change}
@@ -157,7 +157,7 @@ class CheckboxStates extends Component {
               <td className="align-middle">
                 <Checkbox
                   checkboxClassName="icheckbox_square-blue"
-                  label={'#checkbox-3, <span>disabled</span>'}
+                  label="#checkbox-3, <span>disabled</span>"
                   checked={i3checked}
                   disabled={i3disabled}
                   onChange={this.handle3Change}
@@ -170,9 +170,7 @@ class CheckboxStates extends Component {
               <td className="align-middle">
                 <Checkbox
                   checkboxClassName="icheckbox_square-blue"
-                  label={
-                    '#checkbox-4, <span>checked</span>, <span>disabled</span>'
-                  }
+                  label="#checkbox-4, <span>checked</span>, <span>disabled</span>"
                   checked={i4checked}
                   disabled={i4disabled}
                   onChange={this.handle4Change}

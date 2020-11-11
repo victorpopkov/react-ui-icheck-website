@@ -1,4 +1,7 @@
 {
   "extends": ["stylelint-config-prettier"],
-  "plugins": ["stylelint-order", "stylelint-scss"]
+  "plugins": ["stylelint-order", "stylelint-scss"],
+  "ignoreFiles": [
+    "dist/**/*.css"
+  ]
 }

@@ -108,6 +108,6 @@
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
     "start": "cross-env BABEL_ENV=production NODE_ENV=production http-server ./dist/",
-    "watch": "cross-env BABEL_ENV=development NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.dev.js"
+    "watch": "cross-env BABEL_ENV=development NODE_ENV=development webpack serve --config ./webpack/webpack.config.dev.js"
   }
 }

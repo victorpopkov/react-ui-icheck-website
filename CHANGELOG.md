@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- **[maintenance]** Configurations for "GitHub Actions" CI build and lint jobs
+- **[maintenance]** Configurations for "GitHub Actions" deploy production job
+- **[maintenance]** Import of `webpack-merge` in webpack configurations
+- **[maintenance]** Replace `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
+- **[maintenance]** Scripts `build` and `watch` in `package.json`
+- Dependencies to match the latest ones
+
 ## [0.2.0][] - 2020-06-23
 
 ### Added

@@ -97,7 +97,7 @@
     "url": "github:victorpopkov/react-ui-icheck-website"
   },
   "scripts": {
-    "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js --colors --display-error-details --verbose",
+    "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
     "ci:eslint": "eslint --config ./.eslintrc --ext js,jsx --format ./.github/eslint-issues.js .",
     "ci:prettier:md": "prettier --check './**/*.md'",
     "ci:prettier:scss": "prettier --check './**/*.scss'",

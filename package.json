@@ -37,7 +37,7 @@
     "@babel/preset-react": "^7.12.5",
     "autoprefixer": "^10.0.2",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.0",
+    "babel-loader": "^8.2.1",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-plugin-react-css-modules": "^5.2.6",
     "babel-plugin-webpack-alias": "^2.1.2",

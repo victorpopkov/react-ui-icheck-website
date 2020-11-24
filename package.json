@@ -83,7 +83,8 @@
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.4.0",
-    "yarn-audit-fix": "^3.2.12"
+    "yarn-audit-fix": "^3.2.12",
+    "yarn-deduplicate": "^3.1.0"
   },
   "engines": {
     "node": ">= 14"
@@ -104,6 +105,7 @@
     "ci:prettier:md": "prettier --check './**/*.md'",
     "ci:prettier:scss": "prettier --check './**/*.scss'",
     "ci:prettier:yml": "prettier --check './**/*.yml'",
+    "deduplicate": "yarn-deduplicate",
     "dev": "npm-run-all watch",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx .",

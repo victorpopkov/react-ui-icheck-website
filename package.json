@@ -82,7 +82,8 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.4.0"
+    "webpack-merge": "^5.4.0",
+    "yarn-audit-fix": "^3.2.12"
   },
   "engines": {
     "node": ">= 14"
@@ -97,6 +98,7 @@
     "url": "github:victorpopkov/react-ui-icheck-website"
   },
   "scripts": {
+    "audit:fix": "yarn-audit-fix",
     "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
     "ci:eslint": "eslint --config ./.eslintrc --ext js,jsx --format ./.github/eslint-issues.js .",
     "ci:prettier:md": "prettier --check './**/*.md'",

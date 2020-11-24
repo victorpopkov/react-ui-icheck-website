@@ -85,7 +85,7 @@
     "webpack-merge": "^5.4.0"
   },
   "engines": {
-    "node": ">= 8.10.0"
+    "node": ">= 14"
   },
   "homepage": "http://github.victorpopkov.com/react-ui-icheck/",
   "license": "MIT",

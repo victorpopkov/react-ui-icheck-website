@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
+
 ### Changed
 
 - **[maintenance]** Configurations for "GitHub Actions" CI build and lint jobs

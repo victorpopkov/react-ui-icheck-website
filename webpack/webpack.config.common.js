@@ -1,6 +1,7 @@
 const DotenvPlugin = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 const config = require('../config');
 const paths = require('./paths');
 
@@ -75,6 +76,9 @@ module.exports = {
     symlinks: false,
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
     new DotenvPlugin({
       path: path.resolve(paths.root, '.env'),
       silent: true,

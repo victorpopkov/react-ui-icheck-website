@@ -56,7 +56,7 @@ jobs:
         if: always()
         uses: Ilshidur/action-slack@2.1.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CODEDSOLAR }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
   lint:
     runs-on: ubuntu-latest
@@ -129,4 +129,4 @@ jobs:
         if: always()
         uses: Ilshidur/action-slack@2.1.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CODEDSOLAR }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

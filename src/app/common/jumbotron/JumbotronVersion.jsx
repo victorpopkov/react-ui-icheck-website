@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const JumbotronVersion = ({ className, name, revision, title, version }) => (
   <h6 className={className}>
     <span className="align-middle">
-      {title ? `${title} version:` : 'Version'}
+      {title ? `${title} version:` : 'Version:'}
     </span>
     {` `}
     <Badge className="align-middle">{version}</Badge>

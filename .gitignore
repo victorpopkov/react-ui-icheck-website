@@ -114,8 +114,3 @@ temp/
 
 ### VisualStudioCode ###
 .vscode/
-
-### Project ###
-.github/slack*.json
-env*
-lib/

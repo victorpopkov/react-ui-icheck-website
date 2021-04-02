@@ -24,29 +24,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- **[maintenance]** Exceptions for the `react/jsx-props-no-spreading` ESLint rule
 - **[maintenance]** Integration with "GitHub Actions" for CI building and linting
-- **[maintenance]** Integration with "GitHub Actions" for the deploying production
+- **[maintenance]** Integration with "GitHub Actions" for production deploying
 - **[maintenance]** Integration with Prettier
 - Checkbox and radio "Functional" examples
 - Checkbox and radio "States" examples
+- Exceptions for `react/jsx-props-no-spreading` ESLint rule
 - Hot reloading in some missed components
 - Sidebar `NavLink` active state
 
 ### Changed
 
-- **[maintenance]** Configurations for ESLint to work with Prettier and become simpler
-- **[maintenance]** Configurations for stylelint to work with Prettier and become simpler
+- App and library configurations
 - Badges to be in the sidebar
 - Checkbox and radio examples
 - Component `App` to become functional
-- Configurations for the app and the library
+- Configurations for ESLint to work with Prettier
+- Configurations for stylelint to work with Prettier
 - Content of the "Home" page
 - Content of the "Installation" page
 - Dependencies to match the latest ones
 - Deprecated `componentWillReceiveProps` in favour of `getDerivedStateFromProps`
 - Extension `JS` to `JSX` where appropriate
-- Jumbotron to include the website version and revisions
+- Jumbotron to include the website version and revision
 - Markdown styles to become separated
 - Sidebar `NavLink` height
 - Use title case where appropriate
@@ -55,13 +55,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - **[maintenance]** Integration with "Travis CI" in favour of "GitHub Actions"
 - **[maintenance]** Integration with remark in favour of Prettier
-- Dependency `better-npm-run` in favour of `cross-env`
+- Configurations `.babelrc` in favour of `babel.config.js`
+- Deprecated `better-npm-run` in favour of `cross-env`
 
 ### Fixed
 
-- **[maintenance]** Some ESLint code linting issues
-- **[maintenance]** Some Prettier code formatting issues
 - Issue with Prism.js code highlighting after component updates
+- Some ESLint code linting issues
+- Some Prettier code formatting issues
 
 ## 0.1.0 - 2019-07-15
 

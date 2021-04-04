@@ -1,6 +1,6 @@
 import './GitHub.scss';
 import React from 'react';
-import config from '@WebsiteConfig';
+import config from '@Config';
 
 const GitHub = () => (
   <div styleName="github">

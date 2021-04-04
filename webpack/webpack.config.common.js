@@ -69,8 +69,8 @@ module.exports = {
   resolve: {
     modules: ['src', 'node_modules'],
     alias: {
-      '@WebsiteConfig': paths.config,
-      '@WebsiteRoot': paths.root,
+      '@Config': paths.config,
+      '@Root': paths.root,
     },
     extensions: ['.json', '.js', '.jsx'],
     symlinks: false,

@@ -2,7 +2,7 @@ import './Footer.scss';
 import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import config from '@WebsiteConfig';
+import config from '@Config';
 import GitHub from '../github/GitHub';
 
 const Footer = () => (

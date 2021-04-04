@@ -8,7 +8,7 @@ import {
 import { IndexLinkContainer } from 'react-router-bootstrap';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import config from '@WebsiteConfig';
+import config from '@Config';
 import NavbarMenu from './NavbarMenu';
 import NavbarMobile from './NavbarMobile';
 

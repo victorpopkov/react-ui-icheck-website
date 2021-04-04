@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'icheck/skins/all.css';
 import './style.scss';
+import { Helmet } from 'react-helmet';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader/root';
@@ -8,6 +9,9 @@ import { Footer, Navbar } from './common';
 
 const App = ({ children }) => (
   <div className="app">
+    <Helmet>
+      <script async defer src="https://buttons.github.io/buttons.js" />
+    </Helmet>
     <Navbar />
     {children}
     <Footer />

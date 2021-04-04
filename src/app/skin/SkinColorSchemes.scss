@@ -62,7 +62,7 @@ $skin-colors: (
 
   :global {
     @each $name, $color in $skin-colors {
-      .#{$name} {
+      .#{'' + $name} {
         background: $color;
       }
     }

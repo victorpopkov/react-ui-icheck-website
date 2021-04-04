@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Sidebar to become hidden on tablets
 - Webpack aliases to exclude the "Website" prefix
 
+### Removed
+
+- Dependency `node-sass` in favour of `sass`
+
 ## [0.2.0][] - 2020-06-23
 
 ### Added

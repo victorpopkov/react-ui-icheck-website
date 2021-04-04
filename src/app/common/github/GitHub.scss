@@ -20,17 +20,3 @@
     padding: $nav-link-padding-y 0.25rem;
   }
 }
-
-@include media-breakpoint-down(sm) {
-  .github {
-    a,
-    span {
-      margin: 0 ($grid-gutter-width / 4) ($grid-gutter-width / 4) 0;
-      vertical-align: middle;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-  }
-}

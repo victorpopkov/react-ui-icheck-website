@@ -10,15 +10,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
+- Common `GitHub` component
+- Dependency `react-helmet`
+- GitHub buttons in the common `Header` component
 
 ### Changed
 
 - **[maintenance]** Configurations for "GitHub Actions" CI build and lint jobs
 - **[maintenance]** Configurations for "GitHub Actions" deploy production job
-- **[maintenance]** Import of `webpack-merge` in webpack configurations
-- **[maintenance]** Replace `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
 - **[maintenance]** Scripts `build` and `watch` in `package.json`
+- Common `Navbar` component mobile responsiveness
+- CSS loading mode from `global` to `local`
 - Dependencies to match the latest ones
+- GitHub buttons in the common `Footer` component
+- Import of `webpack-merge` in webpack configurations
+- Replace `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
+- Sidebar to become hidden on tablets
+- Webpack aliases to exclude the "Website" prefix
 
 ## [0.2.0][] - 2020-06-23
 

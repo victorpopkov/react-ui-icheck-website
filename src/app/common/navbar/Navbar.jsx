@@ -2,16 +2,14 @@ import {
   Navbar as BaseNavbar,
   Collapse,
   Container,
-  Nav,
-  NavItem,
-  NavLink,
   NavbarBrand,
   NavbarToggler,
 } from 'reactstrap';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
+import { IndexLinkContainer } from 'react-router-bootstrap';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import config from '@WebsiteConfig';
+import NavbarMenu from './NavbarMenu';
 import NavbarMobile from './NavbarMobile';
 
 @hot(module)
@@ -32,26 +30,6 @@ class Navbar extends Component {
     }));
   }
 
-  renderNavItem = (name, to, className) => (
-    <NavItem className={className}>
-      <LinkContainer to={to}>
-        <NavLink>{name}</NavLink>
-      </LinkContainer>
-    </NavItem>
-  );
-
-  renderMenu = () => (
-    <div className="d-none d-lg-inline-block ml-auto text-center">
-      <Nav className="d-flex align-content-center align-items-center" navbar>
-        {this.renderNavItem('Checkbox', '/checkbox')}
-        {this.renderNavItem('Radio', '/radio')}
-        <NavItem>
-          <NavLink href={config.lib.repository}>GitHub</NavLink>
-        </NavItem>
-      </Nav>
-    </div>
-  );
-
   render() {
     const { collapsed } = this.state;
 
@@ -63,7 +41,7 @@ class Navbar extends Component {
           </IndexLinkContainer>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={collapsed} timeout={0} navbar>
-            {this.renderMenu()}
+            <NavbarMenu />
             <NavbarMobile />
           </Collapse>
         </Container>

@@ -14,34 +14,13 @@ const navItem = (name, to, className) => (
 );
 
 const NavbarMobile = () => (
-  <div styleName="mobile">
-    <Nav navbar>
+  <div className="d-none d-lg-inline-block ml-auto text-center">
+    <Nav className="d-flex align-content-center align-items-center" navbar>
       {navItem('Checkbox', '/checkbox')}
       {navItem('Radio', '/radio')}
       <NavItem>
         <NavLink href={config.lib.repository}>GitHub</NavLink>
       </NavItem>
-    </Nav>
-    <hr />
-    <h6>Getting Started</h6>
-    <Nav navbar>
-      {navItem('Overview', '/')}
-      {navItem('Checkbox', '/checkbox')}
-      {navItem('Radio', '/radio')}
-      {navItem('Installation', '/installation')}
-    </Nav>
-    <hr />
-    <h6>Skins</h6>
-    <Nav navbar>
-      {navItem('Flat', '/skin/flat')}
-      {navItem('Line', '/skin/line')}
-      {navItem('Minimal', '/skin/minimal')}
-      {navItem('Square', '/skin/square')}
-    </Nav>
-    <hr />
-    <Nav navbar>
-      {navItem('Futurico', '/skin/futurico')}
-      {navItem('Polaris', '/skin/polaris')}
     </Nav>
   </div>
 );

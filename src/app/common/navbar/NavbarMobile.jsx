@@ -1,26 +1,32 @@
+import './NavbarMobile.scss';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import config from '../../../../config';
 
 const navItem = (name, to, className) => (
   <NavItem className={className}>
     <LinkContainer to={to}>
-      <NavLink>{name}</NavLink>
+      <NavLink styleName="link">{name}</NavLink>
     </LinkContainer>
   </NavItem>
 );
 
 const NavbarMobile = () => (
-  <div className="d-md-none d-sm-block ml-auto text-center">
+  <div styleName="mobile">
+    <hr />
+    <Nav navbar>
+      {navItem('Checkbox', '/checkbox', 'd-none d-md-inline-block')}
+      {navItem('Radio', '/radio', 'd-none d-md-inline-block')}
+      <NavItem>
+        <NavLink href={config.lib.repository}>GitHub</NavLink>
+      </NavItem>
+    </Nav>
     <hr />
     <h6>Getting Started</h6>
     <Nav navbar>
-      <NavItem>
-        <IndexLinkContainer to="/">
-          <NavLink>Overview</NavLink>
-        </IndexLinkContainer>
-      </NavItem>
+      {navItem('Overview', '/')}
       {navItem('Checkbox', '/checkbox')}
       {navItem('Radio', '/radio')}
       {navItem('Installation', '/installation')}

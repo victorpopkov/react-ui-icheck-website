@@ -40,36 +40,30 @@ class Navbar extends Component {
     </NavItem>
   );
 
+  renderMenu = () => (
+    <div className="d-none d-lg-inline-block ml-auto text-center">
+      <Nav className="d-flex align-content-center align-items-center" navbar>
+        {this.renderNavItem('Checkbox', '/checkbox')}
+        {this.renderNavItem('Radio', '/radio')}
+        <NavItem>
+          <NavLink href={config.lib.repository}>GitHub</NavLink>
+        </NavItem>
+      </Nav>
+    </div>
+  );
+
   render() {
     const { collapsed } = this.state;
 
     return (
-      <BaseNavbar expand="md" light>
+      <BaseNavbar expand="lg" light>
         <Container>
           <IndexLinkContainer to="/">
             <NavbarBrand>{config.lib.name}</NavbarBrand>
           </IndexLinkContainer>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={collapsed} timeout={0} navbar>
-            <div className="d-block d-md-inline-block ml-auto text-center">
-              <hr className="d-block d-sm-none" />
-              <Nav navbar>
-                {this.renderNavItem(
-                  'Checkbox',
-                  '/checkbox',
-                  'd-none d-md-inline-block',
-                )}
-
-                {this.renderNavItem(
-                  'Radio',
-                  '/radio',
-                  'd-none d-md-inline-block',
-                )}
-                <NavItem>
-                  <NavLink href={config.lib.repository}>GitHub</NavLink>
-                </NavItem>
-              </Nav>
-            </div>
+            {this.renderMenu()}
             <NavbarMobile />
           </Collapse>
         </Container>

@@ -73,7 +73,7 @@ class Skin extends Component {
         <Row>
           <Col md={9}>
             <h2 className="heading">{title}</h2>
-            <Col className={`skin-${skin} mt-4`} md={11}>
+            <Col className="mt-4" md={11} styleName={`skin-${skin}`}>
               <Row>
                 <Col className="mb-2 mb-lg-0" lg={6} md={12}>
                   <CheckboxGroup

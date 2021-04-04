@@ -1,14 +1,12 @@
-:local {
-  .link {
-    padding-bottom: 0.25rem;
-    padding-top: 0.25rem;
-  }
+.link {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
 
-  .active {
+.active {
+  color: $black;
+
+  &:hover {
     color: $black;
-
-    &:hover {
-      color: $black;
-    }
   }
 }

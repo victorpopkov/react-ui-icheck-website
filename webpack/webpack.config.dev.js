@@ -6,6 +6,35 @@ const common = require('./webpack.config.common');
 const config = require('../config');
 const paths = require('./paths');
 
+const cssLoaders = (mode) => [
+  'style-loader',
+  {
+    loader: 'css-loader',
+    options: {
+      importLoaders: 2,
+      modules: {
+        localIdentName: '[local]___[hash:base64:5]',
+        mode,
+      },
+      sourceMap: true,
+    },
+  },
+  { loader: 'resolve-url-loader', options: { sourceMap: true } },
+  { loader: 'postcss-loader', options: { sourceMap: true } },
+];
+
+const scssLoaders = (mode) => [
+  ...cssLoaders(mode),
+  {
+    loader: 'sass-loader',
+    options: { sassOptions: { outputStyle: 'expanded' }, sourceMap: true },
+  },
+  {
+    loader: 'sass-resources-loader',
+    options: { resources: path.join(paths.src, 'app/sass-resources.scss') },
+  },
+];
+
 module.exports = merge(common, {
   devServer: {
     contentBase: paths.dist,
@@ -28,91 +57,27 @@ module.exports = merge(common, {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-          {
-            loader: 'eslint-loader',
-          },
-        ],
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
-        test: /\.css/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              modules: {
-                localIdentName: '[local]___[hash:base64:5]',
-                mode: 'global',
-              },
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'resolve-url-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
+        test: /\.css?$/,
+        include: [/node_modules\/bootstrap/, /node_modules\/icheck/],
+        use: cssLoaders('global'),
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              modules: {
-                localIdentName: '[local]___[hash:base64:5]',
-                mode: 'global',
-              },
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'resolve-url-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sassOptions: {
-                outputStyle: 'expanded',
-              },
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: path.join(paths.src, 'app/sass-resources.scss'),
-            },
-          },
-        ],
+        test: /\.css?$/,
+        exclude: [/node_modules\/bootstrap/, /node_modules\/icheck/],
+        use: cssLoaders('local'),
+      },
+      {
+        test: /\.scss?$/,
+        include: [/node_modules/],
+        use: scssLoaders('global'),
+      },
+      {
+        test: /\.scss?$/,
+        exclude: [/node_modules/],
+        use: scssLoaders('local'),
       },
     ],
   },

@@ -40,12 +40,6 @@ $skin-colors: (
     transition: opacity 75ms ease-in-out;
     vertical-align: middle;
 
-    @each $name, $color in $skin-colors {
-      &.#{$name} {
-        background: $color;
-      }
-    }
-
     button {
       background: none;
       border: 0;
@@ -63,6 +57,14 @@ $skin-colors: (
     &.active {
       box-shadow: 0 0 0 2px #007bff;
       opacity: 1;
+    }
+  }
+
+  :global {
+    @each $name, $color in $skin-colors {
+      .#{$name} {
+        background: $color;
+      }
     }
   }
 }

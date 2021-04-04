@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const config = require('../config');
 const paths = require('./paths');
 
-const useImages = [
+const imageLoaders = [
   {
     loader: 'url-loader',
     options: {
@@ -27,7 +27,7 @@ module.exports = {
         test: /\.svg$/,
         exclude: /node_modules\/icheck/,
         use: [
-          ...useImages,
+          ...imageLoaders,
           {
             loader: 'svgo-loader',
             options: {
@@ -42,7 +42,7 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif)$/,
         exclude: /node_modules\/icheck/,
-        use: useImages,
+        use: imageLoaders,
       },
       {
         test: /\.(jpe?g|png|gif)$/,

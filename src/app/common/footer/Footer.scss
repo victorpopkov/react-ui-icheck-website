@@ -1,4 +1,4 @@
-:local .footer {
+.footer {
   margin-top: $grid-gutter-width;
   text-align: center;
 
@@ -52,7 +52,7 @@
 }
 
 @include media-breakpoint-down(sm) {
-  :local .footer {
+  .footer {
     margin-top: $grid-gutter-width / 2;
     vertical-align: middle;
 

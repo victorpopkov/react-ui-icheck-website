@@ -24,10 +24,10 @@ jobs:
         run: |
           echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
           echo "GITHUB_JOB_NAME=build" >> $GITHUB_ENV
-          echo "NODE_ENV=production" >> $GITHUB_ENV
+          echo "NODE_ENV=development" >> $GITHUB_ENV
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
-        run: yarn install --ignore-scripts && npm rebuild node-sass
+        run: yarn install --ignore-scripts
       - name: Build
         id: build
         run: |
@@ -77,6 +77,8 @@ jobs:
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Install
         run: yarn install --ignore-scripts
+        env:
+          NODE_ENV: development
       - name: Lint
         id: lint
         run: |

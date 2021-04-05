@@ -1,18 +1,10 @@
 import './NavbarMobile.scss';
-import { Col, Nav, NavItem, NavLink, Row } from 'reactstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Col, Nav, Row } from 'reactstrap';
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import GitHub from '../github/GitHub';
 import config from '../../../../config';
-
-const navItem = (name, to, className) => (
-  <NavItem className={className}>
-    <LinkContainer to={to}>
-      <NavLink styleName="link">{name}</NavLink>
-    </LinkContainer>
-  </NavItem>
-);
+import navItem from './navItem';
 
 const NavbarMobile = () => (
   <div styleName="mobile">
@@ -26,9 +18,7 @@ const NavbarMobile = () => (
         <Nav navbar>
           {navItem('Checkbox', '/checkbox')}
           {navItem('Radio', '/radio')}
-          <NavItem>
-            <NavLink href={config.lib.repository}>GitHub</NavLink>
-          </NavItem>
+          {navItem('GitHub', config.lib.repository)}
         </Nav>
       </Col>
       <Col sm={4}>

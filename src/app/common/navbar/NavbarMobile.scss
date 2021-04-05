@@ -2,11 +2,6 @@
   display: block;
   text-align: center;
   margin-left: auto;
-
-  .link {
-    padding-bottom: 0.25rem;
-    padding-top: 0.25rem;
-  }
 }
 
 @include media-breakpoint-up(lg) {

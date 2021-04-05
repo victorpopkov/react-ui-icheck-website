@@ -61,12 +61,12 @@ module.exports = merge(common, {
       },
       {
         test: /\.css?$/,
-        include: [/node_modules\/bootstrap/, /node_modules\/icheck/],
+        include: [/node_modules/],
         use: cssLoaders('global'),
       },
       {
         test: /\.css?$/,
-        exclude: [/node_modules\/bootstrap/, /node_modules\/icheck/],
+        exclude: [/node_modules/],
         use: cssLoaders('local'),
       },
       {

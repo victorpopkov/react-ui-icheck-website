@@ -5,7 +5,7 @@ import React from 'react';
 
 export default (name, to, className) => (
   <NavItem className={className}>
-    <LinkContainer to={to}>
+    <LinkContainer to={to} exact>
       <NavLink styleName="link">{name}</NavLink>
     </LinkContainer>
   </NavItem>

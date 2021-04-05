@@ -15,11 +15,7 @@ const NavbarMobile = () => (
       <Col sm={4}>
         <hr />
         <h6>Navigation</h6>
-        <Nav navbar>
-          {navItem('Checkbox', '/checkbox')}
-          {navItem('Radio', '/radio')}
-          {navItem('GitHub', config.lib.repository)}
-        </Nav>
+        <Nav navbar>{navItem('GitHub', config.lib.repository)}</Nav>
       </Col>
       <Col sm={4}>
         <hr />

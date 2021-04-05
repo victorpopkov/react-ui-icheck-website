@@ -71,9 +71,9 @@ class Skin extends Component {
     return (
       <Container>
         <Row>
-          <Col md={9}>
+          <Col lg={9}>
             <h2 className="heading">{title}</h2>
-            <Col className="mt-4" md={11} styleName={`skin-${skin}`}>
+            <Col className="mt-4" lg={11} styleName={`skin-${skin}`}>
               <Row>
                 <Col className="mb-2 mb-lg-0" lg={6} md={12}>
                   <CheckboxGroup
@@ -152,13 +152,13 @@ class Skin extends Component {
             </Col>
             {colorSchemes && (
               <Row>
-                <Col className="pt-4" md={11}>
+                <Col className="pt-4" lg={11}>
                   <SkinColorSchemes color={color} onChange={this.handleColor} />
                 </Col>
               </Row>
             )}
             <Row>
-              <Col className="pt-4" md={11}>
+              <Col className="pt-4" lg={11}>
                 <pre className="m-0">
                   <code className="language-jsx">
                     {`import 'icheck/skins/${skin}/${

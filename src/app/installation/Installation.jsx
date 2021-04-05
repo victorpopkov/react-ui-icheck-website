@@ -41,7 +41,7 @@ class Installation extends Component {
         <Jumbotron />
         <Container>
           <Row>
-            <Col md={9}>
+            <Col lg={9}>
               <h2 className="heading">Installation</h2>
               <ReactMarkdown className="markdown" source={this.content} />
             </Col>

@@ -66,9 +66,9 @@ class SkinLine extends Component {
         <Jumbotron />
         <Container>
           <Row>
-            <Col md={9}>
+            <Col lg={9}>
               <h2 className="heading">Line Skin</h2>
-              <Col className="skin-line mt-4" md={11}>
+              <Col className="skin-line mt-4" lg={11}>
                 <Row>
                   <Col className="mb-2 mb-lg-0" lg={6} md={12}>
                     <CheckboxGroup
@@ -173,12 +173,12 @@ class SkinLine extends Component {
                 </Row>
               </Col>
               <Row>
-                <Col className="pt-4" md={11}>
+                <Col className="pt-4" lg={11}>
                   <SkinColorSchemes color={color} onChange={this.handleColor} />
                 </Col>
               </Row>
               <Row>
-                <Col className="pt-4" md={11}>
+                <Col className="pt-4" lg={11}>
                   <pre className="m-0">
                     <code className="language-jsx">
                       {`import 'icheck/skins/line/${color || 'line'}.css';

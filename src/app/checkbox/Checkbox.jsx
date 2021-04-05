@@ -55,7 +55,7 @@ class CheckboxPage extends Component {
         <Jumbotron />
         <Container>
           <Row>
-            <Col md={9}>
+            <Col lg={9}>
               <h2 className="heading">Checkbox</h2>
               <Nav className="mt-4" tabs>
                 <NavItem>

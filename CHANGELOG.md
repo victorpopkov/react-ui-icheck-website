@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.3.0][] - 2021-04-12
+
 ### Added
 
 - **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
@@ -80,5 +82,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 First release.
 
-[unreleased]: https://github.com/victorpopkov/react-ui-icheck/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/victorpopkov/react-ui-icheck/compare/v0.1.0...v0.2.0
+[unreleased]: https://github.com/victorpopkov/react-ui-icheck-website/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/victorpopkov/react-ui-icheck-website/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/victorpopkov/react-ui-icheck-website/compare/v0.1.0...v0.2.0

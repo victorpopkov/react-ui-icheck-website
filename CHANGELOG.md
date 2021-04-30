@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - Dependencies to match the latest ones
+- Prop `source` to `children` for `react-markdown`
 
 ## [0.3.0][] - 2021-04-12
 

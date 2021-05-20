@@ -24,15 +24,9 @@ class Example extends Component {
   }
 
   render() {
-    const {
-      children,
-      src,
-      srcAppend,
-      srcFunctionValue,
-      srcPrepend,
-      title,
-    } = this.props;
     const { collapse } = this.state;
+    const { children, src, srcAppend, srcFunctionValue, srcPrepend, title } =
+      this.props;
 
     return (
       <div>

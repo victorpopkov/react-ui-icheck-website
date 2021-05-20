@@ -33,14 +33,9 @@ class Source extends Component {
   }
 
   render() {
-    const {
-      children,
-      src,
-      srcAppend,
-      srcFunctionValue,
-      srcPrepend,
-    } = this.props;
     const { activeTab } = this.state;
+    const { children, src, srcAppend, srcFunctionValue, srcPrepend } =
+      this.props;
 
     let html = ReactDOMServer.renderToStaticMarkup(children);
 

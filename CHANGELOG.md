@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Dependencies to match the latest ones
 - Prop `source` to `children` for `react-markdown`
 
+### Removed
+
+- Dependency `optimize-css-assets-webpack-plugin` in favour of `css-minimizer-webpack-plugin`
+
 ## [0.3.0][] - 2021-04-12
 
 ### Added

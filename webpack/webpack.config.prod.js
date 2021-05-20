@@ -1,6 +1,6 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
@@ -76,13 +76,14 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new TerserPlugin(),
-      new OptimizeCssAssetsPlugin({
-        canPrint: false,
-        cssProcessor: require('cssnano'), // eslint-disable-line global-require
-        cssProcessorOptions: {
-          discardComments: {
-            removeAll: true,
-          },
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          preset: [
+            'default',
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
         },
       }),
     ],

@@ -11,7 +11,7 @@
     "classnames": "^2.3.1",
     "generic-names": "^3.0.0",
     "icheck": "^1.0.2",
-    "js-beautify": "^1.13.13",
+    "js-beautify": "^1.14.0",
     "lodash": "^4.17.21",
     "prismjs": "^1.23.0",
     "process": "^0.11.10",

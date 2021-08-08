@@ -117,7 +117,9 @@ class RadioStates extends Component {
     return value ? (
       <Badge color="success">Yes</Badge>
     ) : (
-      <Badge color="light">No</Badge>
+      <Badge className="text-dark" color="light">
+        No
+      </Badge>
     );
   };
 

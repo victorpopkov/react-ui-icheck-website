@@ -10,12 +10,14 @@ const Footer = () => (
     <Container>
       <Row>
         <Col md={12} styleName="content">
-          <ul className="mb-2 mb-md-0 me-0 me-md-4">
+          <ul className="mb-2 mb-sm-0 me-0 me-sm-4">
             <li>
               <a href={config.lib.repository}>View on GitHub</a>
             </li>
           </ul>
-          <GitHub />
+          <div styleName="github">
+            <GitHub />
+          </div>
         </Col>
       </Row>
     </Container>

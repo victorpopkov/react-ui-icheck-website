@@ -120,12 +120,16 @@ class CheckboxStates extends Component {
     return (
       <div>
         <h5 className="mb-4 mt-4">States</h5>
-        <Table>
+        <Table responsive>
           <thead>
             <tr>
               <th>Element</th>
-              <th>Checked</th>
-              <th>Disabled</th>
+              <th>
+                <span className="d-md-block d-none">Checked</span>
+              </th>
+              <th>
+                <span className="d-md-block d-none">Disabled</span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -169,7 +173,7 @@ class CheckboxStates extends Component {
               <td className="align-middle">{this.renderYesNo(i3disabled)}</td>
             </tr>
             <tr>
-              <td className="align-middle">
+              <td className="align-middle text-nowrap">
                 <Checkbox
                   checkboxClassName="icheckbox_square-blue"
                   label="#checkbox-4, <span>checked</span>, <span>disabled</span>"

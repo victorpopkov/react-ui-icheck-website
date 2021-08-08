@@ -9,12 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Bootstrap from `4.6.0` to `5.1.0`
+- Bottom border for `th` and `td` tags
+- CSS classes to match the Bootstrap v5
+- Common `Jumbotron` component layout
 - Dependencies to match the latest ones
+- GitHub buttons to become fixed in height
 - Prop `source` to `children` for `react-markdown`
 
 ### Removed
 
 - Dependency `optimize-css-assets-webpack-plugin` in favour of `css-minimizer-webpack-plugin`
+- Slashes as divisions from SCSS in favour of `sass:math`
 
 ## [0.3.0][] - 2021-04-12
 
@@ -23,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
 - Common `GitHub` component
 - Dependency `react-helmet`
-- GitHub buttons in the common `Header` component
+- GitHub buttons in the common `NavbarMenu` component
 
 ### Changed
 

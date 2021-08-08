@@ -79,7 +79,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.20.1",
-    "stylelint-webpack-plugin": "^2.2.2",
+    "stylelint-webpack-plugin": "^3.0.1",
     "terser-webpack-plugin": "5.1.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.48.0",

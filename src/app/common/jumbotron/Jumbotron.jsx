@@ -1,13 +1,13 @@
 import './Jumbotron.scss';
-import { Jumbotron as BaseJumbotron, Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import config from '@Config';
 import JumbotronVersion from './JumbotronVersion';
 
 const Jumbotron = () => (
-  <BaseJumbotron className="m-0 pb-5 pt-5" styleName="jumbotron" tag="section">
-    <Container>
+  <Container>
+    <Col className="py-5 text-center" lg={12}>
       <h1>{config.lib.name}</h1>
       <JumbotronVersion
         className="mt-4"
@@ -32,8 +32,8 @@ const Jumbotron = () => (
           </pre>
         </Col>
       </Row>
-    </Container>
-  </BaseJumbotron>
+    </Col>
+  </Container>
 );
 
 export default hot(module)(Jumbotron);

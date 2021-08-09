@@ -16,7 +16,7 @@ const NavbarMenu = () => (
       <GitHub />
       {navItem('Checkbox', '/checkbox')}
       {navItem('Radio', '/radio')}
-      {navItem('GitHub', config.lib.repository)}
+      {navItem('GitHub', config.lib.repository, null, true)}
     </Nav>
   </div>
 );

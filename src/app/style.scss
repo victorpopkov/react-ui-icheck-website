@@ -33,8 +33,13 @@ body {
       position: relative;
     }
 
-    table {
+    .table-responsive {
       border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      border: 0;
+      margin: 0;
       width: 100%;
 
       label {
@@ -53,6 +58,7 @@ body {
     tfoot {
       th,
       td {
+        border-bottom: 0;
         padding-left: 0.75em;
         padding-right: 0.75em;
         white-space: nowrap;

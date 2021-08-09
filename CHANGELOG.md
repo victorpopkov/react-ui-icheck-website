@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Mobile responsiveness for `CheckboxStates` and `RadioStates` tables
+- Bootstrap usage mentions in examples
+- Mobile responsiveness for inline examples
+- Mobile responsiveness for tables
 
 ### Changed
 
@@ -25,6 +27,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Dependency `optimize-css-assets-webpack-plugin` in favour of `css-minimizer-webpack-plugin`
 - Slashes as divisions from SCSS in favour of `sass:math`
+
+### Fixed
+
+- Issue with GitHub link in `NavbarMenu` component
 
 ## [0.3.0][] - 2021-04-12
 

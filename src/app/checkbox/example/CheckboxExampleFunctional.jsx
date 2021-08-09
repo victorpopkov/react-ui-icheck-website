@@ -11,9 +11,11 @@ const CheckboxExampleFunctional = () => {
   const [i1Checked, setI1Checked] = useState(false);
   const [i2Checked, setI2Checked] = useState(true);
   const [i3Checked, setI3Checked] = useState(false);
+
+  // Example using Bootstrap CSS classes. Replace with your own.
   return (
     <CheckboxGroup
-      checkboxWrapClassName="form-check p-0"
+      checkboxWrapClassName="form-check p-0" // Bootstrap
       checkboxWrapTag="div"
     >
       <Checkbox
@@ -27,14 +29,14 @@ const CheckboxExampleFunctional = () => {
         checked={i2Checked}
         label="#checkbox-2, <span>default</span>"
         labelTag="div"
-        labelTagClassName="d-inline"
+        labelTagClassName="d-inline" // Bootstrap
         onChange={(event, value) => setI2Checked(value)}
       />
       <Checkbox
         checkboxClassName="icheckbox_square-blue"
         checked={i3Checked}
         labelTag="div"
-        labelTagClassName="d-inline"
+        labelTagClassName="d-inline" // Bootstrap
         disabled
         onChange={(event, value) => setI3Checked(value)}
       >
@@ -54,7 +56,7 @@ const CheckboxExampleFunctional = () => {
   const [i2Checked, setI2Checked] = useState(true);
   const [i3Checked, setI3Checked] = useState(false);
   return (
-    <Example src={src} title="Functional">
+    <Example src={src} title="Functional Component">
       <CheckboxGroup
         checkboxWrapClassName="form-check p-0"
         checkboxWrapTag="div"

@@ -20,11 +20,12 @@ class RadioExampleInline extends Component {
   render() {
     const { radioValue } = this.state;
 
+    // Example using Bootstrap CSS classes. Replace with your own.
     return (
       <RadioGroup
-        className="d-flex align-items-center"
+        className="d-flex align-items-center" // Bootstrap
         name="radio"
-        radioWrapClassName="form-check form-check-inline"
+        radioWrapClassName="form-check form-check-inline" // Bootstrap
         radioWrapTag="div"
         value={radioValue}
         onChange={(event, value) => this.setState({ radioValue: value })}
@@ -33,20 +34,20 @@ class RadioExampleInline extends Component {
         <Radio
           label="#radio-2, <span>default</span>"
           labelTag="div"
-          labelTagClassName="d-inline"
+          labelTagClassName="d-inline" // Bootstrap
           radioClassName="iradio_square-blue"
           value="2"
         />
         <Radio
           labelTag="div"
-          labelTagClassName="d-inline"
+          labelTagClassName="d-inline" // Bootstrap
           radioClassName="iradio_square-blue"
           value="3"
           disabled
         >
           <span>#radio-3</span>
           {\`, \`}
-          <span className="label1">disabled</span>
+          <span>disabled</span>
         </Radio>
       </RadioGroup>
     );
@@ -100,7 +101,7 @@ class RadioExampleInline extends Component {
           >
             <span>#radio-3</span>
             {`, `}
-            <span className="label1">disabled</span>
+            <span>disabled</span>
           </Radio>
         </RadioGroup>
       </Example>

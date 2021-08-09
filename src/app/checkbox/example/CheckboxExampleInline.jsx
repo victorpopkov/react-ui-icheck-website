@@ -22,11 +22,12 @@ class CheckboxExampleInline extends Component {
   render() {
     const { i1, i2, i3 } = this.state;
 
+    // Example using Bootstrap CSS classes. Replace with your own.
     return (
       <CheckboxGroup
-        checkboxWrapClassName="form-check form-check-inline"
+        checkboxWrapClassName="form-check form-check-inline" // Bootstrap
         checkboxWrapTag="div"
-        className="d-flex align-items-center"
+        className="d-flex align-items-center" // Bootstrap
       >
         <Checkbox
           checkboxClassName="icheckbox_square-blue"
@@ -41,7 +42,7 @@ class CheckboxExampleInline extends Component {
           disabled={i2.disabled}
           label="#checkbox-2, <span>default</span>"
           labelTag="div"
-          labelTagClassName="d-inline"
+          labelTagClassName="d-inline" // Bootstrap
           onChange={(event, value) => this.setState({ i2: { ...i2, checked: value } })}
         />
         <Checkbox
@@ -49,7 +50,7 @@ class CheckboxExampleInline extends Component {
           checked={i3.checked}
           disabled={i3.disabled}
           labelTag="div"
-          labelTagClassName="d-inline"
+          labelTagClassName="d-inline" // Bootstrap
           onChange={(event, value) => this.setState({ i3: { ...i3, checked: value } })}
         >
           <span>#checkbox-3</span>

@@ -1,4 +1,5 @@
 import {
+  Alert,
   Col,
   Container,
   Nav,
@@ -83,6 +84,11 @@ class RadioPage extends Component {
               </Nav>
               <TabContent activeTab={activeTab} className="mb-4">
                 <TabPane tabId="examples">
+                  <Alert color="primary" className="mt-4" fade={false}>
+                    Bootstrap is used as an example for making horizontal and
+                    inline radio groups. Replace with your own to match your
+                    needs.
+                  </Alert>
                   <RadioExampleDefault />
                   <RadioExampleInline />
                   <RadioExampleFunctional />

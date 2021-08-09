@@ -9,10 +9,12 @@ import React, { useState } from 'react';
 
 const RadioExampleFunctional = () => {
   const [radioValue, setRadioValue] = useState('2');
+
+  // Example using Bootstrap CSS classes. Replace with your own.
   return (
     <RadioGroup
       name="radio"
-      radioWrapClassName="form-check p-0"
+      radioWrapClassName="form-check p-0" // Bootstrap
       radioWrapTag="div"
       value={radioValue}
       onChange={(event, value) => setRadioValue(value)}
@@ -21,13 +23,13 @@ const RadioExampleFunctional = () => {
       <Radio
         label="#radio-2, <span>default</span>"
         labelTag="div"
-        labelTagClassName="d-inline"
+        labelTagClassName="d-inline" // Bootstrap
         radioClassName="iradio_square-blue"
         value="2"
       />
       <Radio
         labelTag="div"
-        labelTagClassName="d-inline"
+        labelTagClassName="d-inline" // Bootstrap
         radioClassName="iradio_square-blue"
         value="3"
         disabled
@@ -46,7 +48,7 @@ export default RadioExampleFunctional;`;
 const RadioExampleFunctional = () => {
   const [radioValue, setRadioValue] = useState('2');
   return (
-    <Example src={src} title="Functional">
+    <Example src={src} title="Functional Component">
       <RadioGroup
         name="radio"
         radioWrapClassName="form-check p-0"

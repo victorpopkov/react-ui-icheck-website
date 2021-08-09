@@ -25,9 +25,9 @@ class CheckboxExampleInline extends Component {
     // Example using Bootstrap CSS classes. Replace with your own.
     return (
       <CheckboxGroup
-        checkboxWrapClassName="form-check form-check-inline" // Bootstrap
+        checkboxWrapClassName="form-check form-check-inline p-0" // Bootstrap
         checkboxWrapTag="div"
-        className="d-flex align-items-center" // Bootstrap
+        className="d-flex align-items-center p-4 overflow-auto text-nowrap" // Bootstrap
       >
         <Checkbox
           checkboxClassName="icheckbox_square-blue"
@@ -83,9 +83,9 @@ class CheckboxExampleInline extends Component {
     return (
       <Example src={src} title="Inline">
         <CheckboxGroup
-          checkboxWrapClassName="form-check form-check-inline"
+          checkboxWrapClassName="form-check form-check-inline p-0"
           checkboxWrapTag="div"
-          className="d-flex align-items-center"
+          className="d-flex align-items-center p-4 overflow-auto text-nowrap"
         >
           <Checkbox
             checkboxClassName="icheckbox_square-blue"

@@ -27,6 +27,7 @@ class CheckboxExampleDefault extends Component {
       <CheckboxGroup
         checkboxWrapClassName="form-check p-0" // Bootstrap
         checkboxWrapTag="div"
+        className="p-4" // Bootstrap
       >
         <Checkbox
           checkboxClassName="icheckbox_square-blue"
@@ -84,6 +85,7 @@ class CheckboxExampleDefault extends Component {
         <CheckboxGroup
           checkboxWrapClassName="form-check p-0"
           checkboxWrapTag="div"
+          className="p-4"
         >
           <Checkbox
             checkboxClassName="icheckbox_square-blue"

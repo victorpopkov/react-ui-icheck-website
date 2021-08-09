@@ -23,9 +23,9 @@ class RadioExampleInline extends Component {
     // Example using Bootstrap CSS classes. Replace with your own.
     return (
       <RadioGroup
-        className="d-flex align-items-center" // Bootstrap
+        className="d-flex align-items-center p-4 overflow-auto text-nowrap" // Bootstrap
         name="radio"
-        radioWrapClassName="form-check form-check-inline" // Bootstrap
+        radioWrapClassName="form-check form-check-inline p-0" // Bootstrap
         radioWrapTag="div"
         value={radioValue}
         onChange={(event, value) => this.setState({ radioValue: value })}
@@ -73,9 +73,9 @@ class RadioExampleInline extends Component {
     return (
       <Example src={src} title="Inline">
         <RadioGroup
-          className="d-flex align-items-center"
+          className="d-flex align-items-center p-4 overflow-auto text-nowrap"
           name="radio"
-          radioWrapClassName="form-check form-check-inline"
+          radioWrapClassName="form-check form-check-inline p-0"
           radioWrapTag="div"
           value={radioValue}
           onChange={(event, value) => this.setState({ radioValue: value })}
@@ -88,13 +88,13 @@ class RadioExampleInline extends Component {
           <Radio
             label="#radio-2, <span>default</span>"
             labelTag="div"
-            labelTagClassName="d-inline"
+            labelTagClassName="d-inline text-nowrap"
             radioClassName="iradio_square-blue"
             value="2"
           />
           <Radio
             labelTag="div"
-            labelTagClassName="d-inline"
+            labelTagClassName="d-inline text-nowrap"
             radioClassName="iradio_square-blue"
             value="3"
             disabled

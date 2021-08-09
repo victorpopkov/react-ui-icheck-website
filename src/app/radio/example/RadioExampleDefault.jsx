@@ -23,6 +23,7 @@ class RadioExampleDefault extends Component {
     // Example using Bootstrap CSS classes. Replace with your own.
     return (
       <RadioGroup
+        className="p-4" // Bootstrap
         name="radio"
         radioWrapClassName="form-check p-0" // Bootstrap
         radioWrapTag="div"
@@ -72,6 +73,7 @@ class RadioExampleDefault extends Component {
     return (
       <Example src={src} title="Default">
         <RadioGroup
+          className="p-4"
           name="radio"
           radioWrapClassName="form-check p-0"
           radioWrapTag="div"

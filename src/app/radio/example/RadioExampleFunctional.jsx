@@ -13,6 +13,7 @@ const RadioExampleFunctional = () => {
   // Example using Bootstrap CSS classes. Replace with your own.
   return (
     <RadioGroup
+      className="p-4" // Bootstrap
       name="radio"
       radioWrapClassName="form-check p-0" // Bootstrap
       radioWrapTag="div"
@@ -50,6 +51,7 @@ const RadioExampleFunctional = () => {
   return (
     <Example src={src} title="Functional Component">
       <RadioGroup
+        className="p-4"
         name="radio"
         radioWrapClassName="form-check p-0"
         radioWrapTag="div"

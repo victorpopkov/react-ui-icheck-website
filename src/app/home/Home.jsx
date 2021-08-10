@@ -7,31 +7,24 @@ import { Jumbotron, Sidebar } from '../common';
 
 @hot(module)
 class Home extends Component {
-  content =
-    'This library has been originally intended to be a fork of the [react-icheck](https://github.com/luqin/react-icheck)\n' +
-    "created by [luqin](https://github.com/luqin) which didn't seem to be maintained anymore. However, after\n" +
-    'diving into the original code it became more convenient to create a new one as a\n' +
-    'drop-in replacement with some additional features.\n' +
-    '\n' +
-    '### Differences\n' +
-    '\n' +
-    'Below you can find the list of the main differences from the original\n' +
-    '[react-icheck](https://github.com/luqin/react-icheck) library:\n' +
-    '\n' +
-    '- Refactored and improved the existing codebase:\n' +
-    '\n' +
-    '  - Added `onBlur` and `onFocus` label events to accompany `onMouseOut` and `onMouseOver`\n' +
-    '  - Moved all corresponding properties from the `EnchantedSwitch` to both `Checkbox` and `Radio` components and removed unused ones\n' +
-    '  - Removed `EnchantedSwitch` in favour of `Input` and `Label` components\n' +
-    '  - Removed `refs` usage to follow the "[Don’t Overuse Refs](https://reactjs.org/docs/refs-and-the-dom.html#dont-overuse-refs)" guide\n' +
-    '\n' +
-    '- Introduced `CheckboxGroup` similar to the `RadioGroup`\n' +
-    '\n' +
-    '- Introduced `checkboxWrapClassName` and `checkboxWrapTag` properties for `RadioGroup` to control the wrapping behaviour of the radio elements\n' +
-    '\n' +
-    '- Introduced `labelTag` and `labelTagClassName` properties for both `Checkbox` and `Radio` components to control the rendering of the label content\n' +
-    '\n' +
-    '- Labels for `Checkbox` and `Radio` can be passed as children alongside with the original label property';
+  content = `This library has been originally intended to be a fork of the [react-icheck](https://github.com/luqin/react-icheck)
+created by [luqin](https://github.com/luqin) which didn't seem to be maintained anymore. However, after
+diving into the original code it became more convenient to create a new one as a
+drop-in replacement with some additional features.
+
+### Differences
+
+Below you can find the list of the main differences from the original
+[react-icheck](https://github.com/luqin/react-icheck) library:
+
+- Added \`onBlur\` and \`onFocus\` label events to accompany \`onMouseOut\` and \`onMouseOver\`
+- Added support for labels as \`Checkbox\` and \`Radio\` children
+- Introduced \`CheckboxGroup\` similar to the \`RadioGroup\`
+- Introduced \`labelTag\` and \`labelTagClassName\` properties for \`Checkbox\` and \`Radio\`
+- Introduced \`radioWrapClassName\` and \`radioWrapTag\` properties for \`RadioGroup\`
+- Moved corresponding properties from \`EnchantedSwitch\` to \`Checkbox\` and \`Radio\`
+- Removed \`EnchantedSwitch\` in favour of \`Input\` and \`Label\`
+- Removed \`refs\` usage to follow the "[Don’t Overuse Refs](https://reactjs.org/docs/refs-and-the-dom.html#dont-overuse-refs)" guide`;
 
   componentDidMount() {
     Prism.highlightAll();

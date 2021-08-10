@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CSS classes to match the Bootstrap v5
 - Common `Jumbotron` component layout
 - Dependencies to match the latest ones
+- Differences structure in `Home` component
 - GitHub buttons to become fixed in height
 - Prop `source` to `children` for `react-markdown`
 

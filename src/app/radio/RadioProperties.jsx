@@ -4,10 +4,10 @@ import { hot } from 'react-hot-loader';
 
 const RadioProperties = () => (
   <div>
-    <h5 className="mb-4 mt-4">Properties</h5>
+    <h5 className="my-4">Properties</h5>
     <Row>
       <Col xs={12}>
-        <h6 className="mb-4 mt-4">RadioGroup</h6>
+        <h6 className="my-4">RadioGroup</h6>
         <pre>
           <code className="language-jsx">
             {`RadioGroup.propTypes = {
@@ -26,7 +26,7 @@ const RadioProperties = () => (
     </Row>
     <Row>
       <Col xs={12}>
-        <h6 className="mb-4 mt-4">Radio</h6>
+        <h6 className="my-4">Radio</h6>
         <pre>
           <code className="language-jsx">
             {`Radio.propTypes = {

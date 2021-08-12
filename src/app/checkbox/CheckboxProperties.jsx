@@ -4,10 +4,10 @@ import { hot } from 'react-hot-loader';
 
 const CheckboxProperties = () => (
   <div>
-    <h5 className="mb-4 mt-4">Properties</h5>
+    <h5 className="my-4">Properties</h5>
     <Row>
       <Col xs={12}>
-        <h6 className="mb-4 mt-4">CheckboxGroup</h6>
+        <h6 className="my-4">CheckboxGroup</h6>
         <pre>
           <code className="language-jsx">
             {`CheckboxGroup.propTypes = {
@@ -22,7 +22,7 @@ const CheckboxProperties = () => (
     </Row>
     <Row>
       <Col xs={12}>
-        <h6 className="mb-4 mt-4">Checkbox</h6>
+        <h6 className="my-4">Checkbox</h6>
         <pre>
           <code className="language-jsx">
             {`Checkbox.propTypes = {

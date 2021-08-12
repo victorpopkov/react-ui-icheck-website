@@ -30,7 +30,7 @@ class Example extends Component {
 
     return (
       <div>
-        <h5 className="mb-4 mt-4">{title}</h5>
+        <h5 className="my-4">{title}</h5>
         <Form styleName="example">
           {children}
           <Button

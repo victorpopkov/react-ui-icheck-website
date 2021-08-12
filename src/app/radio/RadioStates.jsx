@@ -135,7 +135,7 @@ class RadioStates extends Component {
 
     return (
       <div>
-        <h5 className="mb-4 mt-4">States</h5>
+        <h5 className="my-4">States</h5>
         <Table responsive>
           <thead>
             <tr>

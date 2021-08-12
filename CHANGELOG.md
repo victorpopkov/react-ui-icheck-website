@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Changed
+
+- CSS classes `mb-4 mt-4` to `my-4`
+
 ## [0.4.0][] - 2021-08-10
 
 ### Added

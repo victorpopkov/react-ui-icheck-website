@@ -1,13 +1,13 @@
-import './NavbarMobile.scss';
 import { Col, Nav, Row } from 'reactstrap';
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import GitHub from '../github/GitHub';
 import config from '../../../../config';
 import navItem from './navItem';
+import styles from './NavbarMobile.scss';
 
 const NavbarMobile = () => (
-  <div styleName="mobile">
+  <div className={styles.mobile}>
     <Row>
       <Col sm={12}>
         <GitHub />

@@ -1,9 +1,9 @@
-import './Example.scss';
 import { Button, Collapse, Form } from 'reactstrap';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 import Source from '../source/Source';
+import styles from './Example.scss';
 
 @hot(module)
 class Example extends Component {
@@ -31,12 +31,12 @@ class Example extends Component {
     return (
       <div>
         <h5 className="my-4">{title}</h5>
-        <Form styleName="example">
+        <Form className={styles.example}>
           {children}
           <Button
+            className={styles['view-source']}
             color="primary"
             size="sm"
-            styleName="view-source"
             outline
             onClick={this.toggleCollapse}
           >

@@ -1,12 +1,13 @@
-import './Skin.scss';
 import { Checkbox, CheckboxGroup, Radio, RadioGroup } from 'react-ui-icheck';
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import Sidebar from '../common/sidebar/Sidebar';
 import SkinColorSchemes from './SkinColorSchemes';
+import styles from './Skin.scss';
 
 @hot(module)
 class Skin extends Component {
@@ -73,7 +74,7 @@ class Skin extends Component {
         <Row>
           <Col lg={9}>
             <h2 className="heading">{title}</h2>
-            <Col className="mt-4" lg={11} styleName={`skin-${skin}`}>
+            <Col className={classNames(styles[`skin-${skin}`], 'mt-4')} lg={11}>
               <Row>
                 <Col className="mb-2 mb-lg-0" lg={6} md={12}>
                   <CheckboxGroup

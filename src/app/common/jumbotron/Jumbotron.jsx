@@ -1,4 +1,3 @@
-import './Jumbotron.scss';
 import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import { hot } from 'react-hot-loader';

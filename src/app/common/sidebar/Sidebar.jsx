@@ -1,10 +1,10 @@
-import './Sidebar.scss';
 import { Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import _ from 'lodash';
 import { hot } from 'react-hot-loader';
 import SidebarBadge from './SidebarBadge';
+import styles from './Sidebar.scss';
 
 const badges = [
   {
@@ -41,8 +41,8 @@ const badges = [
 
 const navItem = (name, to) => (
   <NavItem>
-    <LinkContainer activeStyleName="active" to={to}>
-      <NavLink styleName="link">{name}</NavLink>
+    <LinkContainer activeClassName={styles.active} to={to}>
+      <NavLink className={styles.link}>{name}</NavLink>
     </LinkContainer>
   </NavItem>
 );
@@ -53,8 +53,8 @@ const Sidebar = () => {
       <h5 className="pb-2">Getting Started</h5>
       <Nav vertical>
         <NavItem>
-          <IndexLinkContainer activeStyleName="active" to="/">
-            <NavLink styleName="link">Overview</NavLink>
+          <IndexLinkContainer activeClassName={styles.active} to="/">
+            <NavLink className={styles.link}>Overview</NavLink>
           </IndexLinkContainer>
         </NavItem>
         {navItem('Checkbox', '/checkbox')}

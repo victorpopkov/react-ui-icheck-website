@@ -1,8 +1,8 @@
-import './SkinColorSchemes.scss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
+import styles from './SkinColorSchemes.scss';
 
 @hot(module)
 class SkinColorSchemes extends React.Component {
@@ -77,7 +77,7 @@ class SkinColorSchemes extends React.Component {
     });
 
     return (
-      <div styleName="colors">
+      <div className={styles.colors}>
         <strong>Color Schemes</strong>
         <ul>{list}</ul>
       </div>

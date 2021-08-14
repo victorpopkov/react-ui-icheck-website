@@ -1,15 +1,15 @@
-import './SidebarBadge.scss';
 import { NavItem, NavLink } from 'reactstrap';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
+import styles from './SidebarBadge.scss';
 
 const SidebarBadge = ({ alt, href, path }) => (
   <NavItem>
     <NavLink
+      className={styles.badge}
       href={href}
       rel="noopener noreferrer"
-      styleName="badge"
       target="_blank"
     >
       <img alt={alt} src={`https://img.shields.io/${path}?style=flat-square`} />

@@ -89,13 +89,13 @@ module.exports = merge(common, {
     ],
   },
   output: {
-    filename: '[name]-[hash].js',
+    filename: '[name].[chunkhash].js',
   },
   plugins: [
     new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name]-[chunkhash].css',
+      filename: 'assets/css/[name].[chunkhash].css',
       chunkFilename: 'assets/css/[id].css',
     }),
   ],

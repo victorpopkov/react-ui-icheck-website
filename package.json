@@ -67,7 +67,6 @@
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.1.1",
-    "precss": "^4.0.0",
     "prettier": "^2.3.2",
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.37.5",

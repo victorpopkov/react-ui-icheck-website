@@ -19,7 +19,8 @@ const imageLoaders = [
 module.exports = {
   context: paths.root,
   entry: {
-    app: [path.join(paths.src, 'app.jsx')],
+    vendor: path.join(paths.scss, 'vendor.scss'),
+    app: [path.join(paths.src, 'app.jsx'), path.join(paths.scss, 'app.scss')],
   },
   module: {
     rules: [

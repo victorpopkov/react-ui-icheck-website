@@ -1,13 +1,14 @@
 const path = require('path');
 
 const root = path.resolve(__dirname, '../');
-const config = path.resolve(root, 'config/');
-const dist = path.resolve(root, 'dist/');
 const src = path.resolve(root, 'src/');
+const assets = path.resolve(src, 'assets/');
 
 module.exports = {
-  config,
-  dist,
+  config: path.resolve(root, 'config/'),
+  dist: path.resolve(root, 'dist/'),
+  scss: path.resolve(assets, 'scss/'),
+  assets,
   root,
   src,
 };

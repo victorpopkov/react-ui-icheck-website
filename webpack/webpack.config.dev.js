@@ -61,22 +61,22 @@ module.exports = merge(common, {
       },
       {
         test: /\.css?$/,
-        include: [/node_modules/],
+        include: [/node_modules|src\/assets/],
         use: cssLoaders('global'),
       },
       {
         test: /\.css?$/,
-        exclude: [/node_modules/],
+        exclude: [/node_modules|src\/assets/],
         use: cssLoaders('local'),
       },
       {
         test: /\.scss?$/,
-        include: [/node_modules/],
+        include: [/node_modules|src\/assets/],
         use: scssLoaders('global'),
       },
       {
         test: /\.scss?$/,
-        exclude: [/node_modules/],
+        exclude: [/node_modules|src\/assets/],
         use: scssLoaders('local'),
       },
     ],

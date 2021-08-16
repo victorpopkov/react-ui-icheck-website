@@ -1,6 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'icheck/skins/all.css';
-import './style.scss';
 import { Helmet } from 'react-helmet';
 import React from 'react';
 import PropTypes from 'prop-types';

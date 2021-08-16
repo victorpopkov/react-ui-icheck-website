@@ -7,9 +7,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Add license mentions in CSS
+
 ### Changed
 
-- CSS classes `mb-4 mt-4` to `my-4`
+- Bump dependencies
+- Disable unused Bootstrap components
+- Rename output CSS and JS
+- Replace CSS classes `mb-4 mt-4` to `my-4`
+- Replace `styleName` prop with `className`
+- Separate `vendor` and `app` output CSS
+
+### Removed
+
+- Remove `babel-plugin-react-css-modules` dependency
+- Remove `precss` dependency
+- Remove `precss` from PostCSS configurations
 
 ## [0.4.0][] - 2021-08-10
 

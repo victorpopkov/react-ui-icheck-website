@@ -5,17 +5,6 @@ const webpack = require('webpack');
 const config = require('../config');
 const paths = require('./paths');
 
-const imageLoaders = [
-  {
-    loader: 'url-loader',
-    options: {
-      limit: 512,
-      name: 'assets/images/[name].[ext]',
-      publicPath: config.app.publicPath,
-    },
-  },
-];
-
 module.exports = {
   context: paths.root,
   entry: {
@@ -26,9 +15,15 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        exclude: /node_modules\/icheck/,
         use: [
-          ...imageLoaders,
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 512,
+              name: 'assets/images/[name].[ext]',
+              publicPath: config.app.publicPath,
+            },
+          },
           {
             loader: 'svgo-loader',
             options: {
@@ -42,23 +37,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif)$/,
-        exclude: /node_modules\/icheck/,
-        use: imageLoaders,
-      },
-      {
-        test: /\.(jpe?g|png|gif)$/,
-        include: /node_modules\/icheck/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 512,
-              name: 'assets/images/icheck/[1]/[name].[ext]',
-              publicPath: config.app.publicPath,
-              regExp: /\/([a-z0-9]+)\/[a-z0-9]+(@2x)?\.png$/,
-            },
-          },
-        ],
+        type: 'asset',
       },
     ],
   },

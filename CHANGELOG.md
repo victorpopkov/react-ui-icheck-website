@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Bump dependencies
 - Disable unused Bootstrap components
+- Migrate to webpack asset modules
 - Rename output CSS and JS
 - Replace CSS classes `mb-4 mt-4` to `my-4`
 - Replace `styleName` prop with `className`
@@ -23,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 
 - Remove `babel-plugin-react-css-modules` dependency
+- Remove `file-loader` dependency
 - Remove `precss` dependency
 - Remove `precss` from PostCSS configurations
 

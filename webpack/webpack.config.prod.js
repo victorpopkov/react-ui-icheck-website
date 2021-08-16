@@ -78,12 +78,7 @@ module.exports = merge(common, {
       new TerserPlugin(),
       new CssMinimizerPlugin({
         minimizerOptions: {
-          preset: [
-            'default',
-            {
-              discardComments: { removeAll: true },
-            },
-          ],
+          preset: ['default'],
         },
       }),
     ],

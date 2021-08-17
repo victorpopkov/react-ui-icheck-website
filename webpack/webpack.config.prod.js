@@ -8,6 +8,8 @@ const webpack = require('webpack');
 const common = require('./webpack.config.common');
 const paths = require('./paths');
 
+const performanceSize = 256 * 3 * 1000;
+
 const cssLoaders = (mode) => [
   MiniCssExtractPlugin.loader,
   {
@@ -85,6 +87,10 @@ module.exports = merge(common, {
   },
   output: {
     filename: '[name].[chunkhash].js',
+  },
+  performance: {
+    maxAssetSize: performanceSize,
+    maxEntrypointSize: performanceSize,
   },
   plugins: [
     new webpack.IgnorePlugin(/\/config$/, /\.\/dev/),

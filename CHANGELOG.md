@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Remove `file-loader` dependency
 - Remove `precss` dependency
 - Remove `precss` from PostCSS configurations
+- Remove webpack build size warning
 
 ## [0.4.0][] - 2021-08-10
 

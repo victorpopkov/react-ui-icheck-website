@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Add license mentions in CSS
+- Add CSS license mentions
 
 ### Changed
 
@@ -17,116 +17,97 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Disable unused Bootstrap components
 - Migrate to webpack asset modules
 - Rename output CSS and JS
-- Replace CSS classes `mb-4 mt-4` to `my-4`
-- Replace `styleName` prop with `className`
+- Replace CSS classes `mb-4 mt-4` with `my-4`
+- Replace `styleName` with `className`
 - Separate `vendor` and `app` output CSS
 
 ### Removed
 
-- Remove `babel-plugin-react-css-modules` dependency
-- Remove `file-loader` dependency
-- Remove `precss` dependency
-- Remove `precss` from PostCSS configurations
-- Remove webpack build size warning
+- Remove [webpack][] build size warning
+- Remove `babel-plugin-react-css-modules`
+- Remove `file-loader`
+- Remove `precss`
 
 ## [0.4.0][] - 2021-08-10
 
 ### Added
 
-- Bootstrap usage mentions in examples
-- Mobile responsiveness for inline examples
-- Mobile responsiveness for tables
+- Add Bootstrap usage mention in examples
+- Add inline examples mobile responsiveness
+- Add tables mobile responsiveness
 
 ### Changed
 
-- Bootstrap from `4.6.0` to `5.1.0`
-- Bottom border for `th` and `td` tags
-- CSS classes to match the Bootstrap v5
-- Common `Jumbotron` component layout
-- Dependencies to match the latest ones
-- Differences structure in `Home` component
-- GitHub buttons to become fixed in height
-- Prop `source` to `children` for `react-markdown`
-
-### Removed
-
-- Dependency `optimize-css-assets-webpack-plugin` in favour of `css-minimizer-webpack-plugin`
-- Slashes as divisions from SCSS in favour of `sass:math`
+- Bump dependencies
+- Change "Home" page content
+- Change `<th />` and `<td />` bottom border
+- Change jumbotron layout
+- Make [GitHub][] buttons fixed in height
+- Migrate Bootstrap from `4.6.0` to `5.1.0`
+- Replace SCSS division slashes with `sass:math`
+- Replace `optimize-css-assets-webpack-plugin` with `css-minimizer-webpack-plugin`
+- Replace `react-markdown` `source` prop with children
 
 ### Fixed
 
-- Issue with GitHub link in `NavbarMenu` component
+- Fix navbar [GitHub][] link issue
 
 ## [0.3.0][] - 2021-04-12
 
 ### Added
 
-- **[maintenance]** Scripts `audit:fix` and `deduplicate` in `package.json`
-- Common `GitHub` component
-- Dependency `react-helmet`
-- GitHub buttons in the common `NavbarMenu` component
+- **[maintenance]** Add `audit:fix` and `deduplicate` scripts
+- Add `react-helmet`
+- Add navbar [GitHub][] buttons
 
 ### Changed
 
-- **[maintenance]** Configurations for "GitHub Actions" CI build and lint jobs
-- **[maintenance]** Configurations for "GitHub Actions" deploy production job
-- **[maintenance]** Scripts `build` and `watch` in `package.json`
-- Common `Navbar` component mobile responsiveness
-- CSS loading mode from `global` to `local`
-- Dependencies to match the latest ones
-- GitHub buttons in the common `Footer` component
-- Import of `webpack-merge` in webpack configurations
-- Replace `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
-- Sidebar to become hidden on tablets
-- Webpack aliases to exclude the "Website" prefix
-
-### Removed
-
-- Dependency `node-sass` in favour of `sass`
+- **[maintenance]** Change [GitHub Actions][] jobs configurations
+- **[maintenance]** Change `build` and `watch` scripts
+- Bump dependencies
+- Change `css-loader` mode from `global` to `local`
+- Change footer [GitHub][] buttons
+- Exclude the "website" prefix in [webpack][] aliases
+- Hide sidebar on tablets
+- Improve navbar mobile responsiveness
+- Reorder `webpack-merge` import
+- Replace deprecated `node-sass` with `sass`
+- Replace deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
 
 ## [0.2.0][] - 2020-06-23
 
 ### Added
 
-- **[maintenance]** Integration with "GitHub Actions" for CI building and linting
-- **[maintenance]** Integration with "GitHub Actions" for production deploying
-- **[maintenance]** Integration with Prettier
-- Checkbox and radio "Functional" examples
-- Checkbox and radio "States" examples
-- Exceptions for `react/jsx-props-no-spreading` ESLint rule
-- Hot reloading in some missed components
-- Sidebar `NavLink` active state
+- Add "Functional" and "States" examples
+- Add `react/jsx-props-no-spreading` [ESLint][] exception
+- Add hot reloading for some missed components
+- Add jumbotron website version and revision
+- Add sidebar links active state
 
 ### Changed
 
-- App and library configurations
-- Badges to be in the sidebar
-- Checkbox and radio examples
-- Component `App` to become functional
-- Configurations for ESLint to work with Prettier
-- Configurations for stylelint to work with Prettier
-- Content of the "Home" page
-- Content of the "Installation" page
-- Dependencies to match the latest ones
-- Deprecated `componentWillReceiveProps` in favour of `getDerivedStateFromProps`
-- Extension `JS` to `JSX` where appropriate
-- Jumbotron to include the website version and revision
-- Markdown styles to become separated
-- Sidebar `NavLink` height
+- **[maintenance]** Replace [Travis CI][] with [GitHub Actions][] to build, lint and deploy
+- **[maintenance]** Replace [remark][] with [Prettier][]
+- Bump dependencies
+- Change "Home" and "Installation" content
+- Change [ESLint][] and [stylelint][] configurations to work with [Prettier][]
+- Change `App` component to become functional
+- Change app and library configurations
+- Change examples
+- Change sidebar links height
+- Move badges to the sidebar
+- Replace `.babelrc` with `babel.config.js`
+- Replace `JS` extension with `JSX` where appropriate
+- Replace deprecated `better-npm-run` with `cross-env`
+- Replace deprecated `componentWillReceiveProps` with `getDerivedStateFromProps`
+- Separate markdown styles
 - Use title case where appropriate
-
-### Removed
-
-- **[maintenance]** Integration with "Travis CI" in favour of "GitHub Actions"
-- **[maintenance]** Integration with remark in favour of Prettier
-- Configurations `.babelrc` in favour of `babel.config.js`
-- Deprecated `better-npm-run` in favour of `cross-env`
 
 ### Fixed
 
-- Issue with Prism.js code highlighting after component updates
-- Some ESLint code linting issues
-- Some Prettier code formatting issues
+- Fix [ESLint][] code linting issues
+- Fix [Prettier][] code formatting issues
+- Fix code highlighting issues
 
 ## 0.1.0 - 2019-07-15
 
@@ -136,3 +117,11 @@ First release.
 [0.4.0]: https://github.com/victorpopkov/react-ui-icheck-website/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/victorpopkov/react-ui-icheck-website/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/victorpopkov/react-ui-icheck-website/compare/v0.1.0...v0.2.0
+[eslint]: https://eslint.org/
+[github actions]: https://github.com/features/actions
+[github]: https://github.com/
+[prettier]: https://prettier.io/
+[remark]: https://remark.js.org/
+[stylelint]: https://stylelint.io/
+[travis ci]: https://travis-ci.org/
+[webpack]: https://webpack.js.org/

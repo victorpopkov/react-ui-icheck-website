@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "bootstrap": "^5.1.0",
+    "bootstrap": "^5.1.1",
     "classnames": "^2.3.1",
     "generic-names": "^3.0.0",
     "icheck": "^1.0.2",

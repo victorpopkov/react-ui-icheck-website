@@ -31,7 +31,7 @@ const scssLoaders = (mode) => [
   },
   {
     loader: 'sass-resources-loader',
-    options: { resources: path.join(paths.src, 'app/sass-resources.scss') },
+    options: { resources: path.join(paths.scss, 'sass-resources.scss') },
   },
 ];
 

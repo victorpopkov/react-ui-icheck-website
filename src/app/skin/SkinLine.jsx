@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-wrap-multilines */
 import { Checkbox, CheckboxGroup, Radio, RadioGroup } from 'react-ui-icheck';
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
@@ -59,11 +58,15 @@ class SkinLine extends Component {
   }
 
   render() {
+    const { latestRevision, latestVersion } = this.props;
     const { color, radioValue } = this.state;
 
     return (
       <main role="main">
-        <Jumbotron />
+        <Jumbotron
+          latestRevision={latestRevision}
+          latestVersion={latestVersion}
+        />
         <Container>
           <Row>
             <Col lg={9}>
@@ -201,10 +204,14 @@ import { Checkbox, Radio } from 'react-ui-icheck';
 
 SkinLine.propTypes = {
   color: PropTypes.string,
+  latestRevision: PropTypes.string,
+  latestVersion: PropTypes.string,
 };
 
 SkinLine.defaultProps = {
   color: null,
+  latestRevision: null,
+  latestVersion: null,
 };
 
 export default SkinLine;

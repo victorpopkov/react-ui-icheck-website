@@ -1,28 +1,31 @@
 import { Col, Container, Row } from 'reactstrap';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import config from '@Config';
-import JumbotronVersion from './JumbotronVersion';
+import Version from '../version/Version';
 
-const Jumbotron = () => (
+const Jumbotron = ({ latestRevision, latestVersion }) => (
   <Container>
     <Col className="py-5 text-center" lg={12}>
-      <h1>{config.lib.name}</h1>
-      <JumbotronVersion
-        className="mt-4"
+      <h1 className="mb-3">{config.lib.name}</h1>
+      <Version
+        className="me-2"
+        color="primary"
         name={config.lib.name}
         revision={config.lib.revision}
-        title="Library"
-        version={config.lib.version}
+        title="Latest Stable"
+        version={`v${config.lib.version}`}
       />
-      <JumbotronVersion
-        className="mb-4"
-        name={config.app.name}
-        revision={config.app.revision}
-        title="Website"
-        version={config.app.version}
-      />
-      <Row className="justify-content-center">
+      {latestVersion && (
+        <Version
+          name={config.app.name}
+          revision={latestRevision}
+          title="Latest Development"
+          version={`v${latestVersion}`}
+        />
+      )}
+      <Row className="justify-content-center mt-3">
         <Col lg={6} md={8} xs={12}>
           <pre className="text-center">
             <code className="language-bash">
@@ -34,5 +37,15 @@ const Jumbotron = () => (
     </Col>
   </Container>
 );
+
+Jumbotron.propTypes = {
+  latestRevision: PropTypes.string,
+  latestVersion: PropTypes.string,
+};
+
+Jumbotron.defaultProps = {
+  latestRevision: null,
+  latestVersion: null,
+};
 
 export default hot(module)(Jumbotron);

@@ -22,6 +22,7 @@ module.exports = {
     name: lib,
     repository: `https://github.com/victorpopkov/${lib}`,
     revision: process.env.LIB_REVISION,
+    user: 'victorpopkov',
     version: packageJson.dependencies[lib].replace(/^\^/, ''),
   },
 };

@@ -1,6 +1,7 @@
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
@@ -35,9 +36,14 @@ Below you can find the list of the main differences from the original
   }
 
   render() {
+    const { latestRevision, latestVersion } = this.props;
+
     return (
       <main className="home" role="main">
-        <Jumbotron />
+        <Jumbotron
+          latestRevision={latestRevision}
+          latestVersion={latestVersion}
+        />
         <Container>
           <Row>
             <Col lg={9}>
@@ -51,5 +57,15 @@ Below you can find the list of the main differences from the original
     );
   }
 }
+
+Home.propTypes = {
+  latestRevision: PropTypes.string,
+  latestVersion: PropTypes.string,
+};
+
+Home.defaultProps = {
+  latestRevision: null,
+  latestVersion: null,
+};
 
 export default Home;

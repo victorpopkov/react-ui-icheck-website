@@ -4,22 +4,18 @@
 
   :global .container {
     box-shadow: 0 -1px 0 transparentize($black, 0.9);
+    padding: 1rem 0;
   }
 
-  .content {
-    padding-bottom: $grid-gutter-width;
-    padding-top: $grid-gutter-width;
-  }
-
-  .github {
+  h6 {
     display: inline-block;
-    height: 3rem;
   }
 
   ul {
     display: inline-block;
     line-height: 1.5;
     list-style: none;
+    margin: 0 1rem 0;
     padding: 0;
     vertical-align: middle;
   }
@@ -42,8 +38,13 @@
 
 @include media-breakpoint-down(sm) {
   .footer {
+    font-size: 0.85em;
     margin-top: math.div($grid-gutter-width, 2);
     vertical-align: middle;
+
+    :global .container {
+      padding: 0.5rem 0;
+    }
 
     .content {
       padding-bottom: math.div($grid-gutter-width, 2);
@@ -52,11 +53,15 @@
 
     ul {
       display: block;
+      margin: 0 0 0.25rem;
       text-align: center;
     }
 
     li {
       display: inline-block;
+    }
+
+    .version {
     }
   }
 }

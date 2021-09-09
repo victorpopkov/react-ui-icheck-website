@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
@@ -21,7 +22,7 @@ import RadioProperties from './RadioProperties';
 import RadioStates from './RadioStates';
 
 @hot(module)
-class RadioPage extends Component {
+class Radio extends Component {
   constructor(props) {
     super(props);
 
@@ -49,11 +50,15 @@ class RadioPage extends Component {
   }
 
   render() {
+    const { latestRevision, latestVersion } = this.props;
     const { activeTab } = this.state;
 
     return (
       <main role="main">
-        <Jumbotron />
+        <Jumbotron
+          latestRevision={latestRevision}
+          latestVersion={latestVersion}
+        />
         <Container>
           <Row>
             <Col lg={9}>
@@ -107,4 +112,14 @@ class RadioPage extends Component {
   }
 }
 
-export default RadioPage;
+Radio.propTypes = {
+  latestRevision: PropTypes.string,
+  latestVersion: PropTypes.string,
+};
+
+Radio.defaultProps = {
+  latestRevision: null,
+  latestVersion: null,
+};
+
+export default Radio;

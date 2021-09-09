@@ -1,6 +1,7 @@
 import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
@@ -36,9 +37,14 @@ class Installation extends Component {
   }
 
   render() {
+    const { latestRevision, latestVersion } = this.props;
+
     return (
       <main role="main">
-        <Jumbotron />
+        <Jumbotron
+          latestRevision={latestRevision}
+          latestVersion={latestVersion}
+        />
         <Container>
           <Row>
             <Col lg={9}>
@@ -52,5 +58,15 @@ class Installation extends Component {
     );
   }
 }
+
+Installation.propTypes = {
+  latestRevision: PropTypes.string,
+  latestVersion: PropTypes.string,
+};
+
+Installation.defaultProps = {
+  latestRevision: null,
+  latestVersion: null,
+};
 
 export default Installation;

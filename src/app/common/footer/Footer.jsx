@@ -3,22 +3,26 @@ import React from 'react';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
 import config from '@Config';
-import GitHub from '../github/GitHub';
 import styles from './Footer.scss';
+import Version from '../version/Version';
 
 const Footer = () => (
   <footer className={classNames(styles.footer, 'footer')}>
     <Container>
-      <Row>
+      <Row className="align-items-center">
         <Col className={styles.content} md={12}>
-          <ul className="mb-2 mb-sm-0 me-0 me-sm-4">
+          <ul>
             <li>
               <a href={config.lib.repository}>View on GitHub</a>
             </li>
           </ul>
-          <div className={styles.github}>
-            <GitHub />
-          </div>
+          <Version
+            className={styles.version}
+            name={config.app.name}
+            revision={config.app.revision}
+            title="Website Release"
+            version={`v${config.app.version}`}
+          />
         </Col>
       </Row>
     </Container>

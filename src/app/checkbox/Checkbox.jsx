@@ -9,6 +9,7 @@ import {
   TabContent,
   TabPane,
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import classNames from 'classnames';
@@ -21,7 +22,7 @@ import CheckboxProperties from './CheckboxProperties';
 import CheckboxStates from './CheckboxStates';
 
 @hot(module)
-class CheckboxPage extends Component {
+class Checkbox extends Component {
   constructor(props) {
     super(props);
 
@@ -49,11 +50,15 @@ class CheckboxPage extends Component {
   }
 
   render() {
+    const { latestRevision, latestVersion } = this.props;
     const { activeTab } = this.state;
 
     return (
       <main role="main">
-        <Jumbotron />
+        <Jumbotron
+          latestRevision={latestRevision}
+          latestVersion={latestVersion}
+        />
         <Container>
           <Row>
             <Col lg={9}>
@@ -107,4 +112,14 @@ class CheckboxPage extends Component {
   }
 }
 
-export default CheckboxPage;
+Checkbox.propTypes = {
+  latestRevision: PropTypes.string,
+  latestVersion: PropTypes.string,
+};
+
+Checkbox.defaultProps = {
+  latestRevision: null,
+  latestVersion: null,
+};
+
+export default Checkbox;

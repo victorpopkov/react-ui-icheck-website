@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+### Added
+
+- Add website version in footer
+
+### Changed
+
+- Bump dependencies
+- Change versions in jumbotron
+- Improve mobile responsiveness
+
 ## [0.5.0][] - 2021-08-18
 
 ### Added

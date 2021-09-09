@@ -11,7 +11,7 @@ Website of the [react-ui-icheck][] library.
 - [Production](#production)
 - [Development](#development)
 
-```bash
+```shell
 $ git clone git@github.com:victorpopkov/react-ui-icheck-website.git
 $ cd react-ui-icheck-website/
 $ yarn install
@@ -19,14 +19,14 @@ $ yarn install
 
 ## Production
 
-```bash
+```shell
 $ yarn build
 $ yarn start
 ```
 
 ## Development
 
-```bash
+```shell
 $ yarn dev
 ```
 

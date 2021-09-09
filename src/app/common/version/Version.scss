@@ -1,0 +1,25 @@
+.version {
+  display: inline-block;
+
+  .name {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0.25rem 0;
+  }
+
+  .value {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0.25rem 0;
+  }
+
+  .revision {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0.25rem 0;
+  }
+}

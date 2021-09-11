@@ -27,7 +27,7 @@ class CheckboxExampleInline extends Component {
       <CheckboxGroup
         checkboxWrapClassName="form-check form-check-inline p-0" // Bootstrap
         checkboxWrapTag="div"
-        className="d-flex align-items-center p-4 overflow-auto text-nowrap" // Bootstrap
+        className="d-flex align-items-center p-4 pt-5 pt-md-4 overflow-auto text-nowrap" // Bootstrap
       >
         <Checkbox
           checkboxClassName="icheckbox_square-blue"
@@ -85,7 +85,7 @@ class CheckboxExampleInline extends Component {
         <CheckboxGroup
           checkboxWrapClassName="form-check form-check-inline p-0"
           checkboxWrapTag="div"
-          className="d-flex align-items-center p-4 overflow-auto text-nowrap"
+          className="d-flex align-items-center p-4 pt-5 pt-md-4 overflow-auto text-nowrap"
         >
           <Checkbox
             checkboxClassName="icheckbox_square-blue"

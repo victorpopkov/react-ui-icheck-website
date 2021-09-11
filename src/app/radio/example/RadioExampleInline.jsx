@@ -23,7 +23,7 @@ class RadioExampleInline extends Component {
     // Example using Bootstrap CSS classes. Replace with your own.
     return (
       <RadioGroup
-        className="d-flex align-items-center p-4 overflow-auto text-nowrap" // Bootstrap
+        className="d-flex align-items-center p-4 pt-5 pt-md-4 overflow-auto text-nowrap" // Bootstrap
         name="radio"
         radioWrapClassName="form-check form-check-inline p-0" // Bootstrap
         radioWrapTag="div"
@@ -73,7 +73,7 @@ class RadioExampleInline extends Component {
     return (
       <Example src={src} title="Inline">
         <RadioGroup
-          className="d-flex align-items-center p-4 overflow-auto text-nowrap"
+          className="d-flex align-items-center p-4 pt-5 pt-md-4 overflow-auto text-nowrap"
           name="radio"
           radioWrapClassName="form-check form-check-inline p-0"
           radioWrapTag="div"

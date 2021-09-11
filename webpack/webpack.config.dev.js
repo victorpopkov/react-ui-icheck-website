@@ -37,18 +37,22 @@ const scssLoaders = (mode) => [
 
 module.exports = merge(common, {
   devServer: {
-    contentBase: paths.dist,
     host: config.app.host,
-    hot: true,
-    hotOnly: true,
-    inline: true,
-    noInfo: true,
-    overlay: {
-      errors: true,
-      warnings: true,
-    },
+    hot: 'only',
     port: config.app.port,
-    publicPath: common.output.publicPath,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
+    },
+    devMiddleware: {
+      publicPath: common.output.publicPath,
+    },
+    static: {
+      directory: paths.dist,
+      publicPath: common.output.publicPath,
+    },
   },
   devtool: 'inline-source-map',
   mode: 'development',
@@ -82,7 +86,6 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new StyleLintPlugin(),
   ],

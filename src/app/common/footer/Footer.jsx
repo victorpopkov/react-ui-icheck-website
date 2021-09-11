@@ -17,7 +17,6 @@ const Footer = () => (
             </li>
           </ul>
           <Version
-            className={styles.version}
             name={config.app.name}
             revision={config.app.revision}
             title="Website Release"

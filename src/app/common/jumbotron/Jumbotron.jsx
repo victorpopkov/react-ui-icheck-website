@@ -19,7 +19,7 @@ const Jumbotron = ({ latestRevision, latestVersion }) => (
       />
       {latestVersion && (
         <Version
-          name={config.app.name}
+          name={config.lib.name}
           revision={latestRevision}
           title="Latest Development"
           version={`v${latestVersion}`}

@@ -85,7 +85,7 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.0",
     "webpack-merge": "^5.8.0",
-    "yarn-audit-fix": "^7.0.2",
+    "yarn-audit-fix": "^7.0.3",
     "yarn-deduplicate": "^3.1.0"
   },
   "engines": {

@@ -7400,10 +7400,10 @@ react-transition-group@^2.3.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-ui-icheck@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/react-ui-icheck/-/react-ui-icheck-0.8.0.tgz#18ca311fd724e4fb406dd17169b7a343a49bc17f"
-  integrity sha512-1bta9fXZjqnbmIU8VrvNYNe0ona8dGvUoC5wHMaadPOBywWSoktzvfFMyjyUt1yORSu9oNb1vvq5SL/SZDBhcA==
+react-ui-icheck@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-ui-icheck/-/react-ui-icheck-0.8.1.tgz#34770e06461b68d76e4ee96b9a147da580a9d75b"
+  integrity sha512-jM11bppIxCRop5yuHcSN7+rzzV1Azurvksea1nVJ9iIPDQDxmRS7jAC0y32ATvsqgVRmbAJjvvVLqvENm9G3JA==
   dependencies:
     classnames "^2.3.1"
     is-mobile "^3.0.0"

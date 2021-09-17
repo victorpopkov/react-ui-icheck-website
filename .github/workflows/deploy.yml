@@ -41,6 +41,9 @@ jobs:
           else
             exit 1
           fi
+
+          # env
+          echo "APP_PUBLIC_PATH=${APP_PUBLIC_PATH}" >> $GITHUB_ENV
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
       - name: Add Docker certificates to access the remote host
@@ -63,11 +66,13 @@ jobs:
           echo "DOCKER_IMAGE=${DOCKER_IMAGE}" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}" >> $GITHUB_ENV
         env:
+          # docker
           DOCKER_CERT_PATH: /home/runner/.docker/deploy
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
+          DOCKER_TLS_VERIFY: 1
+          # docker stack
           DOCKER_IMAGE: victorpopkov/react-ui-icheck-website
           DOCKER_IMAGE_TAG: latest
-          DOCKER_TLS_VERIFY: 1
       - name: Deploy Docker Stack
         run: |
           docker stack rm "${DOCKER_STACK_NAME}"
@@ -78,13 +83,21 @@ jobs:
             --prune \
             "${DOCKER_STACK_NAME}"
         env:
+          # docker
           DOCKER_CERT_PATH: /home/runner/.docker/deploy
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
-          DOCKER_STACK_NAME: github_react_ui_icheck_website
-          DOCKER_STACK_TRAEFIK_HOST: github.victorpopkov.com
-          DOCKER_STACK_TRAEFIK_NAME: github-react-ui-icheck-website
-          DOCKER_STACK_TRAEFIK_PATH_PREFIX: /react-ui-icheck/
           DOCKER_TLS_VERIFY: 1
+          # docker stack
+          DOCKER_STACK_NAME: github_react_ui_icheck_website
+          DOCKER_STACK_NODE_HOSTNAME: mercury
+          # loki
+          LOKI_PIPELINE_STAGE_FILE: /etc/loki/pipelines/nginx.yml
+          LOKI_URL: ${{ secrets.LOKI_URL }}
+          # nginx
+          NGINX_CONF: /etc/nginx/nginx.conf
+          # traefik
+          TRAEFIK_HOSTNAME: github.victorpopkov.com
+          TRAEFIK_NAME: github-react-ui-icheck-website
       - name: Prepare success Slack notification
         if: success()
         run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV

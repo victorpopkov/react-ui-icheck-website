@@ -41,9 +41,6 @@ jobs:
           else
             exit 1
           fi
-
-          # env
-          echo "APP_PUBLIC_PATH=${APP_PUBLIC_PATH}" >> $GITHUB_ENV
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
       - name: Add Docker certificates to access the remote host
@@ -98,6 +95,8 @@ jobs:
           # traefik
           TRAEFIK_HOSTNAME: github.victorpopkov.com
           TRAEFIK_NAME: github-react-ui-icheck-website
+          # app
+          APP_PUBLIC_PATH: /react-ui-icheck/
       - name: Prepare success Slack notification
         if: success()
         run: echo "SLACK_CUSTOM_PAYLOAD=${SLACK_CUSTOM_PAYLOAD}" >> $GITHUB_ENV

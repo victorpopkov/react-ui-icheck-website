@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-curly-newline */
 import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 import { Example } from '../../common';
 
 /* Source start */
-const src = `import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
+const defaultSrc = `import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
 
 class CheckboxExampleDefault extends Component {
@@ -79,9 +80,10 @@ class CheckboxExampleDefault extends Component {
 
   render() {
     const { i1, i2, i3 } = this.state;
+    const { src, title } = this.props;
 
     return (
-      <Example src={src} title="Default">
+      <Example src={src} title={title}>
         <CheckboxGroup
           checkboxWrapClassName="form-check p-0"
           checkboxWrapTag="div"
@@ -126,5 +128,15 @@ class CheckboxExampleDefault extends Component {
     );
   }
 }
+
+CheckboxExampleDefault.propTypes = {
+  src: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  title: PropTypes.string,
+};
+
+CheckboxExampleDefault.defaultProps = {
+  src: defaultSrc,
+  title: 'Default',
+};
 
 export default CheckboxExampleDefault;

@@ -30,29 +30,33 @@ class Example extends Component {
 
     return (
       <div>
-        <h5 className="my-4">{title}</h5>
+        {title && <h5 className="my-4">{title}</h5>}
         <Form className={styles.example}>
           {children}
-          <Button
-            className={styles['view-source']}
-            color="primary"
-            size="sm"
-            outline
-            onClick={this.toggleCollapse}
-          >
-            {collapse ? 'Hide source' : 'View source'}
-          </Button>
+          {src !== false && (
+            <Button
+              className={styles['view-source']}
+              color="primary"
+              size="sm"
+              outline
+              onClick={this.toggleCollapse}
+            >
+              {collapse ? 'Hide source' : 'View source'}
+            </Button>
+          )}
         </Form>
-        <Collapse isOpen={collapse}>
-          <Source
-            src={src}
-            srcAppend={srcAppend}
-            srcFunctionValue={srcFunctionValue}
-            srcPrepend={srcPrepend}
-          >
-            {children}
-          </Source>
-        </Collapse>
+        {src !== false && (
+          <Collapse isOpen={collapse}>
+            <Source
+              src={src}
+              srcAppend={srcAppend}
+              srcFunctionValue={srcFunctionValue}
+              srcPrepend={srcPrepend}
+            >
+              {children}
+            </Source>
+          </Collapse>
+        )}
       </div>
     );
   }
@@ -60,11 +64,11 @@ class Example extends Component {
 
 Example.propTypes = {
   children: PropTypes.element.isRequired,
-  title: PropTypes.string.isRequired,
   src: PropTypes.string,
   srcAppend: PropTypes.string,
   srcFunctionValue: PropTypes.string,
   srcPrepend: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 Example.defaultProps = {

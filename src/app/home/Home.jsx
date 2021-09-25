@@ -2,31 +2,14 @@ import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
 import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
+import CheckboxExampleDefault from '../checkbox/example/CheckboxExampleDefault';
+import RadioExampleDefault from '../radio/example/RadioExampleDefault';
+import styles from './Home.scss';
 
 @hot(module)
 class Home extends Component {
-  content = `This library has been originally intended to be a fork of the [react-icheck](https://github.com/luqin/react-icheck)
-created by [luqin](https://github.com/luqin) which didn't seem to be maintained anymore. However, after
-diving into the original code it became more convenient to create a new one as a
-drop-in replacement with some additional features.
-
-### Differences
-
-Below you can find the list of the main differences from the original
-[react-icheck](https://github.com/luqin/react-icheck) library:
-
-- Added \`onBlur\` and \`onFocus\` label events to accompany \`onMouseOut\` and \`onMouseOver\`
-- Added support for labels as \`Checkbox\` and \`Radio\` children
-- Introduced \`CheckboxGroup\` similar to the \`RadioGroup\`
-- Introduced \`labelTag\` and \`labelTagClassName\` properties for \`Checkbox\` and \`Radio\`
-- Introduced \`radioWrapClassName\` and \`radioWrapTag\` properties for \`RadioGroup\`
-- Moved corresponding properties from \`EnchantedSwitch\` to \`Checkbox\` and \`Radio\`
-- Removed \`EnchantedSwitch\` in favour of \`Input\` and \`Label\`
-- Removed \`refs\` usage to follow the "[Don’t Overuse Refs](https://reactjs.org/docs/refs-and-the-dom.html#dont-overuse-refs)" guide`;
-
   componentDidMount() {
     Prism.highlightAll();
   }
@@ -48,7 +31,71 @@ Below you can find the list of the main differences from the original
           <Row>
             <Col lg={9}>
               <h2 className="heading">Overview</h2>
-              <ReactMarkdown className="markdown">{this.content}</ReactMarkdown>
+              <p>
+                A small library to create customizable checkboxes and radios
+                which can either use{' '}
+                <a href="http://icheck.fronteed.com/">iCheck</a> skins or custom
+                ones.
+              </p>
+              <Row className="py-2">
+                <Col md={6}>
+                  <CheckboxExampleDefault src={false} title="" />
+                </Col>
+                <Col md={6}>
+                  <RadioExampleDefault src={false} title="" />
+                </Col>
+              </Row>
+              <p className="pt-3">
+                This library has been originally intended to be a{' '}
+                <a href="https://github.com/luqin/react-icheck">
+                  luqin/react-icheck
+                </a>{' '}
+                fork. But, after diving into the original code it became more
+                convenient to create a new one as a drop-in replacement with
+                some additional changes:
+              </p>
+              <ul className={styles.differences}>
+                <li>
+                  Added <code>onBlur</code> and <code>onFocus</code> label
+                  events to accompany <code>onMouseOut</code> and{' '}
+                  <code>onMouseOver</code>
+                </li>
+                <li>
+                  Added support for labels as <code>Checkbox</code> and{' '}
+                  <code>Radio</code> children
+                </li>
+                <li>
+                  Introduced <code>CheckboxGroup</code> similar to the{' '}
+                  <code>RadioGroup</code>
+                </li>
+                <li>
+                  Introduced <code>labelTag</code> and{' '}
+                  <code>labelTagClassName</code> properties for{' '}
+                  <code>Checkbox</code> and <code>Radio</code>
+                </li>
+                <li>
+                  Introduced <code>radioWrapClassName</code> and{' '}
+                  <code>radioWrapTag</code> properties for{' '}
+                  <code>RadioGroup</code>
+                </li>
+                <li>
+                  Moved corresponding properties from{' '}
+                  <code>EnchantedSwitch</code> to <code>Checkbox</code> and{' '}
+                  <code>Radio</code>
+                </li>
+                <li>
+                  Removed <code>EnchantedSwitch</code> in favour of{' '}
+                  <code>Input</code> and <code>Label</code>
+                </li>
+                <li>
+                  {' '}
+                  Removed <code>refs</code> usage to follow the{' '}
+                  <a href="https://reactjs.org/docs/refs-and-the-dom.html#dont-overuse-refs">
+                    Don&apos;t Overuse Refs
+                  </a>{' '}
+                  guide
+                </li>
+              </ul>
             </Col>
             <Sidebar />
           </Row>

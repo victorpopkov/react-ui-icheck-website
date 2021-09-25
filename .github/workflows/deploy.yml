@@ -19,8 +19,9 @@ jobs:
         run: |
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
           echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE=victorpopkov/universal-redux" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
           echo "GITHUB_JOB_NAME=production" >> $GITHUB_ENV
-          echo "NODE_ENV=development" >> $GITHUB_ENV
           echo "NODE_VERSION=${{ matrix.node_version }}" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v2
@@ -28,19 +29,15 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install
         run: yarn install --ignore-scripts
+        env:
+          BABEL_ENV: development
+          NODE_ENV: development
       - name: Build
         id: build
         run: |
-          # build
           yarn build
           export STATUS="$?"
-
-          # status
-          if [ "${STATUS}" -eq 0 ]; then
-            exit 0
-          else
-            exit 1
-          fi
+          if [ "${STATUS}" -eq 0 ]; then exit 0; else exit 1; fi
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
       - name: Add Docker certificates to access the remote host
@@ -53,23 +50,17 @@ jobs:
           chmod 400 "${DOCKER_CERT_PATH}/cert.pem"
           chmod 400 "${DOCKER_CERT_PATH}/key.pem"
         env:
-          DOCKER_CERT_PATH: /home/runner/.docker/deploy
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_TLS_CA: ${{ secrets.DOCKER_TLS_CA }}
           DOCKER_TLS_CERT: ${{ secrets.DOCKER_TLS_CERT }}
           DOCKER_TLS_KEY: ${{ secrets.DOCKER_TLS_KEY }}
       - name: Build Docker image
-        run: |
-          docker build --tag "${DOCKER_IMAGE}:${DOCKER_IMAGE_TAG}" .
-          echo "DOCKER_IMAGE=${DOCKER_IMAGE}" >> $GITHUB_ENV
-          echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}" >> $GITHUB_ENV
+        run: docker build --tag "${DOCKER_IMAGE}:${DOCKER_IMAGE_TAG}" .
         env:
           # docker
-          DOCKER_CERT_PATH: /home/runner/.docker/deploy
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
           DOCKER_TLS_VERIFY: 1
-          # docker stack
-          DOCKER_IMAGE: victorpopkov/react-ui-icheck-website
-          DOCKER_IMAGE_TAG: latest
       - name: Deploy Docker Stack
         run: |
           docker stack rm "${DOCKER_STACK_NAME}"
@@ -81,12 +72,12 @@ jobs:
             "${DOCKER_STACK_NAME}"
         env:
           # docker
-          DOCKER_CERT_PATH: /home/runner/.docker/deploy
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
           DOCKER_TLS_VERIFY: 1
           # docker stack
           DOCKER_STACK_NAME: github_react_ui_icheck_website
-          DOCKER_STACK_NODE_HOSTNAME: mercury
+          DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           # loki
           LOKI_PIPELINE_STAGE_FILE: /etc/loki/pipelines/nginx.yml
           LOKI_URL: ${{ secrets.LOKI_URL }}

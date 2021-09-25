@@ -23,6 +23,31 @@ label {
   }
 }
 
+pre.d-inline,
+code {
+  background: $pampas;
+  border-radius: 3px;
+  color: $black;
+  padding: 0.15em 0;
+  white-space: nowrap;
+
+  &::before,
+  &::after {
+    content: '\00a0';
+    letter-spacing: -0.2em;
+  }
+}
+
+pre code {
+  font-size: 1em;
+  white-space: inherit;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
 .heading {
   border-bottom: 1px solid transparentize($black, 0.9);
   margin-bottom: math.div($grid-gutter-width, 2);

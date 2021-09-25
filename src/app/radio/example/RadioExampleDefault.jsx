@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-curly-newline */
 import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 import { Example } from '../../common';
 
 /* Source start */
-const src = `import { Radio, RadioGroup } from 'react-ui-icheck';
+const defaultSrc = `import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
 
 class RadioExampleDefault extends Component {
@@ -69,9 +70,10 @@ class RadioExampleDefault extends Component {
 
   render() {
     const { radioValue } = this.state;
+    const { src, title } = this.props;
 
     return (
-      <Example src={src} title="Default">
+      <Example src={src} title={title}>
         <RadioGroup
           className="p-4"
           name="radio"
@@ -108,5 +110,15 @@ class RadioExampleDefault extends Component {
     );
   }
 }
+
+RadioExampleDefault.propTypes = {
+  src: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  title: PropTypes.string,
+};
+
+RadioExampleDefault.defaultProps = {
+  src: defaultSrc,
+  title: 'Default',
+};
 
 export default RadioExampleDefault;

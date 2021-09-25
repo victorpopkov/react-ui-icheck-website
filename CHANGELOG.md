@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - Bump dependencies
+- Change "Home" page content
 - Change versions in jumbotron
 - Improve mobile responsiveness
 

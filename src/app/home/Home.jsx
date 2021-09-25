@@ -37,11 +37,11 @@ class Home extends Component {
                 <a href="http://icheck.fronteed.com/">iCheck</a> skins or custom
                 ones.
               </p>
-              <Row className="py-2">
-                <Col md={6}>
+              <Row className="pt-sm-4 pt-2">
+                <Col className="pb-sm-4 pb-2" md={6}>
                   <CheckboxExampleDefault src={false} title="" />
                 </Col>
-                <Col md={6}>
+                <Col className="pb-2" md={6}>
                   <RadioExampleDefault src={false} title="" />
                 </Col>
               </Row>

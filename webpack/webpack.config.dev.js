@@ -86,7 +86,9 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new webpack.IgnorePlugin(/webpack-stats\.json$/),
+    new webpack.IgnorePlugin({
+      resourceRegExp: /webpack-stats\.json$/,
+    }),
     new StyleLintPlugin(),
   ],
 });

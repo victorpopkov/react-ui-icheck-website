@@ -58,9 +58,6 @@ jobs:
           images: ${{ env.DOCKER_IMAGE }}
           flavor: latest=true
           labels: maintainer=victor@popkov.me
-          tags: |
-            type=schedule
-            type=ref,event=tag
       - name: Build an image
         uses: docker/build-push-action@v2
         with:

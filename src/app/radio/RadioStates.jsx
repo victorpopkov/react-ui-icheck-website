@@ -113,6 +113,7 @@ class RadioStates extends Component {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   renderYesNo = (value) => {
     return value ? (
       <Badge color="success">Yes</Badge>

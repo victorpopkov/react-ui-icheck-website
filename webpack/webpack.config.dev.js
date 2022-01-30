@@ -1,3 +1,4 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
@@ -61,7 +62,7 @@ module.exports = merge(common, {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.css?$/,
@@ -89,6 +90,7 @@ module.exports = merge(common, {
     new webpack.IgnorePlugin({
       resourceRegExp: /webpack-stats\.json$/,
     }),
+    new ESLintPlugin(),
     new StyleLintPlugin(),
   ],
 });

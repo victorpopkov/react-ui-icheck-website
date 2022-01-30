@@ -53,12 +53,22 @@ class App extends React.Component {
     });
   }
 
-  render() {
-    const childProps = {
-      latestRevision: this.latestRevision,
-      latestVersion: this.latestVersion,
-    };
+  renderRoute(path, component) {
+    return (
+      <Route
+        path={path}
+        render={() =>
+          React.createElement(component, {
+            latestRevision: this.latestRevision,
+            latestVersion: this.latestVersion,
+          })
+        }
+        exact
+      />
+    );
+  }
 
+  render() {
     return (
       <div className="app">
         <Helmet>
@@ -66,48 +76,16 @@ class App extends React.Component {
         </Helmet>
         <Navbar />
         <Switch>
-          <Route path="/" render={() => <Home {...childProps} />} exact />
-          <Route
-            path="/checkbox"
-            render={() => <Checkbox {...childProps} />}
-            exact
-          />
-          <Route path="/radio" render={() => <Radio {...childProps} />} exact />
-          <Route
-            path="/installation"
-            render={() => <Installation {...childProps} />}
-            exact
-          />
-          <Route
-            path="/skin/flat"
-            render={() => <SkinFlat {...childProps} />}
-            exact
-          />
-          <Route
-            path="/skin/futurico"
-            render={() => <SkinFuturico {...childProps} />}
-            exact
-          />
-          <Route
-            path="/skin/line"
-            render={() => <SkinLine {...childProps} />}
-            exact
-          />
-          <Route
-            path="/skin/minimal"
-            render={() => <SkinMinimal {...childProps} />}
-            exact
-          />
-          <Route
-            path="/skin/polaris"
-            render={() => <SkinPolaris {...childProps} />}
-            exact
-          />
-          <Route
-            path="/skin/square"
-            render={() => <SkinSquare {...childProps} />}
-            exact
-          />
+          {this.renderRoute('/', Home)}
+          {this.renderRoute('/checkbox', Checkbox)}
+          {this.renderRoute('/radio', Radio)}
+          {this.renderRoute('/installation', Installation)}
+          {this.renderRoute('/skin/flat', SkinFlat)}
+          {this.renderRoute('/skin/futurico', SkinFuturico)}
+          {this.renderRoute('/skin/line', SkinLine)}
+          {this.renderRoute('/skin/minimal', SkinMinimal)}
+          {this.renderRoute('/skin/polaris', SkinPolaris)}
+          {this.renderRoute('/skin/square', SkinSquare)}
           <Route component={Error404} path="*" />
         </Switch>
         <Footer />

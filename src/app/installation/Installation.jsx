@@ -3,10 +3,8 @@ import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
-import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 
-@hot(module)
 class Installation extends Component {
   content =
     'The library can be installed like any other [npm](https://www.npmjs.com/) package.\n' +

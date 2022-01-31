@@ -1,7 +1,6 @@
 import { Nav } from 'reactstrap';
 import React from 'react';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import GitHub from '../github/GitHub';
 import config from '../../../../config';
 import navItem from './navItem';
@@ -26,4 +25,4 @@ const NavbarMenu = () => (
   </div>
 );
 
-export default hot(module)(NavbarMenu);
+export default NavbarMenu;

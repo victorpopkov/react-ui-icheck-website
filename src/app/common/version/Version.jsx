@@ -2,7 +2,6 @@ import { Badge } from 'reactstrap';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import styles from './Version.scss';
 
 const Version = ({
@@ -69,4 +68,4 @@ Version.defaultProps = {
   versionClassName: null,
 };
 
-export default hot(module)(Version);
+export default Version;

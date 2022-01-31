@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import config from '@Config';
 import styles from './Footer.scss';
 import Version from '../version/Version';
@@ -28,4 +27,4 @@ const Footer = () => (
   </footer>
 );
 
-export default hot(module)(Footer);
+export default Footer;

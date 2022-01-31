@@ -1,7 +1,6 @@
 import { NavItem, NavLink } from 'reactstrap';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
 import styles from './SidebarBadge.scss';
 
 const SidebarBadge = ({ alt, href, path }) => (
@@ -29,4 +28,4 @@ SidebarBadge.defaultProps = {
   path: null,
 };
 
-export default hot(module)(SidebarBadge);
+export default SidebarBadge;

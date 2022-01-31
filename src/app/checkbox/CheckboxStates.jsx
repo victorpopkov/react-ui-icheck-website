@@ -1,9 +1,7 @@
 import { Badge, Button, Table } from 'reactstrap';
 import { Checkbox } from 'react-ui-icheck';
 import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
 
-@hot(module)
 class CheckboxStates extends Component {
   constructor(props) {
     super(props);

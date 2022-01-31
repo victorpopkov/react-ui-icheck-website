@@ -1,6 +1,5 @@
 import { Col, Nav, Row } from 'reactstrap';
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import GitHub from '../github/GitHub';
 import config from '../../../../config';
 import navItem from './navItem';
@@ -43,4 +42,4 @@ const NavbarMobile = () => (
   </div>
 );
 
-export default hot(module)(NavbarMobile);
+export default NavbarMobile;

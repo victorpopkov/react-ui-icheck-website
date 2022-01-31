@@ -2,7 +2,6 @@
 import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
 import { Example } from '../../common';
 
 /* Source start */
@@ -66,7 +65,6 @@ class CheckboxExampleDefault extends Component {
 export default CheckboxExampleDefault;`;
 /* Source end */
 
-@hot(module)
 class CheckboxExampleDefault extends Component {
   constructor(props) {
     super(props);

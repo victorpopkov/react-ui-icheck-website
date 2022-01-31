@@ -2,13 +2,11 @@ import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 import CheckboxExampleDefault from '../checkbox/example/CheckboxExampleDefault';
 import RadioExampleDefault from '../radio/example/RadioExampleDefault';
 import styles from './Home.scss';
 
-@hot(module)
 class Home extends Component {
   componentDidMount() {
     Prism.highlightAll();

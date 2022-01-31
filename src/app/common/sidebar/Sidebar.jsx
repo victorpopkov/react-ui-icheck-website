@@ -2,7 +2,6 @@ import { Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import _ from 'lodash';
-import { hot } from 'react-hot-loader';
 import SidebarBadge from './SidebarBadge';
 import styles from './Sidebar.scss';
 
@@ -90,4 +89,4 @@ const Sidebar = () => {
   );
 };
 
-export default hot(module)(Sidebar);
+export default Sidebar;

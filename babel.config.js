@@ -21,7 +21,7 @@ module.exports = (api) => {
     '@babel/plugin-syntax-export-default-from',
     '@babel/plugin-transform-react-display-name',
     '@babel/plugin-transform-runtime',
-    'react-hot-loader/babel',
+    'react-refresh/babel',
     [
       'prismjs',
       {

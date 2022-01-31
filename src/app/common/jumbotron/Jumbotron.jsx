@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'reactstrap';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import config from '@Config';
 import Version from '../version/Version';
 
@@ -48,4 +47,4 @@ Jumbotron.defaultProps = {
   latestVersion: null,
 };
 
-export default hot(module)(Jumbotron);
+export default Jumbotron;

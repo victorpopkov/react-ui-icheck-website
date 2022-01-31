@@ -4,8 +4,8 @@ import {
   NavbarBrand,
   NavbarToggler,
 } from 'reactstrap';
-import { IndexLinkContainer } from 'react-router-bootstrap';
 import React, { Component } from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import { hot } from 'react-hot-loader';
 import config from '@Config';
 import NavbarMenu from './NavbarMenu';
@@ -34,9 +34,9 @@ class Navbar extends Component {
 
     return (
       <BaseNavbar container="md" expand="lg" light>
-        <IndexLinkContainer to="/">
+        <LinkContainer to="/">
           <NavbarBrand>{config.lib.name}</NavbarBrand>
-        </IndexLinkContainer>
+        </LinkContainer>
         <NavbarToggler onClick={this.toggleNavbar} />
         <Collapse isOpen={collapsed} timeout={0} navbar>
           <NavbarMenu />

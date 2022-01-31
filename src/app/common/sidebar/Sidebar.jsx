@@ -1,5 +1,5 @@
 import { Col, Nav, NavItem, NavLink } from 'reactstrap';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import _ from 'lodash';
 import { hot } from 'react-hot-loader';
@@ -53,9 +53,9 @@ const Sidebar = () => {
       <h5 className="pb-2">Getting Started</h5>
       <Nav vertical>
         <NavItem>
-          <IndexLinkContainer activeClassName={styles.active} to="/">
+          <LinkContainer activeClassName={styles.active} to="/">
             <NavLink className={styles.link}>Overview</NavLink>
-          </IndexLinkContainer>
+          </LinkContainer>
         </NavItem>
         {navItem('Checkbox', '/checkbox')}
         {navItem('Radio', '/radio')}

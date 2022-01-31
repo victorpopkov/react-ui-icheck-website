@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import axios from 'axios';
 import config from '@Config';
@@ -53,18 +53,11 @@ class App extends React.Component {
   }
 
   renderRoute(path, component) {
-    return (
-      <Route
-        path={path}
-        render={() =>
-          React.createElement(component, {
-            latestRevision: this.latestRevision,
-            latestVersion: this.latestVersion,
-          })
-        }
-        exact
-      />
-    );
+    const element = React.createElement(component, {
+      latestRevision: this.latestRevision,
+      latestVersion: this.latestVersion,
+    });
+    return <Route element={element} path={path} />;
   }
 
   render() {
@@ -74,7 +67,7 @@ class App extends React.Component {
           <script async defer src="https://buttons.github.io/buttons.js" />
         </Helmet>
         <Navbar />
-        <Switch>
+        <Routes>
           {this.renderRoute('/', Home)}
           {this.renderRoute('/checkbox', Checkbox)}
           {this.renderRoute('/radio', Radio)}
@@ -86,7 +79,7 @@ class App extends React.Component {
           {this.renderRoute('/skin/polaris', SkinPolaris)}
           {this.renderRoute('/skin/square', SkinSquare)}
           <Route component={Error404} path="*" />
-        </Switch>
+        </Routes>
         <Footer />
       </div>
     );

@@ -21,7 +21,6 @@ module.exports = (api) => {
     '@babel/plugin-syntax-export-default-from',
     '@babel/plugin-transform-react-display-name',
     '@babel/plugin-transform-runtime',
-    'react-refresh/babel',
     [
       'prismjs',
       {
@@ -34,7 +33,15 @@ module.exports = (api) => {
 
   return {
     compact: false,
-    presets,
-    plugins,
+    env: {
+      production: {
+        plugins,
+        presets,
+      },
+      development: {
+        plugins: [...plugins, 'react-refresh/babel'],
+        presets,
+      },
+    },
   };
 };

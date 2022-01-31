@@ -109,7 +109,7 @@
     "ci:prettier:md": "prettier --check './**/*.md'",
     "ci:prettier:scss": "prettier --check './**/*.scss'",
     "ci:prettier:yml": "prettier --check './**/*.yml'",
-    "deduplicate": "yarn-deduplicate",
+    "deduplicate": "yarn-deduplicate && yarn install",
     "dev": "npm-run-all watch",
     "lint": "npm-run-all --continue-on-error lint:*",
     "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx .",

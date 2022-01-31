@@ -142,7 +142,7 @@ class RadioStates extends Component {
             <tr>
               <th>Element</th>
               <th>
-                <span className="d-md-block d-none">Valie</span>
+                <span className="d-md-block d-none">Value</span>
               </th>
               <th>
                 <span className="d-md-block d-none">Disabled</span>

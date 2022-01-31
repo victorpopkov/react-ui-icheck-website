@@ -1,6 +1,5 @@
 import { Col, Row } from 'reactstrap';
 import React from 'react';
-import { hot } from 'react-hot-loader';
 
 const CheckboxProperties = () => (
   <div>
@@ -68,4 +67,4 @@ const CheckboxProperties = () => (
   </div>
 );
 
-export default hot(module)(CheckboxProperties);
+export default CheckboxProperties;

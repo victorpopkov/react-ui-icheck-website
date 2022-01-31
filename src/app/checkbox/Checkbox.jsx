@@ -13,7 +13,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 import CheckboxExampleDefault from './example/CheckboxExampleDefault';
 import CheckboxExampleFunctional from './example/CheckboxExampleFunctional';
@@ -21,7 +20,6 @@ import CheckboxExampleInline from './example/CheckboxExampleInline';
 import CheckboxProperties from './CheckboxProperties';
 import CheckboxStates from './CheckboxStates';
 
-@hot(module)
 class Checkbox extends Component {
   constructor(props) {
     super(props);

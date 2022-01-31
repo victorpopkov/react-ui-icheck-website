@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-curly-newline */
 import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
 import { Example } from '../../common';
 
 /* Source start */
@@ -57,7 +56,6 @@ class RadioExampleInline extends Component {
 export default RadioExampleInline;`;
 /* Source end */
 
-@hot(module)
 class RadioExampleInline extends Component {
   constructor(props) {
     super(props);

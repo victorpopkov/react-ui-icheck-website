@@ -1,4 +1,5 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
@@ -86,11 +87,15 @@ module.exports = merge(common, {
       },
     ],
   },
+  optimization: {
+    runtimeChunk: 'single',
+  },
   plugins: [
     new webpack.IgnorePlugin({
       resourceRegExp: /webpack-stats\.json$/,
     }),
     new ESLintPlugin(),
+    new ReactRefreshWebpackPlugin(),
     new StyleLintPlugin(),
   ],
 });

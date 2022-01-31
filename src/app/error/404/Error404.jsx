@@ -2,7 +2,6 @@ import { Button, Container } from 'reactstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import styles from './Error404.scss';
 
 const Error404 = () => (
@@ -22,4 +21,4 @@ const Error404 = () => (
   </main>
 );
 
-export default hot(module)(Error404);
+export default Error404;

@@ -1,6 +1,5 @@
 import { Checkbox, CheckboxGroup } from 'react-ui-icheck';
 import React, { useState } from 'react';
-import { hot } from 'react-hot-loader';
 import { Example } from '../../common';
 
 /* Source start */
@@ -94,4 +93,4 @@ const CheckboxExampleFunctional = () => {
   );
 };
 
-export default hot(module)(CheckboxExampleFunctional);
+export default CheckboxExampleFunctional;

@@ -2,7 +2,6 @@
 import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
 import { Example } from '../../common';
 
 /* Source start */
@@ -58,7 +57,6 @@ class RadioExampleDefault extends Component {
 export default RadioExampleDefault;`;
 /* Source end */
 
-@hot(module)
 class RadioExampleDefault extends Component {
   constructor(props) {
     super(props);

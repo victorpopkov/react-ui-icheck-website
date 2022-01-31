@@ -5,10 +5,8 @@ import PropTypes from 'prop-types';
 import ReactDOMServer from 'react-dom/server';
 import beautify from 'js-beautify';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
-@hot(module)
 class Source extends Component {
   constructor(props) {
     super(props);

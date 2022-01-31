@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import React from 'react';
 import axios from 'axios';
-import { hot } from 'react-hot-loader/root';
 import config from '@Config';
 import { Footer, Navbar } from './common';
 import Home from './home/Home';
@@ -94,4 +93,4 @@ class App extends React.Component {
   }
 }
 
-export default hot(App);
+export default App;

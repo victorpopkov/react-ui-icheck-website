@@ -6,12 +6,10 @@ import {
 } from 'reactstrap';
 import React, { Component } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
-import { hot } from 'react-hot-loader';
 import config from '@Config';
 import NavbarMenu from './NavbarMenu';
 import NavbarMobile from './NavbarMobile';
 
-@hot(module)
 class Navbar extends Component {
   constructor(props) {
     super(props);

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import Jumbotron from '../common/jumbotron/Jumbotron';
 import Skin from './Skin';
 
@@ -21,4 +20,4 @@ SkinFlat.defaultProps = {
   latestVersion: null,
 };
 
-export default hot(module)(SkinFlat);
+export default SkinFlat;

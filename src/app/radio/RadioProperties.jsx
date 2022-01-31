@@ -1,6 +1,5 @@
 import { Col, Row } from 'reactstrap';
 import React from 'react';
-import { hot } from 'react-hot-loader';
 
 const RadioProperties = () => (
   <div>
@@ -72,4 +71,4 @@ const RadioProperties = () => (
   </div>
 );
 
-export default hot(module)(RadioProperties);
+export default RadioProperties;

@@ -13,7 +13,6 @@ import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { hot } from 'react-hot-loader';
 import { Jumbotron, Sidebar } from '../common';
 import RadioExampleDefault from './example/RadioExampleDefault';
 import RadioExampleFunctional from './example/RadioExampleFunctional';
@@ -21,7 +20,6 @@ import RadioExampleInline from './example/RadioExampleInline';
 import RadioProperties from './RadioProperties';
 import RadioStates from './RadioStates';
 
-@hot(module)
 class Radio extends Component {
   constructor(props) {
     super(props);

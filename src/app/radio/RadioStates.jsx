@@ -2,9 +2,7 @@
 import { Badge, Button, Table } from 'reactstrap';
 import { Radio, RadioGroup } from 'react-ui-icheck';
 import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
 
-@hot(module)
 class RadioStates extends Component {
   constructor(props) {
     super(props);

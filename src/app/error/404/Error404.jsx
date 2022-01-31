@@ -1,5 +1,5 @@
 import { Button, Container } from 'reactstrap';
-import { IndexLinkContainer } from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader';
@@ -13,11 +13,11 @@ const Error404 = () => (
     <Container className="text-center">
       <h1>404</h1>
       <h2>Page Not Found</h2>
-      <IndexLinkContainer to="/">
+      <LinkContainer to="/">
         <Button color="secondary" outline>
           <span>&larr; Back to Homepage</span>
         </Button>
-      </IndexLinkContainer>
+      </LinkContainer>
     </Container>
   </main>
 );

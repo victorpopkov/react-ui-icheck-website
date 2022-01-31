@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change "Home" page content
 - Change versions in jumbotron
 - Improve mobile responsiveness
+- Migrate [ESLint][] from 7 to 8
+- Migrate [Stylelint][] from 13 to 14
+- Migrate `react-router` from 5 to 6
+- Replace `IndexLinkContainer` with `LinkContainer` for `react-router-bootstrap`
+- Replace deprecated `react-hot-loader` with `@pmmmwh/react-refresh-webpack-plugin`
 
 ## [0.5.0][] - 2021-08-18
 

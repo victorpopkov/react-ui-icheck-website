@@ -13,7 +13,7 @@ services:
       driver: loki
       options:
         loki-url: '${LOKI_URL}'
-        loki-external-labels: 'job=nginx,traefik_service=${TRAEFIK_NAME}@docker'
+        loki-external-labels: 'job=logs,logs_provider=nginx,traefik_service=${TRAEFIK_NAME}@docker'
         loki-pipeline-stage-file: '${LOKI_PIPELINE_STAGE_FILE}'
     deploy:
       mode: global

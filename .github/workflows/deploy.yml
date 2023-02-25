@@ -26,7 +26,7 @@ jobs:
       - name: Set a job-wide environment variables
         run: |
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
-          echo "DOCKER_IMAGE=${{ secrets.PRIVATE_REGISTRY }}/react-ui-icheck-website" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE=${{ secrets.DOCKER_REGISTRY_HOST }}/react-ui-icheck-website" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
@@ -64,9 +64,9 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.PRIVATE_REGISTRY }}
-          username: ${{ secrets.PRIVATE_REGISTRY_USERNAME }}
-          password: ${{ secrets.PRIVATE_REGISTRY_PASSWORD }}
+          registry: ${{ secrets.DOCKER_REGISTRY_HOST }}
+          username: ${{ secrets.DOCKER_REGISTRY_USER }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASS }}
       - name: Generate an image metadata
         id: meta
         uses: docker/metadata-action@v4
@@ -112,23 +112,17 @@ jobs:
             --prune \
             "${DOCKER_STACK_NAME}"
         env:
-          # docker
+          APP_PUBLIC_PATH: /react-ui-icheck/
           DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
-          DOCKER_TLS_VERIFY: 1
-          # docker stack
-          DOCKER_STACK_NAME: github_react_ui_icheck_website
+          DOCKER_STACK_NAME: ${{ secrets.DOCKER_STACK_NAME }}
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
-          # loki
-          LOKI_PIPELINE_STAGE_FILE: /etc/loki/pipelines/nginx.yml
+          DOCKER_TLS_VERIFY: 1
+          LOKI_PIPELINE_STAGE_FILE: ${{ secrets.LOKI_PIPELINE_STAGE_FILE }}
           LOKI_URL: ${{ secrets.LOKI_URL }}
-          # nginx
-          NGINX_CONF: /etc/nginx/nginx.conf
-          # traefik
+          NGINX_CONF: ${{ secrets.NGINX_CONF }}
           TRAEFIK_HOSTNAME: github.victorpopkov.com
-          TRAEFIK_NAME: github-react-ui-icheck-website
-          # app
-          APP_PUBLIC_PATH: /react-ui-icheck/
+          TRAEFIK_NAME: ${{ secrets.TRAEFIK_NAME }}
       - name: Update Slack notification
         uses: codedsolar/slack-action@v1
         if: ${{ github.event_name != 'pull_request' && always() }}

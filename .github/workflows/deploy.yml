@@ -8,6 +8,7 @@ on:
 permissions: read-all
 
 env:
+  NODE_ENV: development
   SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
   SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET }}
   SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
@@ -43,17 +44,11 @@ jobs:
             {STATUS}
             {REF}
             Node.js: ${{ steps.node.outputs.node-version }}
-      - name: Install
+      - name: Install dependencies
         run: yarn install --ignore-scripts
-        env:
-          BABEL_ENV: development
-          NODE_ENV: development
       - name: Build
         id: build
-        run: |
-          yarn build
-          export STATUS="$?"
-          if [ "${STATUS}" -eq 0 ]; then exit 0; else exit 1; fi
+        run: yarn build
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
       - name: Set up QEMU
@@ -61,7 +56,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to the private registry
-        if: github.event_name != 'pull_request'
+        if: ${{ github.event_name != 'pull_request' }}
         uses: docker/login-action@v2
         with:
           registry: ${{ secrets.DOCKER_REGISTRY_HOST }}
@@ -77,45 +72,41 @@ jobs:
       - name: Build an image
         uses: docker/build-push-action@v4
         with:
+          cache-from: type=registry,ref=${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_IMAGE_TAG }}
+          cache-to: type=inline
           context: .
           file: ./Dockerfile
+          labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm/v7
           pull: true
           push: ${{ !env.ACT && github.ref == 'refs/heads/main' }}
-          cache-from: type=registry,ref=${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_IMAGE_TAG }}
-          cache-to: type=inline
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
       - name: Add Docker certificates to access the remote host
         if: ${{ !env.ACT }}
         run: |
           mkdir -p "${DOCKER_CERT_PATH}"
-          echo "${DOCKER_TLS_CA}" > "${DOCKER_CERT_PATH}/ca.pem"
-          echo "${DOCKER_TLS_CERT}" > "${DOCKER_CERT_PATH}/cert.pem"
-          echo "${DOCKER_TLS_KEY}" > "${DOCKER_CERT_PATH}/key.pem"
+          echo "${{ secrets.DOCKER_TLS_CA }}" > "${DOCKER_CERT_PATH}/ca.pem"
+          echo "${{ secrets.DOCKER_TLS_CERT }}" > "${DOCKER_CERT_PATH}/cert.pem"
+          echo "${{ secrets.DOCKER_TLS_KEY }}" > "${DOCKER_CERT_PATH}/key.pem"
           chmod 400 "${DOCKER_CERT_PATH}/ca.pem"
           chmod 400 "${DOCKER_CERT_PATH}/cert.pem"
           chmod 400 "${DOCKER_CERT_PATH}/key.pem"
         env:
-          DOCKER_CERT_PATH: /home/runner/.docker/deploy/
-          DOCKER_TLS_CA: ${{ secrets.DOCKER_TLS_CA }}
-          DOCKER_TLS_CERT: ${{ secrets.DOCKER_TLS_CERT }}
-          DOCKER_TLS_KEY: ${{ secrets.DOCKER_TLS_KEY }}
+          DOCKER_CERT_PATH: /home/runner/.docker/deploy
       - name: Deploy Docker Stack
         if: ${{ !env.ACT }}
         run: |
-          docker stack rm "${DOCKER_STACK_NAME}"
+          docker stack rm "${{ secrets.DOCKER_STACK_NAME }}"
           docker stack deploy \
             --with-registry-auth \
             --resolve-image=always \
             --compose-file=docker-stack.yml \
             --prune \
-            "${DOCKER_STACK_NAME}"
+            "${{ secrets.DOCKER_STACK_NAME }}"
         env:
           APP_PUBLIC_PATH: /react-ui-icheck/
           DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
-          DOCKER_STACK_NAME: ${{ secrets.DOCKER_STACK_NAME }}
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           DOCKER_TLS_VERIFY: 1
           LOKI_PIPELINE_STAGE_FILE: ${{ secrets.LOKI_PIPELINE_STAGE_FILE }}

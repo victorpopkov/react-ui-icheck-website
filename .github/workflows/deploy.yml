@@ -27,7 +27,7 @@ jobs:
       - name: Set a job-wide environment variables
         run: |
           echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
-          echo "DOCKER_IMAGE=${{ secrets.DOCKER_REGISTRY_HOST }}/react-ui-icheck-website" >> $GITHUB_ENV
+          echo "DOCKER_IMAGE_NAME=${{ secrets.DOCKER_REGISTRY_HOST }}/react-ui-icheck-website" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
@@ -66,13 +66,13 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.DOCKER_IMAGE }}
           flavor: latest=true
+          images: ${{ env.DOCKER_IMAGE_NAME }}
           labels: maintainer=victor@popkov.me
       - name: Build an image
         uses: docker/build-push-action@v4
         with:
-          cache-from: type=registry,ref=${{ env.DOCKER_IMAGE }}:${{ env.DOCKER_IMAGE_TAG }}
+          cache-from: type=registry,ref=${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_IMAGE_TAG }}
           cache-to: type=inline
           context: .
           file: ./Dockerfile

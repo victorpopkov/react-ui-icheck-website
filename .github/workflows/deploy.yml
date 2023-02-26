@@ -24,9 +24,13 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
+      - name: Set app outputs
+        id: app
+        run: |
+          echo "public-path=/react-ui-icheck/" >> $GITHUB_OUTPUT
+          echo "revision=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Set a job-wide environment variables
         run: |
-          echo "APP_REVISION=$(git rev-parse HEAD)" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_NAME=${{ secrets.DOCKER_REGISTRY_HOST }}/react-ui-icheck-website" >> $GITHUB_ENV
           echo "DOCKER_IMAGE_TAG=latest" >> $GITHUB_ENV
       - name: Set up Node.js ${{ matrix.node_version }}
@@ -50,7 +54,8 @@ jobs:
         id: build
         run: yarn build
         env:
-          APP_PUBLIC_PATH: /react-ui-icheck/
+          APP_PUBLIC_PATH: ${{ steps.app.outputs.public-path }}
+          APP_REVISION: ${{ steps.app.outputs.revision }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -113,7 +118,7 @@ jobs:
           NGINX_CONF: ${{ secrets.NGINX_CONF }}
           TRAEFIK_HOSTNAME: github.victorpopkov.com
           TRAEFIK_NAME: ${{ secrets.TRAEFIK_NAME }}
-          TRAEFIK_PATH_PREFIX: /react-ui-icheck/
+          TRAEFIK_PATH_PREFIX: ${{ steps.app.outputs.public-path }}
       - name: Update Slack notification
         uses: codedsolar/slack-action@v1
         if: ${{ github.event_name != 'pull_request' && always() }}

@@ -104,7 +104,6 @@ jobs:
             --prune \
             "${{ secrets.DOCKER_STACK_NAME }}"
         env:
-          APP_PUBLIC_PATH: /react-ui-icheck/
           DOCKER_CERT_PATH: /home/runner/.docker/deploy/
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
@@ -114,6 +113,7 @@ jobs:
           NGINX_CONF: ${{ secrets.NGINX_CONF }}
           TRAEFIK_HOSTNAME: github.victorpopkov.com
           TRAEFIK_NAME: ${{ secrets.TRAEFIK_NAME }}
+          TRAEFIK_PATH_PREFIX: /react-ui-icheck/
       - name: Update Slack notification
         uses: codedsolar/slack-action@v1
         if: ${{ github.event_name != 'pull_request' && always() }}

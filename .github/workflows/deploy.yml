@@ -27,7 +27,7 @@ jobs:
       - name: Set app outputs
         id: app
         run: |
-          echo "public-path=/react-ui-icheck/" >> $GITHUB_OUTPUT
+          echo "public-path=/react-ui-icheck" >> $GITHUB_OUTPUT
           echo "revision=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Set docker outputs
         id: docker

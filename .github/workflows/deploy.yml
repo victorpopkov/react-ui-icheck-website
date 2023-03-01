@@ -3,6 +3,7 @@ name: Deploy
 on:
   push:
     branches:
+      - develop
       - main
 
 permissions: read-all
@@ -27,13 +28,15 @@ jobs:
       - name: Set app outputs
         id: app
         run: |
-          echo "public-path=/react-ui-icheck" >> $GITHUB_OUTPUT
+          echo "public-path=/react-ui-icheck${{ github.ref != 'refs/heads/main' && '/develop' || '' }}" >> $GITHUB_OUTPUT
           echo "revision=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: Set docker outputs
         id: docker
         run: |
           echo "cert-path=/home/runner/.docker/deploy" >> $GITHUB_OUTPUT
           echo "image-name=${{ secrets.DOCKER_REGISTRY_HOST }}/react-ui-icheck-website" >> $GITHUB_OUTPUT
+          echo "stack-name=${{ secrets.DOCKER_STACK_NAME }}${{ github.ref != 'refs/heads/main' && '_develop' || '' }}" >> $GITHUB_OUTPUT
+          echo "traefik-name=${{ secrets.TRAEFIK_NAME }}${{ github.ref != 'refs/heads/main' && '-develop' || '' }}" >> $GITHUB_OUTPUT
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         id: node
@@ -72,7 +75,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          flavor: latest=true
+          flavor: latest=${{ github.ref == 'refs/heads/main' && 'true' || 'false' }}
           images: ${{ steps.docker.outputs.image-name }}
           labels: maintainer=victor@popkov.me
       - name: Build an image
@@ -85,7 +88,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm/v7
           pull: true
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
       - name: Add Docker certificates to access the remote host
         run: |
@@ -100,24 +103,25 @@ jobs:
           DOCKER_CERT_PATH: ${{ steps.docker.outputs.cert-path }}
       - name: Deploy Docker Stack
         run: |
-          docker stack rm "${{ secrets.DOCKER_STACK_NAME }}"
+          docker stack rm "${DOCKER_STACK_NAME}"
           docker stack deploy \
             --with-registry-auth \
             --resolve-image=always \
             --compose-file=docker-stack.yml \
             --prune \
-            "${{ secrets.DOCKER_STACK_NAME }}"
+            "${DOCKER_STACK_NAME}"
         env:
           DOCKER_CERT_PATH: ${{ steps.docker.outputs.cert-path }}
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
           DOCKER_IMAGE: ${{ fromJSON(steps.meta.outputs.json).tags[0] }}
+          DOCKER_STACK_NAME: ${{ steps.docker.outputs.stack-name }}
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           DOCKER_TLS_VERIFY: 1
           LOKI_PIPELINE_STAGE_FILE: ${{ secrets.LOKI_PIPELINE_STAGE_FILE }}
           LOKI_URL: ${{ secrets.LOKI_URL }}
           NGINX_CONF: ${{ secrets.NGINX_CONF }}
           TRAEFIK_HOSTNAME: github.victorpopkov.com
-          TRAEFIK_NAME: ${{ secrets.TRAEFIK_NAME }}
+          TRAEFIK_NAME: ${{ steps.docker.outputs.traefik-name }}
           TRAEFIK_PATH_PREFIX: ${{ steps.app.outputs.public-path }}
       - name: Update Slack notification
         uses: codedsolar/slack-action@v1

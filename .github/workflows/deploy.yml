@@ -34,7 +34,6 @@ jobs:
         run: |
           echo "cert-path=/home/runner/.docker/deploy" >> $GITHUB_OUTPUT
           echo "image-name=${{ secrets.DOCKER_REGISTRY_HOST }}/react-ui-icheck-website" >> $GITHUB_OUTPUT
-          echo "image-tag=latest" >> $GITHUB_OUTPUT
       - name: Set up Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         id: node
@@ -79,7 +78,7 @@ jobs:
       - name: Build an image
         uses: docker/build-push-action@v4
         with:
-          cache-from: type=registry,ref=${{ steps.docker.outputs.image-name }}:${{ steps.docker.outputs.image-tag }}
+          cache-from: type=registry,ref=${{ fromJSON(steps.meta.outputs.json).tags[0] }}
           cache-to: type=inline
           context: .
           file: ./Dockerfile
@@ -111,7 +110,7 @@ jobs:
         env:
           DOCKER_CERT_PATH: ${{ steps.docker.outputs.cert-path }}
           DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
-          DOCKER_IMAGE: ${{ steps.docker.outputs.image-name }}:${{ steps.docker.outputs.image-tag }}
+          DOCKER_IMAGE: ${{ fromJSON(steps.meta.outputs.json).tags[0] }}
           DOCKER_STACK_NODE_HOSTNAME: ${{ secrets.DOCKER_STACK_NODE_HOSTNAME }}
           DOCKER_TLS_VERIFY: 1
           LOKI_PIPELINE_STAGE_FILE: ${{ secrets.LOKI_PIPELINE_STAGE_FILE }}

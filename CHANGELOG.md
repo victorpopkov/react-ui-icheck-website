@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased][]
+## [Unreleased]
 
-## [0.6.0][] - 2022-02-01
+## [0.6.0] - 2022-02-01
 
 ### Added
 
@@ -19,13 +19,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change "Home" page content
 - Change versions in jumbotron
 - Improve mobile responsiveness
-- Migrate [ESLint][] from 7 to 8
-- Migrate [Stylelint][] from 13 to 14
+- Migrate [ESLint] from 7 to 8
+- Migrate [Stylelint] from 13 to 14
 - Migrate `react-router` from 5 to 6
 - Replace `IndexLinkContainer` with `LinkContainer` for `react-router-bootstrap`
 - Replace deprecated `react-hot-loader` with `@pmmmwh/react-refresh-webpack-plugin`
 
-## [0.5.0][] - 2021-08-18
+## [0.5.0] - 2021-08-18
 
 ### Added
 
@@ -43,12 +43,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
-- Remove [webpack][] build size warning
+- Remove [webpack] build size warning
 - Remove `babel-plugin-react-css-modules`
 - Remove `file-loader`
 - Remove `precss`
 
-## [0.4.0][] - 2021-08-10
+## [0.4.0] - 2021-08-10
 
 ### Added
 
@@ -62,7 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Change "Home" page content
 - Change `<th />` and `<td />` bottom border
 - Change jumbotron layout
-- Make [GitHub][] buttons fixed in height
+- Make [GitHub] buttons fixed in height
 - Migrate Bootstrap from `4.6.0` to `5.1.0`
 - Replace SCSS division slashes with `sass:math`
 - Replace `optimize-css-assets-webpack-plugin` with `css-minimizer-webpack-plugin`
@@ -70,47 +70,47 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- Fix navbar [GitHub][] link issue
+- Fix navbar [GitHub] link issue
 
-## [0.3.0][] - 2021-04-12
+## [0.3.0] - 2021-04-12
 
 ### Added
 
 - **[maintenance]** Add `audit:fix` and `deduplicate` scripts
 - Add `react-helmet`
-- Add navbar [GitHub][] buttons
+- Add navbar [GitHub] buttons
 
 ### Changed
 
-- **[maintenance]** Change [GitHub Actions][] jobs configurations
+- **[maintenance]** Change [GitHub Actions] jobs configurations
 - **[maintenance]** Change `build` and `watch` scripts
 - Bump dependencies
 - Change `css-loader` mode from `global` to `local`
-- Change footer [GitHub][] buttons
-- Exclude the "website" prefix in [webpack][] aliases
+- Change footer [GitHub] buttons
+- Exclude the "website" prefix in [webpack] aliases
 - Hide sidebar on tablets
 - Improve navbar mobile responsiveness
 - Reorder `webpack-merge` import
 - Replace deprecated `node-sass` with `sass`
 - Replace deprecated `uglifyjs-webpack-plugin` with `terser-webpack-plugin`
 
-## [0.2.0][] - 2020-06-23
+## [0.2.0] - 2020-06-23
 
 ### Added
 
 - Add "Functional" and "States" examples
-- Add `react/jsx-props-no-spreading` [ESLint][] exception
+- Add `react/jsx-props-no-spreading` [ESLint] exception
 - Add hot reloading for some missed components
 - Add jumbotron website version and revision
 - Add sidebar links active state
 
 ### Changed
 
-- **[maintenance]** Replace [Travis CI][] with [GitHub Actions][] to build, lint and deploy
-- **[maintenance]** Replace [remark][] with [Prettier][]
+- **[maintenance]** Replace [Travis CI] with [GitHub Actions] to build, lint and deploy
+- **[maintenance]** Replace [remark] with [Prettier]
 - Bump dependencies
 - Change "Home" and "Installation" content
-- Change [ESLint][] and [stylelint][] configurations to work with [Prettier][]
+- Change [ESLint] and [stylelint] configurations to work with [Prettier]
 - Change `App` component to become functional
 - Change app and library configurations
 - Change examples
@@ -125,8 +125,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- Fix [ESLint][] code linting issues
-- Fix [Prettier][] code formatting issues
+- Fix [ESLint] code linting issues
+- Fix [Prettier] code formatting issues
 - Fix code highlighting issues
 
 ## 0.1.0 - 2019-07-15

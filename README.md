@@ -1,7 +1,7 @@
 # react-ui-icheck-website
 
-[![CI]](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3ACI)
-[![Deploy]](https://github.com/victorpopkov/react-ui-icheck-website/actions?query=workflow%3ADeploy)
+[![CI]](https://github.com/victorpopkov/react-ui-icheck-website/actions/workflows/ci.yml)
+[![CD]](https://github.com/victorpopkov/react-ui-icheck-website/actions/workflows/cd.yml)
 [![Code Climate]](https://codeclimate.com/github/victorpopkov/react-ui-icheck-website)
 [![Libraries.io]](https://libraries.io/github/victorpopkov/react-ui-icheck-website)
 
@@ -33,8 +33,8 @@ $ yarn dev
 
 Released under the [MIT License](https://opensource.org/licenses/MIT).
 
+[cd]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/deploy.yml?branch=main&label=cd
 [ci]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/ci.yml?branch=main&label=ci
 [code climate]: https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website
-[deploy]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/deploy.yml?branch=main&label=deploy
 [libraries.io]: https://img.shields.io/librariesio/github/victorpopkov/react-ui-icheck-website
 [react-ui-icheck]: https://github.com/victorpopkov/react-ui-icheck

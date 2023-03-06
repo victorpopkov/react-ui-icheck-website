@@ -7,27 +7,29 @@
 
 Website of the [react-ui-icheck][] library.
 
-- [Production](#production)
-- [Development](#development)
+## Running
 
-```shell
-$ git clone git@github.com:victorpopkov/react-ui-icheck-website.git
-$ cd react-ui-icheck-website/
-$ yarn install
-```
+### Development
 
-## Production
+To start coding you just need to:
 
-```shell
-$ yarn build
-$ yarn start
-```
+1. Clone the repository: `https://github.com/victorpopkov/react-ui-icheck-website.git`
+2. Install packages: `yarn install`
+3. Export `.env.dev` environment variables
+4. Launch: `yarn dev`
+5. Visit in your browser (default: http://localhost:3000/)
 
-## Development
+### Production
 
-```shell
-$ yarn dev
-```
+In order to launch the production version you will need to build the project
+first before actually starting it:
+
+1. Clone the repository: `https://github.com/victorpopkov/react-ui-icheck-website.git`
+2. Install packages: `yarn install`
+3. Export `.env.prod` environment variables
+4. Build: `yarn build`
+5. Launch: `yarn start`
+6. Visit in your browser (default: http://localhost:8080/)
 
 ## License
 

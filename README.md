@@ -33,7 +33,7 @@ $ yarn dev
 
 Released under the [MIT License](https://opensource.org/licenses/MIT).
 
-[cd]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/deploy.yml?branch=main&label=cd
+[cd]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/cd.yml?branch=main&label=cd
 [ci]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/ci.yml?branch=main&label=ci
 [code climate]: https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website
 [libraries.io]: https://img.shields.io/librariesio/github/victorpopkov/react-ui-icheck-website

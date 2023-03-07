@@ -2,7 +2,7 @@
 .dockerignore
 .editorconfig
 .eslintignore
-.eslintrc
+.eslintrc.js
 .git/
 .github/
 .gitignore

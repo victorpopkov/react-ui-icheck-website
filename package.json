@@ -105,16 +105,16 @@
   },
   "scripts": {
     "audit:fix": "yarn-audit-fix",
-    "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
+    "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config='./webpack/webpack.config.prod.js'",
     "ci:eslint": "eslint --ext='js,jsx' --format='./.github/eslint-output.js' .",
     "ci:prettier": "node ./.github/prettier-output.js",
     "deduplicate": "yarn-deduplicate && yarn install",
     "dev": "npm-run-all watch",
     "lint": "npm-run-all --continue-on-error lint:*",
-    "lint:eslint": "eslint --config ./.eslintrc --ext js,jsx .",
+    "lint:eslint": "eslint --ext='js,jsx' .",
     "lint:prettier": "prettier --check .",
     "lint:stylelint": "stylelint './src/**/*.css' './src/**/*.scss'",
     "start": "cross-env BABEL_ENV=production NODE_ENV=production http-server ./dist/",
-    "watch": "cross-env APP_REVISION=dev BABEL_ENV=development NODE_ENV=development webpack serve --config ./webpack/webpack.config.dev.js"
+    "watch": "cross-env APP_REVISION=dev BABEL_ENV=development NODE_ENV=development webpack serve --config='./webpack/webpack.config.dev.js'"
   }
 }

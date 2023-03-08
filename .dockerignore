@@ -1,7 +1,6 @@
 .codeclimate.yml
 .dockerignore
 .editorconfig
-.eslintignore
 .eslintrc.js
 .git/
 .github/

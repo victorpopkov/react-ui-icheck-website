@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
+  ignorePatterns: ['dist/'],
   parser: '@babel/eslint-parser',
   rules: {
     'import/no-unresolved': [2, { ignore: ['@Config'] }],

@@ -7,7 +7,7 @@
     "email": "victor@popkov.me"
   },
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "^1.4.0",
     "bootstrap": "^5.1.3",
     "classnames": "^2.3.2",
     "generic-names": "^4.0.0",

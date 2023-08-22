@@ -12,19 +12,13 @@ const badges = [
     path: 'npm/v/react-ui-icheck',
   },
   {
-    alt: 'David',
-    href: 'https://david-dm.org/victorpopkov/react-ui-icheck',
-    path: 'david/victorpopkov/react-ui-icheck',
-  },
-  {
-    alt: 'David Dev',
-    href: 'https://david-dm.org/victorpopkov/react-ui-icheck?type=dev',
-    path: 'david/dev/victorpopkov/react-ui-icheck',
-  },
-  {
-    alt: 'GitHub Workflow Status',
-    href: 'https://github.com/victorpopkov/react-ui-icheck/actions',
-    path: 'github/workflow/status/victorpopkov/react-ui-icheck/CI',
+    alt: 'CI',
+    href: 'https://github.com/victorpopkov/react-ui-icheck/actions/workflows/ci.yml',
+    path: 'github/actions/workflow/status/victorpopkov/react-ui-icheck/ci.yml',
+    args: {
+      branch: 'main',
+      label: 'ci',
+    },
   },
   {
     alt: 'Codecov',
@@ -35,6 +29,11 @@ const badges = [
     alt: 'Code Climate',
     href: 'https://codeclimate.com/github/victorpopkov/react-ui-icheck',
     path: 'codeclimate/maintainability/victorpopkov/react-ui-icheck',
+  },
+  {
+    alt: 'Libraries.io',
+    href: 'https://libraries.io/github/victorpopkov/react-ui-icheck',
+    path: 'librariesio/github/victorpopkov/react-ui-icheck',
   },
 ];
 
@@ -79,6 +78,7 @@ const Sidebar = () => {
         {_.map(badges, (entry, key) => (
           <SidebarBadge
             alt={entry.alt}
+            args={entry.args}
             href={entry.href}
             key={`badge-${key}`}
             path={entry.path}

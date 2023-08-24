@@ -25,7 +25,7 @@
     "react-router-bootstrap": "^0.26.0",
     "react-router-dom": "^6.2.1",
     "react-ui-icheck": "^0.8.1",
-    "reactstrap": "^9.0.1"
+    "reactstrap": "^9.2.0"
   },
   "devDependencies": {
     "@actions/core": "^1.10.0",

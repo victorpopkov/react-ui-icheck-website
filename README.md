@@ -35,8 +35,8 @@ first before actually starting it:
 
 Released under the [MIT License](https://opensource.org/licenses/MIT).
 
-[cd]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/cd.yml?branch=main&label=cd
-[ci]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/ci.yml?branch=main&label=ci
-[code climate]: https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website
-[libraries.io]: https://img.shields.io/librariesio/github/victorpopkov/react-ui-icheck-website
+[cd]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/cd.yml?branch=main&label=cd&logo=github
+[ci]: https://img.shields.io/github/actions/workflow/status/victorpopkov/react-ui-icheck-website/ci.yml?branch=main&label=ci&logo=github
+[code climate]: https://img.shields.io/codeclimate/maintainability/victorpopkov/react-ui-icheck-website?logo=codeclimate
+[libraries.io]: https://img.shields.io/librariesio/github/victorpopkov/react-ui-icheck-website?logo=librariesdotio
 [react-ui-icheck]: https://github.com/victorpopkov/react-ui-icheck

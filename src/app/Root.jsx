@@ -16,7 +16,7 @@ import SkinPolaris from './skin/SkinPolaris';
 import SkinSquare from './skin/SkinSquare';
 import Error404 from './error/404/Error404';
 
-class App extends React.Component {
+class Root extends React.Component {
   componentDidMount() {
     this.latestVersion = null;
     this.latestRevision = null;
@@ -86,4 +86,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Root;

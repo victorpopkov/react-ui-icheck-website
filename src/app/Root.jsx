@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
 import { Route, Routes } from 'react-router-dom';
 import config from '@Config';
-import { Footer, Navbar } from './common';
-import Home from './home/Home';
 import Checkbox from './checkbox/Checkbox';
-import Radio from './radio/Radio';
+import Error404 from './error/404/Error404';
+import Home from './home/Home';
 import Installation from './installation/Installation';
+import Layout from './Layout';
+import Radio from './radio/Radio';
 import SkinFlat from './skin/SkinFlat';
 import SkinFuturico from './skin/SkinFuturico';
 import SkinLine from './skin/SkinLine';
 import SkinMinimal from './skin/SkinMinimal';
 import SkinPolaris from './skin/SkinPolaris';
 import SkinSquare from './skin/SkinSquare';
-import Error404 from './error/404/Error404';
 
 class Root extends Component {
   componentDidMount() {
@@ -62,12 +61,8 @@ class Root extends Component {
 
   render() {
     return (
-      <div className="app">
-        <Helmet>
-          <script async defer src="https://buttons.github.io/buttons.js" />
-        </Helmet>
-        <Navbar />
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>
           {this.renderRoute('/', Home)}
           {this.renderRoute('/checkbox', Checkbox)}
           {this.renderRoute('/radio', Radio)}
@@ -79,9 +74,8 @@ class Root extends Component {
           {this.renderRoute('/skin/polaris', SkinPolaris)}
           {this.renderRoute('/skin/square', SkinSquare)}
           <Route component={Error404} path="*" />
-        </Routes>
-        <Footer />
-      </div>
+        </Route>
+      </Routes>
     );
   }
 }

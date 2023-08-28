@@ -1,7 +1,7 @@
+import React, { Component } from 'react';
+import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import { Route, Routes } from 'react-router-dom';
-import React from 'react';
-import axios from 'axios';
 import config from '@Config';
 import { Footer, Navbar } from './common';
 import Home from './home/Home';
@@ -16,7 +16,7 @@ import SkinPolaris from './skin/SkinPolaris';
 import SkinSquare from './skin/SkinSquare';
 import Error404 from './error/404/Error404';
 
-class Root extends React.Component {
+class Root extends Component {
   componentDidMount() {
     this.latestVersion = null;
     this.latestRevision = null;

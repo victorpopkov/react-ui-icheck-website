@@ -62,7 +62,7 @@ class Example extends Component {
 
 Example.propTypes = {
   children: PropTypes.element.isRequired,
-  src: PropTypes.string,
+  src: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   srcAppend: PropTypes.string,
   srcFunctionValue: PropTypes.string,
   srcPrepend: PropTypes.string,
@@ -70,7 +70,7 @@ Example.propTypes = {
 };
 
 Example.defaultProps = {
-  src: '',
+  src: false,
   srcAppend: '',
   srcFunctionValue: '',
   srcPrepend: '',

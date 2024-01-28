@@ -1,14 +1,14 @@
 html,
 body {
-  height: 100%;
-  min-height: 100%;
   position: relative;
   width: 100%;
+  height: 100%;
+  min-height: 100%;
 }
 
 label {
-  align-items: center;
   display: flex;
+  align-items: center;
 
   > div {
     display: inline-block;
@@ -23,18 +23,18 @@ label {
   }
 }
 
-pre.d-inline,
+pre,
 code {
+  padding: 0.15em 0;
+  color: $black;
+  white-space: nowrap;
   background: $pampas;
   border-radius: 3px;
-  color: $black;
-  padding: 0.15em 0;
-  white-space: nowrap;
 
   &::before,
   &::after {
-    content: '\00a0';
     letter-spacing: -0.2em;
+    content: '\00a0';
   }
 }
 
@@ -49,9 +49,9 @@ pre code {
 }
 
 .heading {
-  border-bottom: 1px solid transparentize($black, 0.9);
-  margin-bottom: math.div($grid-gutter-width, 2);
   padding-bottom: 0.3em;
+  margin-bottom: math.div($grid-gutter-width, 2);
+  border-bottom: 1px solid transparentize($black, 0.9);
 }
 
 .badges {
@@ -59,8 +59,8 @@ pre code {
 
   a {
     float: left;
-    margin: 0 5px 5px 0;
     padding: 0;
+    margin: 0 5px 5px 0;
 
     img {
       float: left;

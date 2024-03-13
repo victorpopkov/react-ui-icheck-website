@@ -95,17 +95,17 @@ jobs:
       - name: Lint using ESLint
         run: yarn lint:eslint || true
       - name: Output ESLint results
-        id: eslint-output
+        id: eslint
         run: yarn ci:eslint || true
       - name: Lint using Prettier
         run: yarn lint:prettier || true
       - name: Output Prettier results
-        id: prettier-output
+        id: prettier
         run: yarn ci:prettier || true
       - name: Check results
         run: |
-          eslint_issues="${{ steps.eslint-output.outputs.issues }}"
-          prettier_issues="${{ steps.prettier-output.outputs.issues }}"
+          eslint_issues="${{ steps.eslint.outputs.issues }}"
+          prettier_issues="${{ steps.prettier.outputs.issues }}"
 
           echo "Total ESLint issues: $eslint_issues"
           echo "Total Prettier issues: $prettier_issues"
@@ -125,5 +125,5 @@ jobs:
             {STATUS}
             {REF}
             Node.js: ${{ steps.node.outputs.node-version }}
-            ESLint issues: ${{ steps.eslint-output.outputs.issues || 'Skipped' }}
-            Prettier issues: ${{ steps.prettier-output.outputs.issues || 'Skipped' }}
+            ESLint issues: ${{ steps.eslint.outputs.issues || 'Skipped' }}
+            Prettier issues: ${{ steps.prettier.outputs.issues || 'Skipped' }}

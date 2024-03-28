@@ -73,7 +73,7 @@
     "prettier": "^3.2.5",
     "react-refresh": "^0.14.0",
     "resolve-url-loader": "^5.0.0",
-    "sass": "^1.71.1",
+    "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "sass-resources-loader": "^2.2.5",
     "style-loader": "^3.3.4",

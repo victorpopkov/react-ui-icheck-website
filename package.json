@@ -40,7 +40,7 @@
     "@babel/plugin-transform-runtime": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "assert": "^2.1.0",
     "autoprefixer": "^10.4.19",
     "babel-loader": "^9.1.3",

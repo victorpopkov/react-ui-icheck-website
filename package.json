@@ -76,7 +76,7 @@
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
     "sass-resources-loader": "^2.2.5",
-    "style-loader": "^3.3.4",
+    "style-loader": "^4.0.0",
     "stylelint": "^16.2.1",
     "stylelint-config-twbs-bootstrap": "^14.0.0",
     "stylelint-webpack-plugin": "^5.0.0",

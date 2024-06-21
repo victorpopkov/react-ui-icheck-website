@@ -1,4 +1,4 @@
-FROM node:18.15.0-alpine3.17 as build
+FROM node:18.20.3-alpine3.20 as build
 
 ARG APP_HOST="0.0.0.0"
 ENV APP_HOST="${APP_HOST}"
@@ -30,7 +30,7 @@ RUN NODE_ENV="development" yarn install --ignore-scripts \
   && yarn cache clean \
   && yarn build
 
-FROM nginx:1.23.3-alpine AS nginx
+FROM nginx:1.27.0-alpine AS nginx
 
 WORKDIR /usr/share/nginx/html/
 COPY --from=build /srv/react-ui-icheck-website/dist/ /usr/share/nginx/html/

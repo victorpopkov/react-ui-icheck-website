@@ -2,10 +2,10 @@ import { Col, Container, Row } from 'reactstrap';
 import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
+import * as styles from './Home.scss';
 import { Jumbotron, Sidebar } from '../common';
 import CheckboxExampleDefault from '../checkbox/example/CheckboxExampleDefault';
 import RadioExampleDefault from '../radio/example/RadioExampleDefault';
-import styles from './Home.scss';
 
 class Home extends Component {
   componentDidMount() {

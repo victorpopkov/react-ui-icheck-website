@@ -1,9 +1,9 @@
 import { Col, Nav, Row } from 'reactstrap';
 import React from 'react';
+import * as styles from './NavbarMobile.scss';
 import GitHub from '../github/GitHub';
 import config from '../../../../config';
 import navItem from './navItem';
-import styles from './NavbarMobile.scss';
 
 const NavbarMobile = () => (
   <div className={styles.mobile}>

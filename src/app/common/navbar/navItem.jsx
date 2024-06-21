@@ -1,7 +1,7 @@
 import { NavItem, NavLink } from 'reactstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
-import styles from './navItem.scss';
+import * as styles from './navItem.scss';
 
 export default (name, to, className, isHref) => (
   <NavItem className={className}>

@@ -2,7 +2,7 @@ import { Button, Container } from 'reactstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import classNames from 'classnames';
-import styles from './Error404.scss';
+import * as styles from './Error404.scss';
 
 const Error404 = () => (
   <main

@@ -1,8 +1,8 @@
 import { Button, Collapse, Form } from 'reactstrap';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import * as styles from './Example.scss';
 import Source from '../source/Source';
-import styles from './Example.scss';
 
 class Example extends Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import { Col, Container, Row } from 'reactstrap';
 import React from 'react';
 import classNames from 'classnames';
 import config from '@Config';
-import styles from './Footer.scss';
+import * as styles from './Footer.scss';
 import Version from '../version/Version';
 
 const Footer = () => (

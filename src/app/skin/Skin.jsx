@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import Prism from 'prismjs';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import * as styles from './Skin.scss';
 import Sidebar from '../common/sidebar/Sidebar';
 import SkinColorSchemes from './SkinColorSchemes';
-import styles from './Skin.scss';
 
 class Skin extends Component {
   constructor(props) {

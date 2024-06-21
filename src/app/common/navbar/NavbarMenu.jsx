@@ -1,10 +1,10 @@
 import { Nav } from 'reactstrap';
 import React from 'react';
 import classNames from 'classnames';
+import * as styles from './NavbarMenu.scss';
 import GitHub from '../github/GitHub';
 import config from '../../../../config';
 import navItem from './navItem';
-import styles from './NavbarMenu.scss';
 
 const NavbarMenu = () => (
   <div className="d-none d-lg-inline-block ms-auto text-center">

@@ -2,7 +2,7 @@ import { Badge } from 'reactstrap';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import styles from './Version.scss';
+import * as styles from './Version.scss';
 
 const Version = ({
   className,

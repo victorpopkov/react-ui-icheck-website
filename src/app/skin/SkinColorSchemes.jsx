@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import styles from './SkinColorSchemes.scss';
+import * as styles from './SkinColorSchemes.scss';
 
 class SkinColorSchemes extends Component {
   constructor(props) {

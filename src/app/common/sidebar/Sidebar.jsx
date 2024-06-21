@@ -2,8 +2,8 @@ import { Col, Nav, NavItem, NavLink } from 'reactstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import React from 'react';
 import _ from 'lodash';
+import * as styles from './Sidebar.scss';
 import SidebarBadge from './SidebarBadge';
-import styles from './Sidebar.scss';
 
 const badges = [
   {

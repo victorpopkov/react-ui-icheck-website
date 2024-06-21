@@ -2,7 +2,7 @@ import { NavItem, NavLink } from 'reactstrap';
 import React from 'react';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
-import styles from './SidebarBadge.scss';
+import * as styles from './SidebarBadge.scss';
 
 const SidebarBadge = ({ alt, args, href, path }) => {
   let argsStr = '';

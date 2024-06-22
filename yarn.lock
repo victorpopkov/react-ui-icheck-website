@@ -3624,7 +3624,7 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
   integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
-eslint-webpack-plugin@^4.1.0:
+eslint-webpack-plugin@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/eslint-webpack-plugin/-/eslint-webpack-plugin-4.2.0.tgz#41f54b25379908eb9eca8645bc997c90cfdbd34e"
   integrity sha512-rsfpFQ01AWQbqtjgPRr2usVRxhWDuG0YDYcG8DJOteD3EFnpeuYuOwk0PQiN7PRBTqS6ElNdtPZPggj8If9WnA==
@@ -7468,6 +7468,7 @@ stop-iteration-iterator@^1.0.0:
     internal-slot "^1.0.4"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.3:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -7572,6 +7573,7 @@ stringify-entities@^4.0.0:
     character-entities-legacy "^3.0.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -7661,7 +7663,7 @@ stylelint-config-standard@^36.0.0:
   dependencies:
     stylelint-config-recommended "^14.0.1"
 
-stylelint-config-twbs-bootstrap@^14.0.0:
+stylelint-config-twbs-bootstrap@^14.1.0:
   version "14.1.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-twbs-bootstrap/-/stylelint-config-twbs-bootstrap-14.1.0.tgz#e07cf371d2a743c53ae741f55ce31353144bd1fd"
   integrity sha512-4pd1ddeLesZX2GQvQlelrFAUcgKo1GAFUSPR379s+hDUXrF+6JdUVpfUTfKq/k1U4a5RSbtUOXLS238rnqLPqg==
@@ -7692,7 +7694,7 @@ stylelint-scss@^6.0.0, stylelint-scss@^6.2.1:
     postcss-selector-parser "^6.1.0"
     postcss-value-parser "^4.2.0"
 
-stylelint-webpack-plugin@^5.0.0:
+stylelint-webpack-plugin@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-5.0.1.tgz#13a7589a8d4cc00b155b9f792876334ca0bcaf71"
   integrity sha512-07lpo1uVoFctKv0EOOg/YSrUppcLMjNBSMRqgooNnlbfAOgQfMzvLK+EbXz0HQiEgZobr+XQX9md/TgwTGdzbw==
@@ -7703,7 +7705,7 @@ stylelint-webpack-plugin@^5.0.0:
     normalize-path "^3.0.0"
     schema-utils "^4.2.0"
 
-stylelint@^16.2.1, stylelint@^16.4.0:
+stylelint@^16.4.0, stylelint@^16.6.1:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-16.6.1.tgz#84735aca2bb5cde535572b7a9b878d2ec983a570"
   integrity sha512-yNgz2PqWLkhH2hw6X9AweV9YvoafbAD5ZsFdKN9BvSDVwGvPh+AUIrn7lYwy1S7IHmtFin75LLfX1m0D2tHu8Q==

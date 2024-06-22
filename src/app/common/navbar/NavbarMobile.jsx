@@ -1,8 +1,8 @@
 import { Col, Nav, Row } from 'reactstrap';
 import React from 'react';
+import config from '@Config';
 import * as styles from './NavbarMobile.scss';
 import GitHub from '../github/GitHub';
-import config from '../../../../config';
 import navItem from './navItem';
 
 const NavbarMobile = () => (

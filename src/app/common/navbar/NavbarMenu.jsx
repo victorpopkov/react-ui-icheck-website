@@ -1,9 +1,9 @@
 import { Nav } from 'reactstrap';
 import React from 'react';
 import classNames from 'classnames';
+import config from '@Config';
 import * as styles from './NavbarMenu.scss';
 import GitHub from '../github/GitHub';
-import config from '../../../../config';
 import navItem from './navItem';
 
 const NavbarMenu = () => (

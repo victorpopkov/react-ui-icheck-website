@@ -1,12 +1,7 @@
-### WebStorm ###
-.idea/
-
-### VisualStudioCode ###
-.vscode/
-
-### Project ###
 *.log
 .env
+.idea/
+.vscode/
 .yarn-integrity
 dist/
 node_modules/

@@ -1,3 +1,5 @@
+*.log
+*.md
 .codeclimate.yml
 .dockerignore
 .editorconfig
@@ -10,9 +12,6 @@
 .prettierrc
 .stylelintrc.js
 .vscode/
-
-*.log
-*.md
 Dockerfile
 dist/
 node_modules/
